@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대학병원 의료진 검색 · 진료과 추천 플랫폼 (MVP)</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--pri:#0e7490;--pri2:#0c4a6e;--acc:#0ea5e9;--warn:#b45309;--danger:#b91c1c;--ok:#15803d;--radius:14px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Noto Sans KR",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.hwrap{max-width:1180px;margin:0 auto;padding:14px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#0e7490,#0369a1);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px}
+h1{font-size:18px;margin:0}h1 small{display:block;font-size:12px;color:var(--muted);font-weight:500}
+nav{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+nav button{border:1px solid var(--line);background:#fff;padding:9px 14px;border-radius:999px;cursor:pointer;font-weight:700;font-size:13px}
+nav button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+main{max-width:1180px;margin:0 auto;padding:20px 18px 80px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 1px 2px rgba(15,23,42,.05)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g32{grid-template-columns:1.5fr 1fr}
+@media(max-width:900px){.g2,.g3,.g32{grid-template-columns:1fr}}
+.muted{color:var(--muted)}.small{font-size:12.5px}.pill{display:inline-block;padding:3px 10px;border-radius:999px;background:#eef6fb;border:1px solid #bae6fd;font-size:12px;font-weight:700;color:#075985;margin:2px 4px 2px 0}
+.pill.gray{background:#f1f5f9;border-color:var(--line);color:#475569}.pill.green{background:#ecfdf5;border-color:#bbf7d0;color:#166534}.pill.amber{background:#fffbeb;border-color:#fde68a;color:#92400e}.pill.red{background:#fef2f2;border-color:#fecaca;color:#991b1b}
+input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;background:#fff}
+textarea{min-height:70px;resize:vertical}
+label{font-size:12.5px;font-weight:700;color:#334155;display:block;margin:10px 0 6px}
+.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:800;cursor:pointer;font-size:14px;background:var(--pri);color:#fff}
+.btn:hover{background:var(--pri2)}.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn.dark{background:var(--ink)}.btn.warn{background:#b45309}.btn.danger{background:#b91c1c}.btn.sm{padding:7px 11px;font-size:12.5px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.searchbox{display:flex;gap:8px}.searchbox input{font-size:16px;padding:14px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:#0e7490;color:#fff;border-color:#0e7490}
+.doc{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
+.doc h3{margin:0 0 4px;font-size:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}th{background:#f8fafc}
+.alert{border-radius:12px;padding:13px 15px;font-size:13.5px;line-height:1.6;border:1px solid}
+.alert.red{background:#fef2f2;border-color:#fecaca;color:#7f1d1d}.alert.amber{background:#fffbeb;border-color:#fde68a;color:#78350f}.alert.blue{background:#eff6ff;border-color:#bfdbfe;color:#1e3a8a}.alert.green{background:#f0fdf4;border-color:#bbf7d0;color:#14532d}
+.kbd{background:#0f172a;color:#fff;border-radius:6px;padding:1px 7px;font-size:12px}
+footer{max-width:1180px;margin:0 auto;padding:20px 18px 60px;color:var(--muted);font-size:12.5px;line-height:1.7}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}
+.modal.open{display:flex}.sheet{background:#fff;border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow:auto;padding:22px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+pre{background:#0f172a;color:#e2e8f0;border-radius:12px;padding:14px;overflow:auto;font-size:12px;line-height:1.6}
+code{font-family:ui-monospace,Consolas,monospace}
+.section-title{font-size:16px;font-weight:800;margin:0 0 4px}
+.hr{height:1px;background:var(--line);margin:14px 0}
+a{color:#0369a1}
+</style>
+</head>
+<body>
+<header><div class="hwrap">
+<div class="logo">H+</div>
+<div><h1>대학병원 의료진 검색 · 진료과 추천 <small>서울 주요 5개 대학병원 공식 프로필 기반 · 추정치 명시 · 진단 대체 아님</small></h1></div>
+<nav id="nav">
+<button data-tab="search" class="on">메인 검색</button>
+<button data-tab="hosp">병원별</button>
+<button data-tab="docs">의료진 목록</button>
+<button data-tab="admin">관리자</button>
+<button data-tab="guide">윤리·안내</button>
+</nav></div></header>
+<main>
+<!-- SEARCH -->
+<section id="tab-search">
+<div class="grid g32">
+<div class="card">
+<div class="section-title">증상 또는 질환 검색</div>
+<div class="muted small">예: "가슴이 아프고 숨이 차요", "무릎 통증", "대장암", "심장내과 전문의"</div>
+<div style="height:10px"></div>
+<div class="searchbox"><input id="q" placeholder="증상·질환·진료과·의료진 이름을 입력하세요" value=""><button class="btn" onclick="doSearch()">검색</button></div>
+<div style="height:10px"></div>
+<div class="small muted">인기 검색어</div>
+<div id="popular" class="row" style="margin-top:6px"></div>
+<div class="hr"></div>
+<div class="alert blue small">검색 결과는 <b>관련 진료과 추천</b>이며 <b>진단을 대신하지 않습니다.</b> 공식 프로필 링크로 반드시 최신 정보를 확인하세요. 응급 가능 증상 입력 시 응급 안내가 우선 표시됩니다.</div>
+</div>
+<div>
+<div class="card" style="margin-bottom:14px"><div class="section-title">응급 증상 안내</div>
+<div class="small muted">다음 표현이 포함되면 검색보다 응급 안내를 우선합니다.</div>
+<ul class="small">
+<li>갑작스러운 한쪽 마비·언어 장애</li><li>심한 흉통·심한 호흡곤란</li><li>의식 소실 · 조절 안 되는 심한 출혈</li><li>갑작스럽고 극심한 두통</li>
+</ul>
+<div class="alert red small"><b>대한민국 응급상황:</b> 119 또는 가까운 응급실로 즉시 평가받으세요. 특정 의사 예약을 기다리지 마세요.</div>
+</div>
+</div></div>
+<div id="emgBox" style="margin-top:14px"></div>
+<div id="resultBox" style="margin-top:14px" class="grid"></div>
+</section>
+<!-- HOSP -->
+<section id="tab-hosp" hidden>
+<div class="card"><div class="section-title">병원별 페이지</div><div class="muted small">각 병원 공식 홈페이지·예약 링크와 진료과별 대표 의료진 (공식 목록 기준 최대 2명, 순위·실력 평가 아님)</div>
+<div class="tabs" id="hospTabs"></div><div id="hospDetail"></div></div>
+</section>
+<!-- DOCS -->
+<section id="tab-docs" hidden>
+<div class="card">
+<div class="section-title">의료진 목록 · 복합 검색</div>
+<div class="grid g3">
+<div><label>병원</label><select id="fHosp"></select></div>
+<div><label>진료과</label><select id="fDept"></select></div>
+<div><label>추정 연령대</label><select id="fAge"><option value="">전체</option><option value="40대 추정">40대 추정</option><option value="50대 추정">50대 추정</option><option value="연령대 확인 필요">연령대 확인 필요</option></select></div></div>
+<div class="grid g2" style="margin-top:10px"><div><label>의료진 이름·전문분야·질환 검색</label><input id="fName" placeholder="예: 김 / 갑상선 / 대장암"></div>
+<div><label>&nbsp;</label><div class="row"><button class="btn" onclick="renderDocs()">필터 적용</button><button class="btn ghost" onclick="clearFilter()">초기화</button></div></div></div>
+</div>
+<div id="docsList" class="grid g2" style="margin-top:14px"></div>
+</section>
+<!-- ADMIN -->
+<section id="tab-admin" hidden>
+<div id="adminLock" class="card" style="max-width:440px;margin:30px auto">
+<div class="section-title">관리자 로그인</div>
+<div class="muted small">DB 입력·수정은 비밀번호가 필요합니다.</div>
+<label>비밀번호</label><input id="pwInput" type="password" placeholder="비밀번호 입력" autocomplete="current-password">
+<div class="row" style="margin-top:10px"><button class="btn" onclick="tryLogin()">입장</button></div>
+<div id="pwMsg" style="margin-top:8px"></div>
+<div class="small muted" style="margin-top:8px">※ 서버(`node server\server.js`)로 열면 백엔드 세션 인증으로 동작합니다. 파일을 직접 열면 화면 가림용 로컬 잠금입니다.</div>
+</div>
+<div id="adminBody" hidden>
+<div class="row" style="justify-content:space-between;align-items:center;margin-bottom:10px">
+<div class="small"><b>관리자 모드</b> <span class="pill green">인증됨</span></div>
+<div class="row"><button class="btn ghost sm" onclick="togglePwForm()">비밀번호 변경</button><button class="btn ghost sm" onclick="logoutAdmin()">로그아웃</button></div>
+</div>
+<div id="pwForm" class="card" hidden style="margin-bottom:14px;max-width:440px">
+<div class="section-title">비밀번호 변경</div>
+<label>현재 비밀번호</label><input id="pwCur" type="password">
+<label>새 비밀번호(8자 이상)</label><input id="pwNew" type="password">
+<div class="row" style="margin-top:10px"><button class="btn sm" onclick="changePw()">변경</button></div>
+<div id="pwChgMsg" style="margin-top:8px"></div>
+</div>
+<div class="grid g2">
+<div class="card"><div class="section-title">의료진 추가 · 수정 (관리자)</div>
+<div class="muted small">공식 프로필 확인된 정보만 등록. 출처 URL 필수. 졸업연도 모르면 비워두고 "연령대 확인 필요" 유지.</div>
+<input type="hidden" id="aId">
+<label>병원 *</label><select id="aHosp"></select>
+<label>이름 *</label><input id="aName" placeholder="예: OOO (공식 프로필과 동일)">
+<label>진료과 *</label><select id="aDept"></select>
+<label>직급/직책</label><input id="aTitle" placeholder="예: 교수">
+<label>세부 전문분야</label><input id="aSpec" placeholder="예: 대장암, 복강경 수술">
+<label>진료 분야·대상 질환</label><input id="aClin" placeholder="예: 대장암, 염증성 장질환">
+<label>학부 대학교명</label><input id="aUniv" placeholder="예: 서울대학교 의과대학">
+<label>학부 졸업 연도(숫자 4자리, 모르면 공란)</label><input id="aGrad" type="number" placeholder="예: 2003">
+<label>대학원·전문의 학력(JSON 또는 자유기술)</label><textarea id="aEdu" placeholder='예: 내과 전문의 취득'></textarea>
+<label>주요 경력</label><textarea id="aCareer" placeholder="공개된 경력만"></textarea>
+<label>공식 프로필 URL *</label><input id="aProfile" placeholder="https://...">
+<label>출처 발췌(원문 근거)</label><textarea id="aExcerpt" placeholder="출처에서 확인한 원문"></textarea>
+<div class="row" style="margin-top:10px"><button class="btn" onclick="saveDoctor()">저장</button><button class="btn ghost" onclick="clearForm()">새 입력</button></div>
+<div id="adminMsg" style="margin-top:8px"></div></div>
+<div>
+<div class="card"><div class="section-title">수집 상태 · 검증 · 로그</div><div id="adminStat"></div><div class="hr"></div>
+<div class="row"><button class="btn ghost sm" onclick="exportCSV()">CSV 내보내기</button><label class="btn ghost sm" style="cursor:pointer">CSV 가져오기<input type="file" id="csvFile" accept=".csv" hidden onchange="importCSV(event)"></label><button class="btn ghost sm" onclick="checkDup()">중복 확인</button><button class="btn ghost sm" onclick="revalidate()">오래된 데이터 재검증 표시</button><button class="btn ghost sm" onclick="loadDemo()">데모 추가</button><button class="btn ghost sm" onclick="restoreSeed()">공식 시드 복원</button><button class="btn ghost sm" onclick="resetData()">초기화(빈 DB)</button></div>
+<div id="adminLog" class="small" style="margin-top:10px"></div></div>
+<div class="card" style="margin-top:14px"><div class="section-title">CSV 형식</div><pre>name,hospital,department,specialty,university,gradYear,profileUrl,title
+OOO,서울대학교병원,소화기내과,"대장암,내시경",서울대,2003,https://...,교수</pre>
+<div class="small muted">가져온 행은 출처 미검증(<span class="kbd">검증 필요</span>)으로 저장되며, 공식 URL이 없으면 저장하지 않습니다.</div></div>
+</div></div>
+<div class="card" style="margin-top:14px"><div class="section-title">등록 데이터 검증 상태</div><div id="adminTable" style="overflow:auto"></div></div>
+</div>
+</section>
+<!-- GUIDE -->
+<section id="tab-guide" hidden>
+<div class="grid g2">
+<div class="card"><div class="section-title">데이터 품질·윤리 기준</div><ul class="small">
+<li>공식 출처 없는 의료진 정보는 검증 데이터로 등록하지 않음</li><li>졸업연도·학력·경력·전문분야를 추측해 사실처럼 표시하지 않음</li><li>모든 결과에 출처 링크와 최종 확인일 표시</li><li>졸업연도 기반 연령대는 실제 연령이 아닌 통계적 추정치임을 명시</li><li>성별·나이·직급만으로 치료 능력 평가 금지</li><li>근거 없는 추천순위·성공률·만족도 생성 금지</li><li>환자 개인정보 수집 금지 · 공개 범위 내 최소 처리</li></ul></div>
+<div class="card"><div class="section-title">공식 출처 (5개 병원)</div><div id="srcList" class="small"></div>
+<div class="hr"></div><div class="small muted">수집은 이용약관·robots.txt·접근제한·저작권을 준수. 로그인/CAPTCHA 우회, 비공개 정보 수집 금지. 자동 수집 불가 병원은 URL 보존 + CSV/수동 입력 보완.</div></div>
+</div>
+</section>
+</main>
+<footer>본 페이지는 진단을 대신하지 않습니다. 의료진 선택 전 병원 공식 프로필·예약 페이지에서 최신 진료 가능 여부를 확인하세요. 추정 연령대는 졸업연도 기반 통계적 추정치이며 실제 나이와 다를 수 있습니다. · 단일 HTML MVP (localStorage 저장, 백엔드 없이 동작) · API 설계 매핑: /api/hospitals /api/departments /api/doctors /api/search?q= 등 로직을 프론트 함수로 내장.</footer>
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+<script>
+const HOSPITALS=[
+{id:"snuh",name:"서울대학교병원",official:"https://www.snuh.org/reservation/meddept/main.do",reserve:"https://www.snuh.org/reservation/meddept/main.do"},
+{id:"sev",name:"신촌세브란스병원",official:"https://sev.severance.healthcare/sev/department/department-center-clinic-all.do",reserve:"https://sev.severance.healthcare/sev/department/department-center-clinic-all.do"},
+{id:"samsung",name:"삼성서울병원",official:"https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do",reserve:"https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"},
+{id:"asan",name:"서울아산병원",official:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do",reserve:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"},
+{id:"cmc",name:"서울성모병원",official:"https://www.cmcseoul.or.kr/page/department/A",reserve:"https://www.cmcseoul.or.kr/page/department/A"}];
+const DEPTS=["내과","심장내과","신경과","신경외과","정형외과","소화기내과","호흡기내과","내분비내과","종양내과","혈액내과","알레르기내과","외과","심장외과","산부인과","소아청소년과","피부과","안과","이비인후과","비뇨의학과","정신건강의학과","재활의학과","영상의학과","신장내과"];
+const MAP=[
+{k:["가슴","흉통","숨이 차","호흡곤란","두근","심장","협심","심근경색","부정맥","혈압"],dept:["심장내과","호흡기내과","응급의학과"],d:"가슴 통증·호흡곤란 관련"},
+{k:["두통","어지럼","마비","언어장애","힘이 빠","손발 저림","뇌졸중","중풍","치매","경련","파킨슨"],dept:["신경과","신경외과"],d:"뇌·신경계 증상"},
+{k:["무릎","허리","어깨","관절","골절","디스크","척추","통증"],dept:["정형외과","신경외과","재활의학과"],d:"근골격계 증상"},
+{k:["복통","속쓰림","위","대장","간","췌장","소화","변비","설사","혈변","내시경"],dept:["소화기내과","외과"],d:"소화기 증상"},
+{k:["기침","가래","천식","폐","결핵","수면무호흡"],dept:["호흡기내과","이비인후과"],d:"호흡기 증상"},
+{k:["갑상선","당뇨","호르몬","비만","골다공증"],dept:["내분비내과","외과"],d:"내분비·대사"},
+{k:["암","종양","항암","대장암","위암","폐암","유방암","간암"],dept:["종양내과","외과","소화기내과"],d:"종양 진료"},
+{k:["임신","출산","생리","자궁","난소","산부인과"],dept:["산부인과"],d:"여성 건강"},
+{k:["아이","소아","신생아","예방접종","발달"],dept:["소아청소년과"],d:"소아"},
+{k:["피부","발진","두드러기","아토피","여드름","탈모"],dept:["피부과"],d:"피부"},
+{k:["눈","시력","백내장","녹내장","안과"],dept:["안과"],d:"눈"},
+{k:["코","귀","목","비염","축농증","편도","이명","난청"],dept:["이비인후과"],d:"이비인후"},
+{k:["소변","전립선","방광","비뇨"],dept:["비뇨의학과","신장내과"],d:"비뇨·신장"},
+{k:["우울","불안","불면","공황","정신","스트레스"],dept:["정신건강의학과","신경과"],d:"정신건강"},
+{k:["재활","뇌졸중 재활","물리치료","보행"],dept:["재활의학과","신경과","정형외과"],d:"재활"},
+{k:["신장","투석","콩팥","부종","단백뇨"],dept:["신장내과","비뇨의학과"],d:"신장"},
+{k:["백혈병","림프종","골수종","혈액암"],dept:["혈액내과","종양내과"],d:"혈액암 관련"},
+{k:["심장내과 전문의","심장내과"],dept:["심장내과"],d:"진료과 직접 지정"},
+{k:["내과","외과","정형외과","신경과","피부과","안과"],dept:[],d:"직접지정"}];
+const EMG=[/한쪽.*마비|마비.*한쪽|언어.*장애|말이.*어눌/,/심한.*흉통|가슴.*쥐어짜|심한.*호흡곤란|숨.*못.*쉬/,/의식.*소실|기절|쓰러져.*의식/,/조절.*안.*되는.*출혈|심한.*출혈.*멈추지/,/갑자기.*극심.*두통|벼락.*두통|평생.*가장.*심한.*두통/];
+const LSKEY="univ_hosp_mvp_v7";
+const SEV_INDEX=[
+{label:"심장내과(심장혈관병원)",canon:"심장내과"},
+{label:"심장혈관외과",canon:null},
+{label:"소화기내과",canon:"소화기내과"},
+{label:"호흡기내과",canon:"호흡기내과"},
+{label:"내분비내과",canon:"내분비내과"},
+{label:"신장내과",canon:"신장내과"},
+{label:"혈액내과",canon:"혈액내과"},
+{label:"종양내과(연세암병원)",canon:"종양내과"},
+{label:"신경과",canon:"신경과"},
+{label:"신경외과",canon:"신경외과"},
+{label:"정형외과",canon:"정형외과"},
+{label:"외과(유방외과 포함)",canon:"외과"},
+{label:"산부인과",canon:"산부인과"},
+{label:"소아청소년과(어린이병원)",canon:"소아청소년과"},
+{label:"피부과",canon:"피부과"},
+{label:"안과(안과병원)",canon:"안과"},
+{label:"이비인후과",canon:"이비인후과"},
+{label:"비뇨의학과",canon:"비뇨의학과"},
+{label:"정신건강의학과",canon:"정신건강의학과"},
+{label:"재활의학과(재활병원)",canon:"재활의학과"},
+{label:"영상의학과",canon:"영상의학과"}];
+const SMC_INDEX=[
+{label:"순환기내과(심장내과)",canons:["심장내과"]},
+{label:"심장외과",canons:["심장외과"]},
+{label:"소화기내과",canons:["소화기내과"]},
+{label:"호흡기내과",canons:["호흡기내과"]},
+{label:"내분비대사내과",canons:["내분비내과"]},
+{label:"신장내과",canons:["신장내과"]},
+{label:"혈액종양내과",canons:["혈액내과","종양내과"]},
+{label:"알레르기내과",canons:["알레르기내과"]},
+{label:"신경외과",canons:["신경외과"]},
+{label:"정형외과",canons:["정형외과"]},
+{label:"외과(위장관·대장항문·간담췌·유방)",canons:["외과"]},
+{label:"산부인과",canons:["산부인과"]},
+{label:"소아청소년과",canons:["소아청소년과"]},
+{label:"피부과",canons:["피부과"]},
+{label:"안과",canons:["안과"]},
+{label:"이비인후과",canons:["이비인후과"]},
+{label:"비뇨의학과",canons:["비뇨의학과"]},
+{label:"정신건강의학과",canons:["정신건강의학과"]},
+{label:"재활의학과",canons:["재활의학과"]},
+{label:"영상의학과",canons:["영상의학과"]}];
+const SNUH_INDEX=[
+{label:"순환기내과",canons:["심장내과"]},
+{label:"소화기내과",canons:["소화기내과"]},
+{label:"호흡기내과",canons:["호흡기내과"]},
+{label:"내분비대사내과",canons:["내분비내과"]},
+{label:"신장내과",canons:["신장내과"]},
+{label:"혈액종양내과",canons:["종양내과"]},
+{label:"알레르기면역내과",canons:["알레르기내과"]},
+{label:"신경과",canons:["신경과"]},
+{label:"신경외과",canons:["신경외과"]},
+{label:"정형외과",canons:["정형외과"]},
+{label:"외과(간담췌·대장항문)",canons:["외과"]},
+{label:"심장혈관흉부외과",canons:["심장외과"]},
+{label:"산부인과",canons:["산부인과"]},
+{label:"소아청소년과",canons:["소아청소년과"]},
+{label:"피부과",canons:["피부과"]},
+{label:"안과",canons:["안과"]},
+{label:"이비인후과",canons:["이비인후과"]},
+{label:"비뇨의학과",canons:["비뇨의학과"]},
+{label:"정신건강의학과",canons:["정신건강의학과"]},
+{label:"재활의학과",canons:["재활의학과"]},
+{label:"영상의학과",canons:["영상의학과"]}];
+const ASAN_INDEX=[
+{label:"심장내과(심장병원)",canons:["심장내과"]},
+{label:"심장외과",canons:["심장외과"]},
+{label:"소화기내과",canons:["소화기내과"]},
+{label:"호흡기내과",canons:["호흡기내과"]},
+{label:"내분비내과",canons:["내분비내과"]},
+{label:"신장내과",canons:["신장내과"]},
+{label:"혈액내과",canons:["혈액내과"]},
+{label:"종양내과",canons:["종양내과"]},
+{label:"알레르기내과",canons:["알레르기내과"]},
+{label:"신경과",canons:["신경과"]},
+{label:"신경외과",canons:["신경외과"]},
+{label:"정형외과",canons:["정형외과"]},
+{label:"외과(유방·대장항문)",canons:["외과"]},
+{label:"산부인과",canons:["산부인과"]},
+{label:"소아청소년과",canons:["소아청소년과"]},
+{label:"피부과",canons:["피부과"]},
+{label:"안과",canons:["안과"]},
+{label:"이비인후과",canons:["이비인후과"]},
+{label:"비뇨의학과",canons:["비뇨의학과"]},
+{label:"정신건강의학과",canons:["정신건강의학과"]},
+{label:"재활의학과",canons:["재활의학과"]},
+{label:"영상의학과",canons:["영상의학과"]}];
+const CMC_INDEX=[
+{label:"순환기내과",canons:["심장내과"]},
+{label:"소화기내과",canons:["소화기내과"]},
+{label:"호흡기내과",canons:["호흡기내과"]},
+{label:"내분비내과",canons:["내분비내과"]},
+{label:"신장내과",canons:["신장내과"]},
+{label:"혈액내과",canons:["혈액내과"]},
+{label:"종양내과",canons:["종양내과"]},
+{label:"신경과",canons:["신경과"]},
+{label:"신경외과",canons:["신경외과"]},
+{label:"정형외과",canons:["정형외과"]},
+{label:"외과(위장관·유방)",canons:["외과"]},
+{label:"심장혈관흉부외과",canons:["심장외과"]},
+{label:"산부인과",canons:["산부인과"]},
+{label:"소아청소년과",canons:["소아청소년과"]},
+{label:"피부과",canons:["피부과"]},
+{label:"안과",canons:["안과"]},
+{label:"이비인후과",canons:["이비인후과"]},
+{label:"비뇨의학과",canons:["비뇨의학과"]},
+{label:"정신건강의학과",canons:["정신건강의학과"]},
+{label:"재활의학과",canons:["재활의학과"]},
+{label:"영상의학과",canons:["영상의학과"]}];
+const SEED_DATE="2026-10-09";
+const SEED_DOCTORS=[
+{id:"seed01",hospital:"snuh",name:"최의근",dept:"심장내과",title:"교수",specialty:"순환기내과, 부정맥",clinical:"부정맥, 심방세동",university:"서울대학교 의과대학",gradYear:1998,edu:"1992~1998 서울대학교 의과대학 의학과 / 2000~2002 의학석사 / 2005~2008 의학박사",career:"서울대학교병원 순환기내과 교수",profileUrl:"https://www.snuh.org/blog/01176/philosophy.do",excerpt:"공식 프로필 학력: 1992~1998 서울대학교 의과대학 의학과",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed02",hospital:"snuh",name:"김형관",dept:"심장내과",title:"교수",specialty:"비후성 심근병증, 심장판막질환",clinical:"비후성 심근병증, 심장판막질환",university:"미확인",gradYear:null,edu:"미국 듀크대 연수(소개 페이지 기재)",career:"서울대학교병원 순환기내과 교수",profileUrl:"https://raredisease.snuh.org/doctors/adult/kim-hyung-kwan/",excerpt:"희귀질환센터 공식 소개: 비후성 심근병증 및 심장판막질환 분야",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed03",hospital:"snuh",name:"김치헌",dept:"신경외과",title:"교수",specialty:"경추·흉추 질환, 척추디스크, 척추 변형",clinical:"경추/흉추 디스크, 후종인대골화증, 측만증",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울대학교병원 신경외과",profileUrl:"https://www.snuh.org/blog/01116/philosophy.do",excerpt:"공식 프로필 진료분야: 경추/흉추 질환, 척추디스크, 척추 변형/기형",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed04",hospital:"snuh",name:"한혁수",dept:"정형외과",title:"교수",specialty:"정형외과",clinical:"정형외과 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2017.09 서울대학교병원 정형외과 교수 / 2014~2017 부교수 / 미국 콜럼비아의대 연구교수",profileUrl:"https://www.snuh.org/blog/01180/philosophy.do",excerpt:"공식 프로필 경력: 2017.09 정형외과 교수, 2013~2014 콜럼비아의대 연구교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed05",hospital:"snuh",name:"이은정",dept:"신경외과",title:"임상부교수",specialty:"신경외과",clinical:"신경외과 진료",university:"가톨릭대학교 의과대학",gradYear:null,edu:"가톨릭대학교 의과대학 학사(연도 미확인)",career:"2023.03~ 서울대학교병원 신경외과 임상부교수 / 2019~2023 임상조교수",profileUrl:"https://www.snuh.org/blog/65950/philosophy.do",excerpt:"공식 프로필: 가톨릭의대 학사, 2023.03~ 신경외과 임상부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed06",hospital:"asan",name:"박덕우",dept:"심장내과",title:"교수",specialty:"관상동맥질환, 협심증, 심근경색증",clinical:"관상동맥질환(협심증·심근경색증), 대동맥판막스텐트치료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울아산병원 심장내과",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=UDdxQk5yY1BhY25HOHdLTEhjRUw5dz09",excerpt:"공식 프로필: 관상동맥질환(협심증·심근경색증), 대동맥판막스텐트치료클리닉",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed07",hospital:"asan",name:"강도윤",dept:"심장내과",title:"부교수",specialty:"심장내과",clinical:"심장내과 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2023.03~ 울산의대 서울아산병원 심장내과 부교수 / 2018~2023 임상조교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=eklqankrN0tvMGdUSjc2SlRXM3Awdz09",excerpt:"공식 프로필 경력: 2023.03~ 심장내과 부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed08",hospital:"asan",name:"김선영",dept:"종양내과",title:"교수",specialty:"대장암, 직장암, 항문암, 소화기 육종",clinical:"대장암, 직장암, 항문암, 소장암, 복막중피종",university:"서울대학교",gradYear:2001,edu:"1995.03~2001.02 서울대학교 의학 학사 / 2004~2006 의학석사 / 2006~2012 의학박사",career:"서울아산병원 종양내과",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=Y1ZJTWF3b2s3QWtZTVFCSGEzQU1EZz09",excerpt:"공식 프로필 학력: 1995.03~2001.02 서울대학교 의학 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed09",hospital:"asan",name:"김형돈",dept:"종양내과",title:"조교수",specialty:"종양내과",clinical:"종양내과 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2022.03~ 울산의대 서울아산병원 종양내과 조교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=c1pNSk1QTThWYVRZVlF0MXBQUnBpQT09",excerpt:"공식 프로필 경력: 2022.03~ 종양내과 조교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed10",hospital:"asan",name:"이재련",dept:"종양내과",title:"교수",specialty:"종양내과, 비뇨기암",clinical:"비뇨기암, 종양내과 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2024.03~ 비뇨기암센터 소장 / 2017.04~ 종양내과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=QmtVa1dENUhYYTNUbWpOQm1SNUcyZz09",excerpt:"공식 프로필 경력: 2024.03~ 비뇨기암센터 소장, 2017.04~ 종양내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed11",hospital:"samsung",name:"민병훈",dept:"소화기내과",title:"교수",specialty:"위암, 치료내시경, 위선종, 식도암",clinical:"위암, 치료내시경, 위선종, 식도암",university:"서울대학교",gradYear:null,edu:"2008.02 서울대학교 의학과 박사",career:"2025.04~ 삼성서울병원 소화기내시경실 실장",profileUrl:"http://www.samsunghospital.com/m/reservation/common/doctorProfile.do?DR_NO=692",excerpt:"공식 프로필: 2008.02 서울대 의학과 박사, 위암·치료내시경 진료",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed12",hospital:"samsung",name:"이광혁",dept:"소화기내과",title:"교수",specialty:"췌장담도암",clinical:"췌장담도암",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2025.04~ 췌장담도암센터 센터장 / 2020.04~ 성균관의대 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=227",excerpt:"공식 프로필 경력: 췌장담도암센터 센터장, 성균관의대 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed13",hospital:"samsung",name:"송영빈",dept:"심장내과",title:"교수",specialty:"순환기내과, 협심증, 심근경색증",clinical:"협심증, 심근경색증, 심장혈관중재시술",university:"중앙대학교",gradYear:null,edu:"2009.08 중앙대 의과대학원 의학과 박사",career:"삼성서울병원 순환기내과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=253",excerpt:"공식 프로필: 2009.08 중앙대 의학박사, 순환기내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed14",hospital:"samsung",name:"한주용",dept:"심장내과",title:"교수",specialty:"순환기내과",clinical:"순환기내과 진료",university:"서울대학교",gradYear:null,edu:"2001.02 서울대 의과대학원 의학과 박사",career:"삼성서울병원 순환기내과 과장",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=250",excerpt:"공식 프로필: 서울대 의학박사 2001.02, 순환기내과 과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed15",hospital:"samsung",name:"온영근",dept:"심장내과",title:"교수",specialty:"순환기내과, 부정맥",clinical:"부정맥, 순환기내과 진료",university:"서울대학교",gradYear:null,edu:"2002.02 서울대 의과대학원 의학과 박사",career:"2024.02~ 삼성서울병원 진료운영실장",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=241",excerpt:"공식 프로필: 2002.02 서울대 의학박사, 진료운영실장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed16",hospital:"sev",name:"이필휴",dept:"신경과",title:"교수",specialty:"신경과",clinical:"신경과 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2009~2014 세브란스병원 신경과 부교수 / 2014.03~ 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMQSikwTFP9CVa7BDBFJNd%2FQqlIdsvDVDC8RMZ51TKw%3D",excerpt:"공식 프로필 경력: 2014.03~ 세브란스병원 신경과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed17",hospital:"sev",name:"김승우",dept:"신경과",title:"부교수",specialty:"신경과",clinical:"신경과 진료",university:"연세대학교",gradYear:2009,edu:"연세대학교 의학과 학사(2009) / 의학과 석사(2014)",career:"2024.03~ 세브란스병원 신경과 부교수 / 2020~2024 조교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmi1MuFflGVaDKDRhJM538JKF%2Bdga%2BhvbdDo3gXqc%3D",excerpt:"공식 프로필 학력: 연세대 의학과 학사(2009), 석사(2014)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed18",hospital:"sev",name:"신하영",dept:"신경과",title:"교수",specialty:"신경과",clinical:"신경과 진료",university:"연세대학교",gradYear:2001,edu:"연세대학교 의학과 학사(2001) / 의학과 석사(2006)",career:"2001~2002 세브란스병원 인턴 / 2002~2006 전공의",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNNIGikwPFft3Va%2FPDBBLPHPywk4Y38oB%2FWRG4oaXX0s%3D",excerpt:"공식 프로필 학력: 연세대 의학과 학사(2001), 석사(2006)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed19",hospital:"sev",name:"최윤락",dept:"정형외과",title:"교수",specialty:"정형외과",clinical:"정형외과 진료",university:"연세대학교",gradYear:2000,edu:"연세대학교 의학과 학사(2000) / 의학석사(2005) / 의학박사(2008)",career:"2008 연세대 의과대학 정형외과 임상강사",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNOw6i0UzEv5LVa%2FMDRJJNQ9JzP9IsaML0Iu3TPWsBX8%3D",excerpt:"공식 프로필 학력: 연세대 의학과 학사(2000), 석사(2005), 박사(2008)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed20",hospital:"sev",name:"박시영",dept:"정형외과",title:"교수",specialty:"척추협착증, 디스크, 내시경 수술",clinical:"내시경 수술, 척추종양, 척추협착증, 디스크, 골다공증",university:"연세대학교",gradYear:1996,edu:"연세대학교 의과대학 학사(1996) / 의과석사(2004)",career:"세브란스병원 정형외과",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApM%2Bkzi1ILFft3Va%2FIDRVIMeBvREzgysuwhfiZJA8jVN8%3D",excerpt:"공식 프로필: 척추협착증·디스크, 학사(1996)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed21",hospital:"cmc",name:"김영훈",dept:"정형외과",title:"교수",specialty:"정형외과",clinical:"정형외과 진료",university:"가톨릭대학교",gradYear:1994,edu:"1988~1994 가톨릭대학교 의학 학사 / 2008 정형외과학 박사",career:"2016~ 서울성모병원 교수 / 정형외과 과장 / 2020 대한민국 의학한림원 정회원",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/157/D0000280",excerpt:"공식 프로필 학력: 1988~1994 가톨릭대 의학 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed22",hospital:"cmc",name:"임영욱",dept:"정형외과",title:"교수",specialty:"정형외과",clinical:"정형외과 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2024~ 서울성모병원 정형외과 교수 / 2019~2023 부교수 / 2014~2018 조교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/157/D0000010",excerpt:"공식 프로필 경력: 2024~ 정형외과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed23",hospital:"cmc",name:"이소영",dept:"심장내과",title:"임상진료조교수",specialty:"순환기내과",clinical:"순환기내과 진료",university:"가톨릭대학교",gradYear:null,edu:"2013~2017 가톨릭대 의학과 석사 / 2022~ 의학과 박사",career:"2024~ 서울성모병원 순환기내과 임상진료조교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/468/D0002124",excerpt:"공식 프로필: 2013~2017 가톨릭대 의학과 석사, 순환기내과",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed24",hospital:"cmc",name:"박실비아",dept:"종양내과",title:"부교수",specialty:"혈액내과, 혈액암",clinical:"혈액암, 혈액내과 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2022~ 서울성모병원 혈액내과 부교수 / 2020~2022 조교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/189/D0001467",excerpt:"공식 프로필 경력: 2022~ 혈액내과 부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed25",hospital:"snuh",name:"구승엽",dept:"산부인과",title:"교수",specialty:"불임, 시험관아기, 자궁내시경",clinical:"불임, 월경이상, 다낭성난소, 부정출혈, 골반통",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울대학교병원 산부인과",profileUrl:"https://www.snuh.org/blog/01208/philosophy.do",excerpt:"공식 프로필 진료분야: 불임, 시험관아기, 자궁내시경, 골반통",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed26",hospital:"snuh",name:"최은화",dept:"소아청소년과",title:"교수",specialty:"소아감염",clinical:"소아 감염질환",university:"서울대학교",gradYear:1990,edu:"1984~1990 서울대학교 의과대학 의학과 / 1995~1997 의학석사",career:"2023~ 소아진료부원장 / 서울대 어린이병원 소아청소년과",profileUrl:"https://www.snuh.org/blog/00920/philosophy.do",excerpt:"공식 프로필 학력: 1984~1990 서울대 의과대학 의학과",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed27",hospital:"snuh",name:"강희경",dept:"소아청소년과",title:"교수",specialty:"소아신장",clinical:"소아신장질환",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2014.07~ 서울대 어린이병원 소아청소년과 소아신장분과 분과장",profileUrl:"https://www.snuh.org/blog/01112/philosophy.do",excerpt:"공식 프로필 경력: 2014.07~ 소아신장분과 분과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed28",hospital:"snuh",name:"김재원",dept:"정신건강의학과",title:"교수",specialty:"소아정신, 여성폭력 피해자 보호",clinical:"소아청소년 정신건강",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2018~ 서울대 의과대학 정신과학교실 교수 / 서울해바라기센터 소장",profileUrl:"https://www.snuh.org/blog/01027/philosophy.do",excerpt:"공식 프로필 경력: 2018~ 정신과학교실 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed29",hospital:"asan",name:"고윤석",dept:"호흡기내과",title:"교수",specialty:"호흡기내과",clinical:"호흡기내과 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울아산병원 호흡기내과",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do?searchHpCd=D013",excerpt:"서울아산병원 공식 호흡기내과 의료진 목록에 등재",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed30",hospital:"asan",name:"고은희",dept:"내분비내과",title:"교수",specialty:"내분비내과, 당뇨",clinical:"당뇨병, 내분비질환",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울아산병원 내분비내과",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do",excerpt:"서울아산병원 공식 내분비내과 의료진 목록에 등재",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed31",hospital:"samsung",name:"김석원",dept:"외과",title:"교수",specialty:"유방암, 유방암수술",clinical:"유방암, 유방암수술",university:"고려대학교",gradYear:null,edu:"2002.02 고려대 의과대학원 박사",career:"2021.04~ 삼성서울병원 유방암센터장",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1386",excerpt:"공식 프로필: 유방암·유방암수술, 유방암센터장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed32",hospital:"samsung",name:"유종한",dept:"외과",title:"교수",specialty:"유방암, 유방암수술",clinical:"유방암, 유방암수술",university:"서울대학교",gradYear:null,edu:"2016.02 서울대 대학원 의학박사",career:"2025.04~ 삼성서울병원 유방외과 분과장",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1913",excerpt:"공식 프로필: 유방암·유방암수술, 유방외과 분과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed33",hospital:"sev",name:"윤보현",dept:"산부인과",title:"교수",specialty:"난임, 생식내분비",clinical:"난임, 생식내분비, 부인과질환",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"세브란스병원 산부인과",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMUCjGojFPtyVaDLDRlKNQSqOIAlhNziASfxiO4ktoE%3D&deptSeq=87",excerpt:"공식 프로필 진료분야: 난임, 생식내분비",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed34",hospital:"cmc",name:"이지열",dept:"비뇨의학과",title:"교수",specialty:"비뇨기종양, 전립선",clinical:"전립선질환, 비뇨기종양",university:"가톨릭대학교",gradYear:1989,edu:"1983~1989 가톨릭대학교 의학 학사",career:"2017 아태비뇨기종양학회 회장 / 서울성모병원 비뇨의학과",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/56/D0001122",excerpt:"공식 프로필 학력: 1983~1989 가톨릭대 의학 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed35",hospital:"cmc",name:"박용현",dept:"비뇨의학과",title:"교수",specialty:"비뇨의학과",clinical:"비뇨의학과 진료",university:"서울대학교",gradYear:2003,edu:"1997~2003 서울대 의학 학사 / 2005~2007 비뇨기과학 석사",career:"서울성모병원 비뇨의학과",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/56/D0000635",excerpt:"공식 프로필 학력: 1997~2003 서울대 의학 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed36",hospital:"cmc",name:"유재원",dept:"소아청소년과",title:"임상조교수",specialty:"소아청소년과",clinical:"소아청소년 진료",university:"충남대학교",gradYear:2012,edu:"2006~2012 충남대 의과대학 의학과 학사",career:"서울성모병원 소아청소년과",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/1085/D0002047",excerpt:"공식 프로필 학력: 2006~2012 충남대 의학과 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed37",hospital:"sev",name:"김지훈",dept:"소화기내과",title:"임상조교수",specialty:"췌장암, 담도암, 신경내분비종양, 치료내시경",clinical:"췌장암, 담도암, 신경내분비종양, 항암치료, 치료내시경",university:"연세대학교",gradYear:2015,edu:"연세대학교 의학과 학사(2015) / 석·박사 통합과정(2022~)",career:"2025~ 세브란스병원 소화기내과 임상조교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmi34XFPh%2BVaHJDBNJM0JeUPsvbzcEDgJ9ZcuIyjw%3D",excerpt:"프로필 직접 확인: 학사(2015), 임상조교수, 췌장암·담도암",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed38",hospital:"sev",name:"이혜원",dept:"소화기내과",title:"부교수",specialty:"간암, 간경변증, 바이러스간염",clinical:"간암, 간경변증, 지방간, 바이러스간염(B/C형)",university:"이화여자대학교",gradYear:null,edu:"2009.02 이화여대 의학과 학사(검색 스니펫 확인)",career:"2024~ 세브란스병원 소화기내과 부교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMQSikELFfhmVa%2FADBBLNVMdwt8RHaWTlpi%2FTjudjPY%3D",excerpt:"검색 스니펫 확인: 소화기내과 부교수, 간암·간경변증",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed39",hospital:"sev",name:"이병완",dept:"내분비내과",title:"교수",specialty:"당뇨병, 임신당뇨병, 지방간",clinical:"당뇨병전단계, 당뇨병, 임신당뇨병, 지방간",university:"경희대학교",gradYear:null,edu:"1989.03~1995.02 경희대 의과대학 학사(검색 스니펫 확인)",career:"2009~ 연세의대 내분비내과 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMQSjGoGFfpyVa7ADRhIPPtWmX8T98aGhFyGT6fRyo8%3D",excerpt:"검색 스니펫 확인: 내분비내과 교수, 당뇨병·임신당뇨병",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed40",hospital:"sev",name:"박철호",dept:"신장내과",title:"임상조교수",specialty:"만성콩팥병, 사구체질환, 투석",clinical:"만성콩팥병, 사구체질환, 단백뇨, 당뇨성신증, 고혈압, 투석",university:"연세대학교",gradYear:2013,edu:"연세대학교 의학과 학사(2013)(검색 스니펫 확인)",career:"세브란스병원 신장내과 임상조교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApM%2Bkzi2s3FPtOVaDBDRdINQ2EfIOaoDUdDTcYMRLkWss%3D",excerpt:"검색 스니펫 확인: 신장내과 임상조교수, 학사(2013)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed41",hospital:"sev",name:"유태현",dept:"신장내과",title:"교수",specialty:"만성콩팥병, 당뇨성신증",clinical:"만성콩팥병, 당뇨성신증, 사구체질환",university:"연세대학교",gradYear:1995,edu:"연세대학교 의학과 학사(1995)(검색 스니펫 확인)",career:"2017.03~ 세브란스병원 신장내과 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMUGiloLFPtyVa%2FJDBBINE5avWltZLGtuMjb8UOsWeg%3D",excerpt:"검색 스니펫 확인: 신장내과 교수, 학사(1995)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed42",hospital:"sev",name:"김진석",dept:"혈액내과",title:"교수",specialty:"악성림프종, 다발골수종",clinical:"악성림프종, 다발골수종, 발작성야간혈색소뇨증",university:"연세대학교",gradYear:1996,edu:"연세의대 의학과 학사(1996) / 내과학 석사(2001) / 박사(2004)",career:"2017~ 연세의대 혈액내과 교수 / 임상시험센터 소장",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmi34TFedrVa7ADBFLPAq%2BNp40yoP9Fn9F05sqBcY%3D",excerpt:"프로필 직접 확인: 학사(1996), 혈액내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed43",hospital:"sev",name:"정준원",dept:"혈액내과",title:"교수",specialty:"급성골수성백혈병, 골수형성이상증후군",clinical:"골수계 혈액암(급성골수성백혈병, 골수형성이상증후군)",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"세브란스병원 혈액내과 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNPkzi30XFfhmVa%2FJDRJJNctBuoP%2F3nqvOaioSL8OjsU%3D",excerpt:"검색 스니펫 확인: 혈액내과 정준원 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed44",hospital:"sev",name:"강석구",dept:"신경외과",title:"교수",specialty:"뇌종양(교모세포종, 신경교종, 뇌전이암, 수막종)",clinical:"뇌종양 전반",university:"가톨릭대학교",gradYear:1995,edu:"1995 가톨릭대 의과대학 의학과 학사 / 1999 석사 / 2005 박사",career:"2018~ 세브란스 뇌종양센터 신경외과 교수 / 2023~ 센터 소장",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMukzi10KE9ZaVa%2FJDBBLPYAR8LnMKdfA1hPlJaoKfgQ%3D",excerpt:"프로필 직접 확인: 1995 가톨릭대 학사, 뇌종양센터 소장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed45",hospital:"sev",name:"장종희",dept:"신경외과",title:"교수",specialty:"뇌종양",clinical:"뇌종양",university:"연세대학교",gradYear:1991,edu:"1991 연세대학교 의과대학 의학사(검색 스니펫 확인)",career:"세브란스병원 신경외과 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMcDi3sSFP5aVa7PDBFIMIXUAXEzqXBPWz9fybYwSNA%3D",excerpt:"검색 스니펫 확인: 신경외과, 뇌종양, 의학사(1991)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed46",hospital:"sev",name:"박관규",dept:"정형외과",title:"교수",specialty:"무릎 인공관절, 고관절 질환",clinical:"무릎 인공관절전치환술·반치환술, 퇴행성관절염, 고관절 무혈성괴사증",university:"연세대학교",gradYear:2000,edu:"연세대학교 의학과 학사(2000)(검색 스니펫 확인)",career:"2020.03~ 연세의대 정형외과교실 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApM%2BkzjW0XE9RqVa%2FMDBFJMKCg9ta7OdOlksZrL9lvJhw%3D",excerpt:"검색 스니펫 확인: 정형외과 교수, 학사(2000)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed47",hospital:"sev",name:"이진우",dept:"정형외과",title:"교수",specialty:"발·발목 관절염, 인대손상",clinical:"발 관절염, 발목 관절염, 발목 인대손상",university:"연세대학교",gradYear:1988,edu:"연세대학교 의학과 학사(1988)(검색 스니펫 확인)",career:"2009.03~ 연세의대 정형외과학교실 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMQSi34TFflGVa7NDRlJMIGfc8pJhE3kARoloH25owU%3D",excerpt:"검색 스니펫 확인: 정형외과 교수, 학사(1988)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed48",hospital:"sev",name:"김승일",dept:"외과",title:"교수",specialty:"유방암(유방외과)",clinical:"유방암",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2012.03~ 외과학교실 교수(유방외과)",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?deptSeq=876&empNo=eXVoczIwMjBAKUApMuAmi1MuFf5KVa7NDBBLNTqAGD1ZWB5EWIBzkfzl%2BeY%3D",excerpt:"검색 스니펫 확인: 유방외과, 외과학교실 교수 (표준분류 외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed49",hospital:"sev",name:"박형석",dept:"외과",title:"교수",specialty:"유방암, 유방암 로봇수술(유방외과)",clinical:"유방암, 유방암 로봇수술, 유전성 유방암-난소암클리닉",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2024~ 외과학교실 교수(유방외과)",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?deptSeq=876&empNo=eXVoczIwMjBAKUApM%2BkzikECFedrVa%2FPDRNLMRny%2BOyVI6X94%2Fco%2FIPD8UE%3D",excerpt:"검색 스니펫 확인: 유방외과 교수 (표준분류 외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed50",hospital:"sev",name:"김영한",dept:"산부인과",title:"교수",specialty:"고위험임신, 태아 초음파",clinical:"고위험임신, 태아기형 초음파, 융모막·양수검사",university:"연세대학교",gradYear:1995,edu:"연세대학교 의학과 학사(1995)(검색 스니펫 확인)",career:"세브란스병원 산부인과 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmi0EWFPZqVa%2FIDRRLNjcvb6jfabwEU7agimM%2FQ8s%3D&deptSeq=87",excerpt:"검색 스니펫 확인: 산부인과 교수, 학사(1995)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed51",hospital:"sev",name:"권자영",dept:"산부인과",title:"교수",specialty:"고위험임신, 고령임신",clinical:"고위험임신, 태아기형 초음파·치료, 고령임신",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"세브란스병원 산부인과 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMu8qi0cHFft3Va%2FMDRlINmZUcfl%2FrXvxvyVmEls5B2k%3D",excerpt:"검색 스니펫 확인: 산부인과 권자영 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed52",hospital:"sev",name:"고아라",dept:"소아청소년과",title:"조교수",specialty:"소아 뇌전증, 발달, 두통(소아신경과)",clinical:"뇌전증, 발달, 두통",university:"연세대학교",gradYear:2011,edu:"연세대 의학과 학사(2011) / 석사(2018) / 부산대 박사(2021)",career:"2023~ 세브란스어린이병원 소아신경과 조교수",profileUrl:"https://sev-children.severance.healthcare/sev-children/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuoGi0wTEv5KVaDMDRJJM58mD%2BG1%2FNRJKIdwwCyuyjM%3D",excerpt:"프로필 직접 확인: 학사(2011), 소아신경과 조교수 (표준분류 소아청소년과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed53",hospital:"sev",name:"신정은",dept:"소아청소년과",title:"교수",specialty:"신생아, 미숙아 질환(신생아과)",clinical:"신생아, 미숙아 질환, 고위험신생아 추적진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"세브란스어린이병원 신생아과 교수",profileUrl:"https://sev-children.severance.healthcare/sev-children/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNNIGi3kCFf52VaDPDRBIMHntyNT0k3EsC4LGYhlbadA%3D&deptSeq=595",excerpt:"검색 스니펫 확인: 신생아과 신정은 교수 (표준분류 소아청소년과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed54",hospital:"sev",name:"오병호",dept:"피부과",title:"",specialty:"피부암, 흑색종, 모즈수술",clinical:"피부암, 흑색종, 모즈미세도식수술",university:"건국대학교",gradYear:null,edu:"1996~2002 건국대 의학사 졸업(검색 스니펫 확인)",career:"세브란스병원 피부과",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?deptSeq=80&empNo=eXVoczIwMjBAKUApNMECjGoGFPtOVa%2FPDBFJPNh%2BVqcEkBIleJ9F2Xrej1E%3D",excerpt:"검색 스니펫 확인: 피부과, 피부암·흑색종",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed55",hospital:"sev",name:"오상호",dept:"피부과",title:"교수",specialty:"백반증, 건선, 아토피",clinical:"백반증, 광과민성질환, 기미·건선·아토피, 레이저",university:"연세대학교",gradYear:null,edu:"1993.03~1999.02 연세대 의과대학(검색 스니펫 확인)",career:"2021.03~ 피부과학교실 교수(주임교수 겸 과장)",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMECi1oWFPtOVa%2FNDBFJPZcR7Zi6P0m6ky8yDSPrwLY%3D",excerpt:"검색 스니펫 확인: 피부과 교수(주임교수 겸 과장)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed56",hospital:"sev",name:"한진우",dept:"안과",title:"교수",specialty:"사시, 신경안과, 약시",clinical:"사시, 눈떨림, 유전성 안질환, 신경안과, 약시",university:"연세대학교",gradYear:2004,edu:"연세대 의과대학 의학사(2004) / 박사(2017)",career:"2026~ 세브란스병원 안과 교수",profileUrl:"https://sev-eye.severance.healthcare/sev-eye/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNcw6i34TFflGVa%2FADRlLMYibtKy2gYRPiKlsZ6%2F3NaE%3D",excerpt:"프로필 직접 확인: 안과, 의학사(2004), 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed57",hospital:"sev",name:"김성수",dept:"안과",title:"교수",specialty:"황반원공, 당뇨망막병증",clinical:"황반원공, 망막전막, 유리체출혈, 당뇨망막병증",university:"미확인",gradYear:null,edu:"의학사·석사·박사(연도 미확인, 검색 스니펫 확인)",career:"2014.03~ 교수(안과장·주임교수 역임)",profileUrl:"https://sev-eye.severance.healthcare/sev-eye/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmi10mFetuVa7ODRBKNJQU59WQbVQu5kZPh3zhHEE%3D",excerpt:"검색 스니펫 확인: 안과 교수(안과장·주임교수 역임)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed58",hospital:"sev",name:"김보경",dept:"이비인후과",title:"임상부교수",specialty:"난청, 인공와우, 어지럼증",clinical:"난청(성인·소아), 인공와우·중이수술, 중이염, 어지럼증",university:"연세대학교",gradYear:2006,edu:"연세대 의과대학 의학과 학사(2006)(검색 스니펫 확인)",career:"2025~ 세브란스병원 이비인후과 임상부교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmjGojE9FLVaDJDBBIPPkS1stOGTgESWglpsPMS2o%3D",excerpt:"검색 스니펫 확인: 임상부교수, 학사(2006년)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed59",hospital:"sev",name:"김다희",dept:"이비인후과",title:"임상조교수",specialty:"두경부암, 갑상선암, 로봇수술",clinical:"두경부암, 갑상선암, 로봇수술, 성대·음성질환",university:"연세대학교",gradYear:2011,edu:"2011.02 연세대 의과대학 졸업(검색 스니펫 확인)",career:"2019.03~ 세브란스병원 이비인후과 임상조교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmjFIzFP5aVaDBDRBIPPZ5WdUXS8KWK8qU%2BJ8U%2FAs%3D",excerpt:"검색 스니펫 확인: 임상조교수, 2011.02 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed60",hospital:"sev",name:"장원식",dept:"비뇨의학과",title:"",specialty:"방광암, 전립선암, 로봇수술",clinical:"방광암, 전립선암, 신장암, 로봇(단일공)수술",university:"연세대학교",gradYear:2007,edu:"연세대 의과대학 의학사(2007)(검색 스니펫 확인)",career:"세브란스병원 비뇨의학과",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?deptSeq=88&empNo=eXVoczIwMjBAKUApNMcDi0IHFehrVaDJDRdLMuVadRvkfqqaGjgilM4I5lA%3D",excerpt:"검색 스니펫 확인: 비뇨의학과, 의학사(2007)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed61",hospital:"sev",name:"한웅규",dept:"비뇨의학과",title:"주임교수",specialty:"신장암, 전립선암",clinical:"신장암, 전립선암",university:"연세대학교",gradYear:1997,edu:"연세대 의학과 학사(1997)(검색 스니펫 확인)",career:"연세대 비뇨의학교실 주임교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNcw6i0ISE9RqVa%2FLDRhLPfbawn3onMgxk0Pg%2FD%2BSVmQ%3D",excerpt:"검색 스니펫 확인: 주임교수, 학사(1997)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed62",hospital:"sev",name:"조현상",dept:"정신건강의학과",title:"교수",specialty:"조울증, 우울증, 조현병",clinical:"조울증, 우울증, 조현병",university:"연세대학교",gradYear:1988,edu:"1988 연세대 의과대학 졸업(검색 스니펫 확인)",career:"2009~ 정신과학교실 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNPgWikETFeB3Va7KDRNLMf%2FKPVKkPUlI8K2Byt6RYJQ%3D",excerpt:"검색 스니펫 확인: 정신과학교실 교수, 1988년 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed63",hospital:"sev",name:"김찬형",dept:"정신건강의학과",title:"교수",specialty:"강박증, 공황장애",clinical:"강박증, 공황장애",university:"연세대학교",gradYear:1986,edu:"연세대 의학과 학사(1986)(검색 스니펫 확인)",career:"2008.03~ 연세의대 정신과 교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?deptSeq=79&empNo=eXVoczIwMjBAKUApMuAmi2k7FPtjVa7IDRJINNwHL5OqmfIcSyU9iDvZkaw%3D",excerpt:"검색 스니펫 확인: 정신건강의학과 교수, 학사(1986)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed64",hospital:"sev",name:"조성래",dept:"재활의학과",title:"교수",specialty:"성인 뇌성마비, 파킨슨, 안면마비",clinical:"성인 뇌성마비, 근긴장이상증, 파킨슨, 안면마비",university:"연세대학교",gradYear:1996,edu:"1990.03.01~1996.02.28 연세대 의과대학 학사",career:"2017.03~ 재활의학교실 교수 / 2024.04~ 재활병원 원장",profileUrl:"https://sev-rehabil.severance.healthcare/sev-rehabil/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNPgWi10mEv1uVa%2FIDRhIPOTIsb%2FWIWTpwlLFJqmJG%2BA%3D",excerpt:"프로필 직접 확인: 1990~1996 학사, 재활병원 원장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed65",hospital:"sev",name:"신지철",dept:"재활의학과",title:"교수",specialty:"척수손상, 일반재활",clinical:"일반재활, 척수손상, 절단, 신경인성방광",university:"연세대학교",gradYear:1986,edu:"연세대 의학과 학사(1986)(검색 스니펫 확인)",career:"2006.03~ 정교수(재활의학과)",profileUrl:"https://sev-rehabil.severance.healthcare/sev-rehabil/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNNIGi34XFdFWVa7IDBBLPBxl43jh040rz9ok0HichKs%3D",excerpt:"검색 스니펫 확인: 정교수, 학사(1986)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed66",hospital:"sev",name:"김경민",dept:"영상의학과",title:"부교수",specialty:"영상의학과",clinical:"영상의학과 진료(세부 분야는 공식 프로필 확인 요망)",university:"서울대학교",gradYear:2005,edu:"서울대 의과대학 학사(2005)(검색 스니펫 확인)",career:"영상의학교실 부교수",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmjWsqEsxKVa%2FMDBNKNCgRdnKf8GzTdVWxZRwk2Eg%3D",excerpt:"검색 스니펫 확인: 영상의학과 부교수, 학사(2005)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed67",hospital:"sev",name:"신나영",dept:"영상의학과",title:"",specialty:"영상의학과",clinical:"영상의학과 진료(세부 분야는 공식 프로필 확인 요망)",university:"연세대학교",gradYear:2006,edu:"연세대 의과대학 학사(2006) / 석사(2011) / 박사(2016)(검색 스니펫 확인)",career:"세브란스병원 영상의학과",profileUrl:"https://sev.severance.healthcare/sev/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNNIGjFsPFft3Va%2FADRJLM1K2sJudRBL%2BrWrLcvr%2Fajc%3D",excerpt:"검색 스니펫 확인: 영상의학과, 학사(2006)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed68",hospital:"samsung",name:"이경종",dept:"호흡기내과",title:"교수",specialty:"폐암, 폐결절, 기관지내시경",clinical:"폐암, 폐결절, 초음파기관지내시경, 로봇기관지내시경",university:"충남대학교",gradYear:1999,edu:"1999.02 충남대 의과대학 졸업 / 2011.02 연세대 석사 / 2021.02 연세대 박사",career:"2025.04~ 삼성서울병원 호흡기내과장 / 2022.03~ 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1004",excerpt:"프로필 직접 확인: 1999.02 충남대 졸업, 호흡기내과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed69",hospital:"samsung",name:"박혜윤",dept:"호흡기내과",title:"교수",specialty:"만성폐쇄성폐질환, 만성기도질환",clinical:"만성폐쇄성폐질환(COPD), 기관지확장증",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2024.03~ 삼성서울병원 호흡기내과 교수 / 2018.04~ 부교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1472",excerpt:"검색 스니펫 확인: 호흡기내과 교수, COPD 전문가",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed70",hospital:"samsung",name:"김선욱",dept:"내분비내과",title:"교수",specialty:"갑상선질환",clinical:"갑상선질환",university:"서울대학교",gradYear:1992,edu:"1992.02 서울대 의과대학 의학과 졸업(의학사) / 1997.02 석사 / 2005.08 박사",career:"2023.04~ 갑상선센터장 / 2014.04~ 성균관의대 내과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=279",excerpt:"프로필 직접 확인: 1992.02 서울대 졸업, 갑상선센터장 (내분비대사내과→내분비내과 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed71",hospital:"samsung",name:"진상만",dept:"내분비내과",title:"교수",specialty:"당뇨병, 부신·뇌하수체질환",clinical:"당뇨병, 부신질환, 뇌하수체질환",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"삼성서울병원 내분비대사내과 교수(의국장)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1031",excerpt:"검색 스니펫 확인: 내분비대사내과 교수 (내분비내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed72",hospital:"samsung",name:"허우성",dept:"신장내과",title:"교수",specialty:"신장이식, 만성신질환, 투석",clinical:"신장이식(콩팥이식), 만성신질환, 혈액투석, 당뇨성신증",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"삼성서울병원 신장내과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=295",excerpt:"검색 스니펫 확인: 신장내과 교수, 신장이식·투석",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed73",hospital:"samsung",name:"장혜련",dept:"신장내과",title:"교수",specialty:"신장이식, 사구체신질환",clinical:"신장이식, 사구체신질환, 급성신손상, 만성신질환, 혈액투석",university:"미확인",gradYear:null,edu:"공식 프로필 학사연도 미표기(제3자 출처 2000.02 표기 있으나 미채택)",career:"삼성서울병원 신장내과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=753",excerpt:"검색 스니펫 확인: 신장내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed74",hospital:"samsung",name:"장준호",dept:"혈액내과",title:"교수",specialty:"골수형성이상증후군, 급성백혈병",clinical:"골수형성이상증후군, 재생불량성빈혈, 급성백혈병",university:"연세대학교",gradYear:1992,edu:"1992.02 연세대 졸업 / 2000.02 석사 / 2008.02 박사(검색 스니펫 확인)",career:"삼성서울병원 혈액종양내과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=318",excerpt:"검색 스니펫 확인: 혈액종양내과 교수, 1992.02 연세대 졸업 (혈액내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed75",hospital:"samsung",name:"박세훈",dept:"종양내과",title:"조교수",specialty:"폐암, 식도암, 흉선암",clinical:"폐암, 식도암, 흉선암",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2022.03~ 삼성서울병원 혈액종양내과 조교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=2548",excerpt:"검색 스니펫 확인: 혈액종양내과 조교수, 폐암·식도암 (종양내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed76",hospital:"samsung",name:"박승우",dept:"심장내과",title:"교수",specialty:"심장판막증, 협심증, 고혈압",clinical:"심장판막증, 심근경색증, 협심증, 성인선천성심장질환, 고혈압",university:"서울대학교",gradYear:null,edu:"서울대 의대 졸업(연도 미확인, 검색 스니펫 확인)",career:"삼성서울병원 순환기내과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=246",excerpt:"검색 스니펫 확인: 순환기내과 교수 (심장내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed77",hospital:"samsung",name:"권현철",dept:"심장내과",title:"교수",specialty:"심장혈관중재시술, 협심증",clinical:"심장혈관중재시술, 협심증, 심근경색증",university:"서울대학교",gradYear:null,edu:"서울대 의대 학사(연도 미확인, 검색 스니펫 확인)",career:"2007.10~ 내과학 교수(순환기내과)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=248",excerpt:"검색 스니펫 확인: 순환기내과 교수 (심장내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed78",hospital:"samsung",name:"이병재",dept:"알레르기내과",title:"교수",specialty:"만성기침, 천식, 약물알레르기",clinical:"만성기침, 천식, 약물알레르기, 알레르기비염, 두드러기",university:"서울대학교",gradYear:1990,edu:"1990.02 서울대 의과대학(검색 스니펫 확인)",career:"삼성서울병원 알레르기내과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=321",excerpt:"검색 스니펫 확인: 알레르기내과 교수, 1990.02 서울대",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed79",hospital:"samsung",name:"강노을",dept:"알레르기내과",title:"교수",specialty:"중증천식, 만성기침",clinical:"천식, 중증천식, 호산구증가증, 만성기침, 약물알레르기",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"삼성서울병원 알레르기내과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=2889",excerpt:"검색 스니펫 확인: 알레르기내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed80",hospital:"samsung",name:"이승훈",dept:"신경외과",title:"부교수",specialty:"뇌전증수술, 안면경련, 파킨슨",clinical:"뇌전증, 안면경련, 삼차신경통, 파킨슨병(뇌심부자극술, 감마나이프)",university:"성균관대학교",gradYear:2006,edu:"2006.02 성균관대 의과대학 졸업(검색 스니펫 확인)",career:"2022.03~ 삼성서울병원 부교수(신경외과)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=2299",excerpt:"검색 스니펫 확인: 신경외과 부교수, 2006.02 성균관대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed81",hospital:"samsung",name:"이승준",dept:"신경외과",title:"전임대우부교수",specialty:"척추종양, 디스크, 협착증",clinical:"척추·척수종양, 경추·요추·흉추질환, 허리디스크, 척추협착증",university:"서울대학교",gradYear:2004,edu:"2004.02 서울대 의과대학 의학사(검색 스니펫 확인)",career:"2024.03~ 전임대우부교수(신경외과)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=2689",excerpt:"검색 스니펫 확인: 의학사(2004), 전임대우부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed82",hospital:"samsung",name:"문영완",dept:"정형외과",title:"교수",specialty:"무릎인공관절",clinical:"무릎인공관절치환술, 무릎퇴행성관절염",university:"서울대학교",gradYear:1988,edu:"1988.02 서울대 의과대학 졸업(의학사) / 1997.02 석사 / 2000.08 박사",career:"2021.04~ 진료과장·골관절센터장 / 2009.04~ 성균관의대 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=407",excerpt:"프로필 직접 확인: 1988.02 서울대 졸업, 진료과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed83",hospital:"samsung",name:"왕준호",dept:"정형외과",title:"교수",specialty:"십자인대파열, 스포츠손상",clinical:"전방십자인대파열, 스포츠손상, 반월상연골손상",university:"고려대학교",gradYear:1994,edu:"1994.02 고려대 의과대학 졸업(검색 스니펫 확인)",career:"삼성서울병원 정형외과 교수(골관절센터장·스포츠의학실장)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=734",excerpt:"검색 스니펫 확인: 정형외과 교수, 1994.02 고려대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed84",hospital:"samsung",name:"오성은",dept:"외과",title:"교수",specialty:"위암, 복강경·로봇수술(위장관외과)",clinical:"위암, 위장관기질종양, 복강경수술, 로봇수술",university:"가톨릭관동대학교",gradYear:2013,edu:"2013.02 가톨릭관동대 의학과 졸업(검색 스니펫 확인)",career:"삼성서울병원 위장관외과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=2353",excerpt:"검색 스니펫 확인: 위장관외과분과 (표준분류 외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed85",hospital:"samsung",name:"안상훈",dept:"외과",title:"교수",specialty:"위암수술, 비만대사수술(위장관외과)",clinical:"위장관기질종양, 비만대사수술, 복강경·로봇수술, 위암수술",university:"서울대학교",gradYear:2003,edu:"2003.02 서울대 의과대학 의학과 졸업(검색 스니펫 확인)",career:"삼성서울병원 위장관외과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=3620",excerpt:"검색 스니펫 확인: 위장관외과 교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed86",hospital:"samsung",name:"윤성현",dept:"외과",title:"교수",specialty:"대장암, 직장암(대장항문외과)",clinical:"대장암, 직장암, 싱글포트복강경수술, 로봇수술",university:"연세대학교",gradYear:1989,edu:"1989.02 연세대 의과대학원 학사 졸업 / 1998.02 석사 / 2007.02 박사",career:"2021.04~ 대장암센터장·대장항문외과 분과장",profileUrl:"http://www.samsunghospital.com/m/reservation/common/doctorProfile.do?DR_NO=170",excerpt:"프로필 직접 확인: 1989.02 연세대 졸업, 대장암센터장 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed87",hospital:"samsung",name:"이우용",dept:"외과",title:"교수",specialty:"대장암, 직장암(대장항문외과)",clinical:"대장암, 직장암, 유전성대장암, 복강경·로봇수술",university:"서울대학교",gradYear:null,edu:"1988 서울대의대 졸업(언론 보도 기준, 공식 프로필 미확인)",career:"삼성서울병원 암병원장(대장항문외과)",profileUrl:"http://www.samsunghospital.com/m/reservation/common/doctorProfile.do?DR_NO=183",excerpt:"검색 스니펫 확인: 대장항문외과, 암병원장 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed88",hospital:"samsung",name:"허진석",dept:"외과",title:"교수",specialty:"췌장담도암(간담췌외과)",clinical:"췌장담도암, 담낭암, 담석증, 복강경·로봇수술",university:"미확인",gradYear:null,edu:"2002.02 인하대 대학원 의학박사(검색 스니펫 확인)",career:"삼성서울병원 간담췌외과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=165",excerpt:"검색 스니펫 확인: 간담췌외과분과 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed89",hospital:"samsung",name:"한인웅",dept:"외과",title:"부교수",specialty:"췌장암, 담도암(간담췌외과)",clinical:"췌장암, 담도암, 담낭암, 팽대부암, 로봇수술",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"삼성서울병원 간담췌외과 분과장(부교수)",profileUrl:"http://www.samsunghospital.com/home/reservation/common/doctorProfile.do?DR_NO=2114",excerpt:"검색 스니펫 확인: 간담췌외과 분과장 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed90",hospital:"samsung",name:"정동섭",dept:"심장외과",title:"교수",specialty:"판막, 관상동맥, 최소침습심장수술",clinical:"판막, 관상동맥, 부정맥수술, 최소침습심장수술",university:"서울대학교",gradYear:1997,edu:"1997.02 서울대 의과대학 졸업(검색 스니펫 확인)",career:"성균관의대 흉부외과학 교수(심장외과)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=864",excerpt:"검색 스니펫 확인: 심장외과분과 교수, 1997.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed91",hospital:"samsung",name:"오수영",dept:"산부인과",title:"교수",specialty:"고위험임신, 조산",clinical:"고위험임신, 조산, 임신중독증, 자궁경부무력증",university:"서울대학교",gradYear:1995,edu:"1995.02 서울대 의과대학 의학사(검색 스니펫 확인)",career:"모아집중치료센터 센터장(산부인과)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=377",excerpt:"검색 스니펫 확인: 산부인과 교수, 의학사(1995)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed92",hospital:"samsung",name:"성지희",dept:"산부인과",title:"전임대우부교수",specialty:"고위험임신, 정밀초음파",clinical:"고위험임신, 정밀·입체초음파검사, 양수검사",university:"이화여자대학교",gradYear:2008,edu:"2008.02 이화여대 의과대학 의학사(검색 스니펫 확인)",career:"삼성서울병원 산부인과 전임대우부교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1853",excerpt:"검색 스니펫 확인: 전임대우부교수, 의학사(2008)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed93",hospital:"samsung",name:"송진영",dept:"소아청소년과",title:"교수",specialty:"소아심장질환, 가와사끼병",clinical:"소아청소년고혈압, 가와사끼병, 폐동맥고혈압, 태아심장질환",university:"서울대학교",gradYear:1991,edu:"1991.02 서울대 의과대학 졸업(의학사) / 2001.02 석사 / 2009.06 박사",career:"2019.03~ 성균관의대 소아청소년과 교수(심장분과)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1140",excerpt:"프로필 직접 확인: 1991.02 서울대 졸업 (소아청소년 심장분과)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed94",hospital:"samsung",name:"안소윤",dept:"소아청소년과",title:"교수",specialty:"미숙아, 고위험신생아",clinical:"미숙아, 고위험신생아, 신생아질환",university:"조선대학교",gradYear:2004,edu:"2004.02 조선대 의과대학 졸업(검색 스니펫 확인)",career:"삼성서울병원 소아청소년과 교수(신생아분과)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=2561",excerpt:"검색 스니펫 확인: 신생아분과 교수, 2004.02 조선대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed95",hospital:"samsung",name:"이동윤",dept:"피부과",title:"교수",specialty:"피부암, 탈모, 백반증",clinical:"피부암(흑색종 포함), 손발톱질환, 탈모, 백반증",university:"서울대학교",gradYear:1992,edu:"1992.02 서울대 의과대학 졸업(의학사)(검색 스니펫 확인)",career:"2013.04~ 삼성서울병원 피부과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=138",excerpt:"검색 스니펫 확인: 피부과 교수, 1992.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed96",hospital:"samsung",name:"박지혜",dept:"피부과",title:"부교수",specialty:"피부외과, 약발진",clinical:"피부외과(수술), 악성종양, 약발진, 두드러기",university:"성균관대학교",gradYear:2006,edu:"2006.02 성균관대 의과대학 졸업(검색 스니펫 확인)",career:"성균관의대 삼성서울병원 피부과 부교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1801",excerpt:"검색 스니펫 확인: 부교수, 2006.02 성균관대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed97",hospital:"samsung",name:"함돈일",dept:"안과",title:"교수",specialty:"망막질환, 당뇨망막병증",clinical:"망막질환, 당뇨망막병증, 포도막염",university:"서울대학교",gradYear:1988,edu:"1988.02 서울대 의과대학 졸업(의학사)(검색 스니펫 확인)",career:"삼성서울병원 안과 과장·성균관의대 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=396",excerpt:"검색 스니펫 확인: 안과 과장, 1988.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed98",hospital:"samsung",name:"우경인",dept:"안과",title:"교수",specialty:"안성형, 안와종양",clinical:"안성형, 눈주변부종양, 안와, 눈꺼풀",university:"서울대학교",gradYear:1988,edu:"1988.02 서울대 의과대학 의학과 졸업(의학사)(검색 스니펫 확인)",career:"2010.03~ 삼성서울병원 안과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=398",excerpt:"검색 스니펫 확인: 안과 교수, 1988.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed99",hospital:"samsung",name:"손영익",dept:"이비인후과",title:"교수",specialty:"후두암, 갑상선암, 음성질환",clinical:"후두암, 갑상선암, 음성질환, 두경부암수술",university:"서울대학교",gradYear:1987,edu:"1987.02 서울대 의과대학 졸업(의학사)(검색 스니펫 확인)",career:"2021.11~ 미래병원추진단장(이비인후과)",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=144",excerpt:"검색 스니펫 확인: 이비인후과 교수, 1987.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed100",hospital:"samsung",name:"조양선",dept:"이비인후과",title:"교수",specialty:"중이염, 인공와우, 안면마비",clinical:"중이염, 인공와우이식, 안면마비, 두개저종양",university:"서울대학교",gradYear:1989,edu:"1989.02 서울대 의과대학 졸업(의학사)(검색 스니펫 확인)",career:"삼성서울병원 이비인후과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=146",excerpt:"검색 스니펫 확인: 이비인후과 교수, 1989.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed101",hospital:"samsung",name:"이규성",dept:"비뇨의학과",title:"교수",specialty:"전립선비대증, 요실금",clinical:"전립선비대증, 과민성방광, 요실금, 전립선레이저수술",university:"서울대학교",gradYear:1987,edu:"1987.02 서울대 의과대학(검색 스니펫 확인)",career:"삼성서울병원 비뇨의학과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=525",excerpt:"검색 스니펫 확인: 비뇨의학과 교수, 1987.02 서울대",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed102",hospital:"samsung",name:"서성일",dept:"비뇨의학과",title:"교수",specialty:"신장암, 전립선암, 로봇수술",clinical:"신장암, 전립선암, 로봇수술, 복강경수술",university:"서울대학교",gradYear:1992,edu:"1992.02 서울대 의과대학 졸업(의학사)(검색 스니펫 확인)",career:"2023.04~ 비뇨의학과 진료과장·주임교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=526",excerpt:"검색 스니펫 확인: 진료과장, 1992.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed103",hospital:"samsung",name:"전홍진",dept:"정신건강의학과",title:"교수",specialty:"우울증, 기분장애, 치매",clinical:"우울증, 기분장애, 노인정신질환, 치매",university:"서울대학교",gradYear:1997,edu:"1997.02 서울대 의과대학 졸업(의학사)(검색 스니펫 확인)",career:"삼성서울병원 정신건강의학과 교수",profileUrl:"http://www.samsunghospital.com/m/reservation/common/doctorProfile.do?DR_NO=470",excerpt:"검색 스니펫 확인: 정신건강의학과 교수, 1997.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed104",hospital:"samsung",name:"홍진표",dept:"정신건강의학과",title:"교수",specialty:"공황장애, 불안장애",clinical:"공황장애, 우울증, 불안장애",university:"서울대학교",gradYear:1988,edu:"1988.02 서울대 의과대학 졸업(검색 스니펫 확인)",career:"삼성서울병원 정신건강의학과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=1717",excerpt:"검색 스니펫 확인: 정신건강의학과 교수, 1988.02 서울대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed105",hospital:"samsung",name:"성덕현",dept:"재활의학과",title:"교수",specialty:"척추·척수 재활, 보툴리늄치료",clinical:"척추·척수손상, 근골격계질환, 보툴리늄독소주입술, 호흡재활",university:"서울대학교",gradYear:1987,edu:"1987.02 서울대 의과대학 졸업(의학사) / 1991.02 석사 / 1997.08 박사",career:"2007.09~ 성균관의대 재활의학교실 교수 / 2011~2015 진료과장",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=484",excerpt:"프로필 직접 확인: 1987.02 서울대 졸업, 재활의학교실 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed106",hospital:"samsung",name:"황지혜",dept:"재활의학과",title:"교수",specialty:"림프부종, 암재활",clinical:"족부질환, 림프부종, 암재활, 당뇨발",university:"가톨릭대학교",gradYear:1989,edu:"1989.02 가톨릭대 의과대학 졸업(의학사)(검색 스니펫 확인)",career:"삼성서울병원 재활의학 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=486",excerpt:"검색 스니펫 확인: 재활의학 교수, 1989.02 가톨릭대 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed107",hospital:"samsung",name:"윤영철",dept:"영상의학과",title:"교수",specialty:"근골격계영상진단",clinical:"근골격계영상진단",university:"경희대학교",gradYear:1993,edu:"1993.02 경희대 의학 학사(검색 스니펫 확인)",career:"삼성서울병원 영상의학과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=77",excerpt:"검색 스니펫 확인: 영상의학과 교수, 1993.02 경희대 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed108",hospital:"samsung",name:"이민우",dept:"영상의학과",title:"교수",specialty:"복부영상, 간암고주파치료",clinical:"복부영상의학, 간암고주파열치료, 간이식",university:"서울대학교",gradYear:1999,edu:"1999.02 서울대 의학 학사(검색 스니펫 확인)",career:"2020.04~ 삼성서울병원 영상의학과 교수",profileUrl:"https://www.samsunghospital.com/m/smc/reservation/common/doctorProfile.do?DR_NO=105",excerpt:"검색 스니펫 확인: 영상의학과 교수, 1999.02 서울대 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed109",hospital:"snuh",name:"백우현",dept:"소화기내과",title:"임상교수",specialty:"담낭암, 췌장암, 담관암",clinical:"담낭암, 췌장암, 담관암, 담도계암, 췌장낭종",university:"서울대학교",gradYear:2003,edu:"1997~2003 서울대 의과대학 의학사 / 2006~2008 석사 / 2011~2013 박사",career:"2023.03~ 서울대병원 내과(소화기내과) 임상교수",profileUrl:"https://www.snuh.org/blog/65810/philosophy.do",excerpt:"프로필 직접 확인: 1997~2003 의학사, 임상교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed110",hospital:"snuh",name:"김병관",dept:"소화기내과",title:"교수",specialty:"대장암, 염증성 장질환, 치료내시경",clinical:"대장용종, 크론병, 궤양성대장염, 대장암, 조기대장암",university:"서울대학교",gradYear:1992,edu:"1986~1992 서울대 의과대학 의학 학사(검색 스니펫 확인)",career:"2016.09~ 의대 내과 교수(소화기내과)",profileUrl:"https://www.snuh.org/blog/01041/philosophy.do",excerpt:"검색 스니펫 확인: 소화기내과 교수, 1986~1992 의학 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed111",hospital:"snuh",name:"임재준",dept:"호흡기내과",title:"교수",specialty:"비결핵항산균증, 폐결핵",clinical:"비결핵항산균증, 폐결핵",university:"서울대학교",gradYear:1994,edu:"1990~1994 서울대 의과대학 의학사(검색 스니펫 확인)",career:"2002.09~ 의대 내과학교실 및 병원 내과 교수",profileUrl:"https://www.snuh.org/blog/00934/philosophy.do",excerpt:"검색 스니펫 확인: 호흡기내과 교수, 1990~1994 의학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed112",hospital:"snuh",name:"곽낙원",dept:"호흡기내과",title:"부교수",specialty:"비결핵항산균 폐질환, 폐결핵",clinical:"비결핵항산균 폐질환, 폐결핵",university:"서울대학교",gradYear:2010,edu:"2006.03~2010.02 서울대 의과대학 의학사(검색 스니펫 확인)",career:"2023.03 호흡기내과 부교수",profileUrl:"https://www.snuh.org/blog/65947/philosophy.do",excerpt:"검색 스니펫 확인: 호흡기내과 부교수, 2006~2010 의학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed113",hospital:"snuh",name:"조영민",dept:"내분비내과",title:"교수",specialty:"비만, 당뇨병, 대사증후군",clinical:"비만, 고지혈증, 당뇨병, 대사증후군",university:"서울대학교",gradYear:1996,edu:"1990~1996 서울대 의과대학 의학 학사(검색 스니펫 확인)",career:"2019~ 의대 내과 교수(내분비대사내과)",profileUrl:"https://www.snuh.org/blog/01091/philosophy.do",excerpt:"검색 스니펫 확인: 내분비대사내과 교수 (내분비내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed114",hospital:"snuh",name:"정혜승",dept:"내분비내과",title:"교수",specialty:"당뇨병, 임신성당뇨",clinical:"당뇨병, 대사증후군, 고지혈증, 임신성당뇨",university:"서울대학교",gradYear:1999,edu:"1993~1999 서울대 의과대학 의학과(검색 스니펫 확인)",career:"2019.03~ 병원 내과 교수(내분비대사내과)",profileUrl:"https://www.snuh.org/blog/65484/philosophy.do",excerpt:"검색 스니펫 확인: 내분비대사내과 교수 (내분비내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed115",hospital:"snuh",name:"박세훈",dept:"신장내과",title:"조교수",specialty:"신장이식, 사구체신질환",clinical:"신장이식, 사구체신질환, 급성·만성 신부전, 루푸스신염",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2023.03~ 신장내과 조교수",profileUrl:"https://www.snuh.org/blog/66406/philosophy.do",excerpt:"검색 스니펫 확인: 신장내과 조교수 (삼성서울병원 동명이인과 별개 인물)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed116",hospital:"snuh",name:"김용철",dept:"신장내과",title:"임상부교수",specialty:"루푸스신염, 신장이식, 투석",clinical:"루푸스신염, 신장이식, 사구체신염, 만성콩팥병, 투석",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2020.03~ 신장내과 임상부교수(장기이식센터)",profileUrl:"https://www.snuh.org/blog/66006/philosophy.do",excerpt:"검색 스니펫 확인: 신장내과 임상부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed117",hospital:"snuh",name:"김범석",dept:"종양내과",title:"임상교수",specialty:"두경부암, 폐암, 식도암",clinical:"두경부암, 폐암, 식도암, 임상시험, 맞춤치료",university:"서울대학교",gradYear:2002,edu:"1998~2002 서울대 의과대학 의학과(검색 스니펫 확인)",career:"2020.03~ 내과(혈액종양내과) 임상교수",profileUrl:"https://www.snuh.org/blog/01263/philosophy.do",excerpt:"검색 스니펫 확인: 혈액종양내과(종양) 임상교수 (종양내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed118",hospital:"snuh",name:"김동완",dept:"종양내과",title:"교수",specialty:"폐암, 임상시험",clinical:"폐암, 임상시험, 맞춤치료",university:"서울대학교",gradYear:1994,edu:"1994 서울대 의과대학 의학과 의학사(검색 스니펫 확인)",career:"2017~ 의대 내과 교수(혈액종양내과)",profileUrl:"https://www.snuh.org/blog/01044/philosophy.do",excerpt:"검색 스니펫 확인: 혈액종양내과(종양) 교수 (종양내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed119",hospital:"snuh",name:"강혜련",dept:"알레르기내과",title:"교수",specialty:"천식, 약물알레르기, 두드러기",clinical:"천식, 알레르기비염, 만성기침, 두드러기, 아나필락시스",university:"경북대학교",gradYear:1997,edu:"1991~1997 경북대 의과대학 의학과(검색 스니펫 확인)",career:"2017.09~ 알레르기내과 교수",profileUrl:"https://www.snuh.org/blog/01017/philosophy.do",excerpt:"검색 스니펫 확인: 알레르기면역내과 교수 (알레르기내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed120",hospital:"snuh",name:"김영찬",dept:"알레르기내과",title:"임상조교수",specialty:"만성기침, 천식, 면역치료",clinical:"만성기침, 천식, 비염, 두드러기, 면역치료, 약물알레르기",university:"서울대학교",gradYear:2011,edu:"2007~2011 서울대 의과대학 의학과(검색 스니펫 확인)",career:"2024.03~ 알레르기내과 임상조교수",profileUrl:"https://www.snuh.org/blog/66250/philosophy.do",excerpt:"검색 스니펫 확인: 알레르기면역내과 임상조교수 (알레르기내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed121",hospital:"snuh",name:"김만호",dept:"신경과",title:"교수",specialty:"두통, 치매, 신경퇴행질환",clinical:"두통, 유전성·신경퇴행질환, 기억감퇴, 치매",university:"서울대학교",gradYear:1990,edu:"1986~1990 서울대 의과대학 의학과 학사 / 1993~1995 석사 / 2000~2002 박사",career:"2018.08~ 신경과장 및 신경과학교실 주임교수",profileUrl:"https://www.snuh.org/blog/01068/philosophy.do",excerpt:"프로필 직접 확인: 1986~1990 의학과 학사, 신경과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed122",hospital:"snuh",name:"정기영",dept:"신경과",title:"교수",specialty:"뇌전증, 수면장애",clinical:"뇌전증, 수면장애, 경련",university:"충남대학교",gradYear:null,edu:"1985~1991 충남대 의과대학(졸업 명시 없음, 검색 스니펫 확인)",career:"서울의대 신경과 교수",profileUrl:"https://www.snuh.org/blog/01018/philosophy.do",excerpt:"검색 스니펫 확인: 신경과 교수, 뇌전증·수면장애",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed123",hospital:"snuh",name:"김세훈",dept:"정형외과",title:"교수",specialty:"견관절(어깨관절)",clinical:"견관절 질환",university:"서울대학교",gradYear:1999,edu:"1993~1999 서울대 의과대학 의학사(검색 스니펫 확인)",career:"서울대병원 정형외과 교수",profileUrl:"https://www.snuh.org/blog/01206/philosophy.do",excerpt:"검색 스니펫 확인: 정형외과 교수, 견관절",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed124",hospital:"snuh",name:"조혜성",dept:"외과",title:"임상부교수",specialty:"간암, 간이식(간담췌외과)",clinical:"간암, 간종양, 간내담도암, 전이성간암, 간이식",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울대병원 간담췌외과 임상부교수",profileUrl:"https://www.snuh.org/blog/66407/philosophy.do",excerpt:"검색 스니펫 확인: 간담췌외과 임상부교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed125",hospital:"snuh",name:"정혜솔",dept:"외과",title:"임상조교수",specialty:"췌장암, 담도암(간담췌외과)",clinical:"담관·담낭·췌장 종양, 췌장암, 담도암, 로봇수술",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2024.03~ 간담췌외과 임상조교수",profileUrl:"https://www.snuh.org/blog/66251/philosophy.do",excerpt:"검색 스니펫 확인: 간담췌외과 임상조교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed126",hospital:"snuh",name:"박지원",dept:"외과",title:"임상교수",specialty:"대장암, 유전성대장암",clinical:"대장암, 유전성 대장암",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울대병원 외과 임상교수(대장항문외과)",profileUrl:"https://www.snuh.org/blog/65652/philosophy.do",excerpt:"검색 스니펫 확인: 대장항문외과 임상교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed127",hospital:"snuh",name:"정승용",dept:"외과",title:"교수",specialty:"대장항문암, 복강경수술",clinical:"대장항문암, 유전성 대장암, 대장암수술, 복강경수술",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울대병원 대장항문외과 교수",profileUrl:"https://www.snuh.org/blog/00916/philosophy.do",excerpt:"검색 스니펫 확인: 대장항문외과 교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed128",hospital:"snuh",name:"강창현",dept:"심장외과",title:"교수",specialty:"폐암, 일반흉부",clinical:"폐암 등 일반흉부 질환",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2024.07~ 심장혈관흉부외과 과장·주임교수",profileUrl:"https://www.snuh.org/blog/01024/philosophy.do",excerpt:"검색 스니펫 확인: 심장혈관흉부외과 과장 (심장외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed129",hospital:"snuh",name:"황호영",dept:"심장외과",title:"교수",specialty:"협심증, 판막질환, 심장이식",clinical:"허혈성심질환, 심장판막질환, 심방세동, 심장이식, 로봇심장수술",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울대병원 흉부외과 교수",profileUrl:"https://www.snuh.org/blog/01114/philosophy.do",excerpt:"검색 스니펫 확인: 흉부외과 교수 (심장외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed130",hospital:"snuh",name:"이승미",dept:"산부인과",title:"교수",specialty:"고위험임신, 조산",clinical:"정상임신, 고위험임신, 조산, 쌍태아임신, 태아치료",university:"서울대학교",gradYear:2002,edu:"1996~2002 서울대 의과대학 학사(검색 스니펫 확인)",career:"서울대병원 산부인과 교수",profileUrl:"https://www.snuh.org/blog/01269/philosophy.do",excerpt:"검색 스니펫 확인: 산부인과 교수, 1996~2002 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed131",hospital:"snuh",name:"이동훈",dept:"피부과",title:"교수",specialty:"아토피피부염, 접촉피부염",clinical:"아토피피부염, 접촉피부염, 습진, 두드러기, 미용레이저",university:"서울대학교",gradYear:2003,edu:"1999~2003 서울대 의과대학 의학과 학사 / 2005~2008 석사 / 2008~2012 박사",career:"2023.09~ 피부과학교실 교수",profileUrl:"https://www.snuh.org/blog/01118/philosophy.do",excerpt:"프로필 직접 확인: 1999~2003 학사, 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed132",hospital:"snuh",name:"조성진",dept:"피부과",title:"교수",specialty:"건선, 흑색종, 피부암",clinical:"건선, 중증건선, 흑색종, 피부암",university:"서울대학교",gradYear:2001,edu:"1997~2001 서울대 의과대학 의학과 학사(검색 스니펫 확인)",career:"2024.03~ 피부과 교수",profileUrl:"https://www.snuh.org/blog/01209/philosophy.do",excerpt:"검색 스니펫 확인: 피부과 교수, 1997~2001 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed133",hospital:"snuh",name:"윤창기",dept:"안과",title:"임상부교수",specialty:"망막질환, 포도막질환",clinical:"유리체질환, 포도막질환, 망막질환",university:"서울대학교",gradYear:2004,edu:"2000~2004 서울대 의과대학(검색 스니펫 확인)",career:"2024.03~ 안과 임상부교수",profileUrl:"https://www.snuh.org/blog/66254/philosophy.do",excerpt:"검색 스니펫 확인: 안과 임상부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed134",hospital:"snuh",name:"배건호",dept:"안과",title:"진료교수",specialty:"황반변성, 당뇨망막병증",clinical:"망막, 황반, 황반변성, 당뇨망막병증, 망막박리",university:"서울대학교",gradYear:2007,edu:"2001~2007 서울대 의과대학 의학과(검색 스니펫 확인)",career:"2021~ 안과 진료교수",profileUrl:"https://www.snuh.org/blog/83719/philosophy.do",excerpt:"검색 스니펫 확인: 안과 진료교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed135",hospital:"snuh",name:"박무균",dept:"이비인후과",title:"교수",specialty:"난청, 인공와우, 중이염",clinical:"난청, 이명, 인공와우, 보청기, 중이염",university:"고려대학교",gradYear:2000,edu:"1994~2000 고려대 의과대학 의학사 / 2004~2007 석사 / 2008~2010 박사",career:"2020.03~ 이비인후과 교수",profileUrl:"https://www.snuh.org/blog/01020/philosophy.do",excerpt:"프로필 직접 확인: 1994~2000 의학사, 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed136",hospital:"snuh",name:"원태빈",dept:"이비인후과",title:"교수",specialty:"코종양, 비염, 수면무호흡",clinical:"코종양, 코성형, 비염·축농증, 코골이·수면무호흡",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2010.04~ 이비인후과 교수",profileUrl:"https://www.snuh.org/blog/01304/philosophy.do",excerpt:"검색 스니펫 확인: 이비인후과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed137",hospital:"snuh",name:"육형동",dept:"비뇨의학과",title:"부교수",specialty:"전립선암, 방광암, 로봇수술",clinical:"전립선암, 방광암, 신우요관암, 복강경·로봇수술",university:"서울대학교",gradYear:2008,edu:"2001~2008 서울대 의과대학 학사(검색 스니펫 확인)",career:"2023.09~ 비뇨의학과 부교수",profileUrl:"https://www.snuh.org/blog/66014/philosophy.do",excerpt:"검색 스니펫 확인: 비뇨의학과 부교수, 2001~2008 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed138",hospital:"snuh",name:"임영재",dept:"비뇨의학과",title:"부교수",specialty:"소아배뇨장애, 요로결석",clinical:"야뇨증, 소아 배뇨장애, 요로결석, 수신증, 로봇수술",university:"연세대학교",gradYear:2001,edu:"1994~2001 연세대 의학과 학사(검색 스니펫 확인)",career:"2018.09~ 비뇨의학과(소아비뇨) 부교수",profileUrl:"https://www.snuh.org/blog/01125/philosophy.do",excerpt:"검색 스니펫 확인: 소아비뇨 부교수, 1994~2001 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed139",hospital:"snuh",name:"정선근",dept:"재활의학과",title:"교수",specialty:"요통, 근골격계 재활",clinical:"경부통, 슬관절통, 요통, 견관절통, 스포츠 재활",university:"서울대학교",gradYear:1988,edu:"1982~1988 서울대 의과대학 의학과 졸업 / 1990~1992 석사 / 1995~1997 박사",career:"2011.06~ 주임교수·재활의학과장 / 2009.10~ 교수",profileUrl:"https://www.snuh.org/blog/00964/philosophy.do",excerpt:"프로필 직접 확인: 1982~1988 졸업, 주임교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed140",hospital:"snuh",name:"서한길",dept:"재활의학과",title:"임상교수",specialty:"연하장애, 뇌질환재활",clinical:"연하장애, 파킨슨병, 뇌졸중 재활",university:"서울대학교",gradYear:2005,edu:"1999~2005 서울대 의과대학 의학과(검색 스니펫 확인)",career:"2023.03~ 재활의학과 임상교수",profileUrl:"https://www.snuh.org/blog/65882/philosophy.do",excerpt:"검색 스니펫 확인: 재활의학과 임상교수, 1999~2005 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed141",hospital:"snuh",name:"김지훈",dept:"영상의학과",title:"교수",specialty:"갑상선·두경부 영상, 고주파절제술",clinical:"신경두경부·갑상선 영상진단, 고주파·에탄올절제술",university:"서울대학교",gradYear:1995,edu:"1988~1995 서울대 의과대학 의학사 / 2003~2005 석사 / 2005~2008 박사",career:"2017.02~ 영상의학과 교수",profileUrl:"https://www.snuh.org/blog/01257/philosophy.do",excerpt:"프로필 직접 확인: 1988~1995 의학사, 교수 (세브란스 동명이인과 별개 인물)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed142",hospital:"snuh",name:"김정훈",dept:"영상의학과",title:"교수",specialty:"복부영상의학",clinical:"복부영상의학",university:"한양대학교",gradYear:1994,edu:"1988~1994 한양대 의과대학 의학과(검색 스니펫 확인)",career:"2019.09~ 영상의학과 교수",profileUrl:"https://www.snuh.org/blog/01061/philosophy.do",excerpt:"검색 스니펫 확인: 영상의학과 교수, 1988~1994 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed143",hospital:"snuh",name:"이유진",dept:"정신건강의학과",title:"교수",specialty:"불면증, 수면장애",clinical:"불면증, 졸림증, 수면무호흡증, 수면장애",university:"이화여자대학교",gradYear:1998,edu:"1992~1998 이화여대 의과대학 졸업(검색 스니펫 확인)",career:"2018.09 정신건강의학과 교수",profileUrl:"https://www.snuh.org/blog/00932/philosophy.do",excerpt:"검색 스니펫 확인: 정신건강의학과 교수, 수면장애",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed144",hospital:"asan",name:"명승재",dept:"소화기내과",title:"교수",specialty:"대장·소장질환, 변비",clinical:"대장·소장질환(변비, 과민성장증후군), 변비클리닉",university:"미확인",gradYear:null,edu:"울산대 석사(1994~1996) / 박사(1996~1998)",career:"2012.04~ 울산의대 서울아산병원 소화기내과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=d3RlcStjSm55QTVGVkFGOHN5MlBFUT09",excerpt:"프로필 직접 확인: 소화기내과 교수, 대장·소장질환",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed145",hospital:"asan",name:"변정식",dept:"소화기내과",title:"소화기내과장",specialty:"대장암, 치료대장내시경",clinical:"대장암, 치료 대장내시경, 염증성장질환",university:"미확인",gradYear:null,edu:"서울대 석사(1997~2003) / 울산대 박사(2004~2009)",career:"2025.03~ 소화기내과장·내시경센터 소장",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=Smk3RllUbFRuYzFrTkROYVRLNzVDdz09",excerpt:"프로필 직접 확인: 소화기내과장, 대장암·치료내시경",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed146",hospital:"asan",name:"정찬영",dept:"신장내과",title:"조교수",specialty:"신장질환, 신장이식",clinical:"신장질환, 신장이식클리닉",university:"연세대학교",gradYear:2015,edu:"2009.03~2015.02 연세대 의학 학사 / 2017~2024 석·박사",career:"2024.09~ 신장내과 조교수 / 2025.03~ 의국장",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=N1RBVlVXRjU0YVFwdE91eUp6OEJlUT09",excerpt:"프로필 직접 확인: 학사(2015), 조교수·의국장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed147",hospital:"asan",name:"김효상",dept:"신장내과",title:"",specialty:"신장질환, 신장이식",clinical:"신장질환, 신장이식클리닉",university:"미확인",gradYear:null,edu:"울산대 석사(2012~2014) / 박사(2014~2017)",career:"서울아산병원 신장내과",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=OGlDZXFOQ1lyTXN0cVNWQ1E3OXgzQT09",excerpt:"프로필 직접 확인: 신장내과, 신장이식 (직급 미표기)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed148",hospital:"asan",name:"이제환",dept:"혈액내과",title:"교수",specialty:"골수이식, 급성골수성백혈병",clinical:"골수이식, 골수형성이상증후군, 급성골수성백혈병",university:"미확인",gradYear:null,edu:"울산대 석사(1995~1997) / 충북대 박사(1997~2001)",career:"서울아산병원 혈액내과 교수(진료부원장)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=VWFpbG5nSVlXTmdwT202SGpZd2lzQT09",excerpt:"공식 목록·프로필 확인: 혈액내과 교수(진료부원장)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed149",hospital:"asan",name:"이정희",dept:"혈액내과",title:"교수",specialty:"골수이식, 림프종, 다발골수종",clinical:"골수이식, 림프구성백혈병, 림프종, 다발골수종",university:"미확인",gradYear:null,edu:"울산대 석사(2000~2002) / 박사(2002~2004)",career:"2018.03~ 혈액내과장·혈액암 및 골수이식센터 소장",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=NTAwZlI3NGMrQ05QMUVkOEJydkYzdz09",excerpt:"공식 목록·프로필 확인: 혈액내과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed150",hospital:"asan",name:"오연목",dept:"호흡기내과",title:"교수",specialty:"천식, 만성폐쇄성폐질환",clinical:"천식, 만성폐쇄성폐질환, 기관지확장증",university:"미확인",gradYear:null,edu:"서울대 석사(1992~1994) / 박사(1999~2006)",career:"2002.03~ 호흡기내과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=Q3MzOXdvMEJ5S1NmMGdHVzFQUmJNQT09",excerpt:"공식 목록·프로필 확인: 호흡기내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed151",hospital:"asan",name:"김태용",dept:"내분비내과",title:"교수",specialty:"갑상선질환, 갑상선암",clinical:"갑상선질환, 갑상선암",university:"미확인",gradYear:null,edu:"서울대 석사(2000~2002) / 박사(2002~2004)",career:"2017~ 내분비내과 교수(2011~2017 부교수)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=SFVJOGk4Qnk0SVpUMExZR212UHV3UT09",excerpt:"공식 목록·프로필 확인: 내분비내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed152",hospital:"asan",name:"김태범",dept:"알레르기내과",title:"교수",specialty:"천식, 약물알레르기",clinical:"천식, 비염, 두드러기, 약물알레르기, 만성기침",university:"미확인",gradYear:null,edu:"서울대 석사(2002~2004) / 박사(2004~2006)",career:"2019.03~ 알레르기내과 교수(천식COPD센터 소장 2018~2024)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=dUtoQ2hXV0xzYW9wc3drQzVJTXdRZz09",excerpt:"공식 목록·프로필 확인: 알레르기내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed153",hospital:"asan",name:"송우정",dept:"알레르기내과",title:"교수",specialty:"만성기침, 천식",clinical:"만성기침, 난치성기침, 천식, 롱코비드 기침",university:"미확인",gradYear:null,edu:"서울대 석사(2005~2007) / 박사(2010~2017)",career:"서울아산병원 알레르기내과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=TUN5TGJ3bWswZ3J5WXVmcDZXVStFZz09",excerpt:"공식 목록·프로필 확인: 알레르기내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed154",hospital:"asan",name:"김범준",dept:"신경과",title:"부교수",specialty:"뇌졸중, 뇌혈관협착",clinical:"뇌졸중, 급성기 뇌졸중, 뇌혈관협착",university:"미확인",gradYear:null,edu:"울산대 석사(2009~2011) / 박사(2015~)",career:"2021.09~ 신경과 부교수(뇌졸중센터)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=SWRGS0ppbmJ5Zmw3cEMrWEx3VFVRdz09",excerpt:"프로필 직접 확인: 신경과 부교수, 뇌졸중",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed155",hospital:"asan",name:"이재홍",dept:"신경과",title:"자문교수",specialty:"알츠하이머, 치매",clinical:"기억력장애, 알츠하이머병, 혈관성치매, 경도인지장애",university:"미확인",gradYear:null,edu:"고려대 박사 / 서울대 석사",career:"2025.09~ 신경과 자문교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=d011eCtGRkxaS0dVSmY2TnJ4d1NKQT09",excerpt:"검색 스니펫·프로필 확인: 신경과 자문교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed156",hospital:"asan",name:"권병덕",dept:"신경외과",title:"촉탁임상교수",specialty:"뇌동맥류, 뇌출혈",clinical:"뇌동맥류, 뇌혈관기형, 비외상성뇌출혈",university:"미확인",gradYear:null,edu:"서울대 박사·석사",career:"2022.09~ 신경외과 촉탁임상교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=NS9jcWlFaG1SSGVuUWhlR3kzR29PQT09",excerpt:"검색 스니펫·프로필 확인: 신경외과 촉탁임상교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed157",hospital:"asan",name:"김영훈",dept:"신경외과",title:"교수",specialty:"뇌하수체종양, 감마나이프",clinical:"뇌하수체종양, 뇌종양, 감마나이프, 뇌전이암",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2023.03~ 신경외과 교수(뇌종양센터)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=cTU0NU5MWTRtRXovdXo3Skl6S1Mydz09",excerpt:"검색 스니펫·프로필 확인: 신경외과 교수 (서울성모 동명이인과 별개 인물)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed158",hospital:"asan",name:"송주호",dept:"정형외과",title:"부교수",specialty:"무릎질환, 인공관절",clinical:"무릎질환(인공관절, 절골술, 인대·연골판손상)",university:"미확인",gradYear:null,edu:"울산대 박사·석사",career:"2026.03~ 정형외과 부교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=eWJQSTBiM0JOMEsrcmRuaGU1OHltdz09",excerpt:"검색 스니펫·프로필 확인: 정형외과 부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed159",hospital:"asan",name:"김철호",dept:"정형외과",title:"부교수",specialty:"고관절, 골절",clinical:"고관절질환(인공관절치환술), 골절, 골다공증",university:"미확인",gradYear:null,edu:"울산대 박사·석사",career:"서울아산병원 정형외과 부교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=QU0yZm5kWW5KS1g2a01aSlVFRkpwZz09",excerpt:"검색 스니펫·프로필 확인: 정형외과 부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed160",hospital:"asan",name:"유재석",dept:"심장외과",title:"부교수",specialty:"심장판막질환, 최소침습수술",clinical:"심장판막질환, 판막성형술, 최소침습심장수술",university:"미확인",gradYear:null,edu:"울산대 박사 / 서울대 석사",career:"2023.09~ 부교수(심장혈관흉부외과)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=WmxJcGorajBCQU9WL3QxQzJDV01mZz09",excerpt:"검색 스니펫·프로필 확인: 심장혈관흉부외과 부교수 (심장외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed161",hospital:"asan",name:"정성호",dept:"심장외과",title:"교수",specialty:"심장이식, 판막질환",clinical:"성인심장질환, 심장이식, 심실보조장치, 관상동맥질환",university:"미확인",gradYear:null,edu:"울산대 박사 / 경상국립대 석사",career:"2018.04~ 흉부외과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=Sk5yNTc0T0dJWUpNQVVxSU80YVlXdz09",excerpt:"검색 스니펫·프로필 확인: 심장혈관흉부외과 교수 (심장외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed162",hospital:"asan",name:"정일용",dept:"외과",title:"교수",specialty:"유방암, 로봇유방수술",clinical:"유방암, 유방암수술, 로봇유방수술, 미용수술",university:"미확인",gradYear:null,edu:"서울대 박사(2013~2021) / 석사(2010~2013)",career:"2024.03~ 유방외과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=eEh4bDd3dlZ1ZWNwVGowdC9rc2RTUT09",excerpt:"프로필 직접 확인: 유방외과 교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed163",hospital:"asan",name:"김지선",dept:"외과",title:"부교수",specialty:"유방암, 로봇수술",clinical:"유방암클리닉, 유방질환, 로봇수술",university:"미확인",gradYear:null,edu:"서울대 박사·석사",career:"2022.03~ 유방외과 부교수·의국장",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=VG5Xa3JKQzRnM3c5Tlppa0U2R0ZQdz09",excerpt:"검색 스니펫·프로필 확인: 유방외과 부교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed164",hospital:"asan",name:"김찬욱",dept:"외과",title:"교수",specialty:"대장암, 직장암, 로봇수술",clinical:"대장암, 직장암, 로봇수술",university:"전남대학교",gradYear:2002,edu:"1996.03~2002.02 전남대 의학 학사",career:"2024.09~ 대장항문외과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=M29pd1NOcm1BSnJJckEzZDdtT1dZUT09",excerpt:"검색 스니펫·프로필 확인: 대장항문외과 교수, 전남대 학사 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed165",hospital:"asan",name:"김영일",dept:"외과",title:"의국장",specialty:"대장암, 복강경·로봇수술",clinical:"대장암, 직장암, 복강경, 로봇수술",university:"미확인",gradYear:null,edu:"울산대 박사·석사",career:"대장항문외과 의국장",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=K1lyaDRXU2lSSUZBY29xbWpFSUptZz09",excerpt:"검색 스니펫·프로필 확인: 대장항문외과 의국장 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed166",hospital:"asan",name:"김대연",dept:"산부인과",title:"교수",specialty:"부인암, 복강경·로봇수술",clinical:"부인암, 자궁내막암, 복강경·로봇수술",university:"미확인",gradYear:null,edu:"박사·석사(공식 프로필 확인)",career:"울산의대 서울아산병원 산부인과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=SVljNXZOV2NhYXlDcnprcktsb1NOQT09",excerpt:"공식 프로필 확인: 산부인과 교수, 부인암",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed167",hospital:"asan",name:"박정열",dept:"산부인과",title:"교수",specialty:"부인암, 가임력보존",clinical:"부인암, 임신성 융모막질환, 가임력보존치료, 로봇수술",university:"미확인",gradYear:null,edu:"박사·석사(공식 프로필 확인)",career:"2021.03~ 산부인과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=WDlEYzdYQ2pFR2h5M21MQzc2bG9yZz09",excerpt:"공식 프로필 확인: 산부인과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed168",hospital:"asan",name:"고경남",dept:"소아청소년과",title:"교수",specialty:"소아 혈액종양, CAR-T",clinical:"소아 혈액종양, 골수이식, 소아 뇌종양, CAR-T",university:"미확인",gradYear:null,edu:"박사·석사(공식 프로필 확인)",career:"2022.03~ 소아청소년과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=Y0hHNmoyUEdmMHhONVhEVjVyL3VJQT09",excerpt:"공식 프로필 확인: 소아청소년종양혈액과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed169",hospital:"asan",name:"이범희",dept:"소아청소년과",title:"교수",specialty:"염색체이상, 유전질환",clinical:"염색체이상, 발달지연, 유전대사질환, 마르판클리닉",university:"미확인",gradYear:null,edu:"박사·석사(공식 프로필 확인)",career:"2022.03~ 소아청소년과 교수(의학유전학센터)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=eHBTWmc3U0pJMDQzU2hWNm0zTmI5QT09",excerpt:"공식 프로필 확인: 소아청소년과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed170",hospital:"asan",name:"원종현",dept:"피부과",title:"교수",specialty:"피부암, 흑색종",clinical:"피부암(기저·편평상피암), 흑색종, 아토피, 탈모",university:"미확인",gradYear:null,edu:"서울대 박사(2005~2007) / 석사(2002~2005)",career:"2022.09~ 피부과 과장·피부암센터소장",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=QzRoVkhZMHZnRnUvekdnWHBab05sUT09",excerpt:"프로필 직접 확인: 피부과 과장, 피부암",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed171",hospital:"asan",name:"장성은",dept:"피부과",title:"교수",specialty:"건선, 아토피",clinical:"건선, 색소질환, 성인 아토피",university:"미확인",gradYear:null,edu:"박사·석사(공식 프로필 확인)",career:"2016~ 피부과 교수(2017~2022.08 과장)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=UTM1UXByNE9MdXBJRDFQemdIK3R3dz09",excerpt:"공식 프로필 확인: 피부과 교수(전 과장)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed172",hospital:"asan",name:"사호석",dept:"안과",title:"교수",specialty:"성형안과, 안와종양",clinical:"성형안과, 눈꺼풀질환, 안와종양, 갑상샘눈병증",university:"서울대학교",gradYear:2001,edu:"1995.03~2001.02 서울대 의학 학사",career:"서울아산병원 안과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=MGFuYkNMZitqWTQ0bFRYWnN4clhmZz09",excerpt:"공식 프로필 확인: 안과 교수, 서울대 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed173",hospital:"asan",name:"한예은",dept:"안과",title:"임상전임강사",specialty:"망막, 황반변성",clinical:"당뇨망막클리닉, 망막·유리체질환, 황반변성",university:"미확인",gradYear:null,edu:"박사·석사(공식 프로필 확인)",career:"2025.09~ 안과 임상전임강사",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=STFZenBCYkhzdEtGVXkwYURCSDBQQT09",excerpt:"공식 프로필 확인: 안과 임상전임강사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed174",hospital:"asan",name:"정영호",dept:"이비인후과",title:"교수",specialty:"갑상선암, 두경부암",clinical:"갑상선암·두경부암(로봇수술), 침샘종양",university:"미확인",gradYear:null,edu:"박사·석사(공식 프로필 확인)",career:"2020.09~ 이비인후과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=K2F5c1hMeEk5dUFHU1JxRjh6dU5zUT09",excerpt:"공식 프로필 확인: 이비인후과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed175",hospital:"asan",name:"최승호",dept:"이비인후과",title:"교수",specialty:"갑상선암, 구강암",clinical:"갑상선암, 구강암, 후두암, 침샘암",university:"미확인",gradYear:null,edu:"박사·석사(공식 프로필 확인)",career:"2024.09~ 이비인후과장",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=enNhcjlOc1N0OTMwK2pneXFGTnBqQT09",excerpt:"공식 프로필 확인: 이비인후과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed176",hospital:"asan",name:"유달산",dept:"비뇨의학과",title:"교수",specialty:"전립선암, 로봇수술",clinical:"전립선암, 신장암, 방광암, 로봇·복강경수술",university:"미확인",gradYear:null,edu:"울산대 박사(2009~2011) / 석사(2004~2008)",career:"2026.03~ 로봇수술센터소장(비뇨의학과)",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=c2t5cll5MXBWTWJHSVgxdWhMZStXUT09",excerpt:"프로필 직접 확인: 비뇨의학과 교수, 로봇수술센터소장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed177",hospital:"asan",name:"김정권",dept:"비뇨의학과",title:"부교수",specialty:"신장암, 전립선암, 로봇수술",clinical:"신장암, 전립선암, 로봇수술",university:"서울대학교",gradYear:null,edu:"서울대 의학 학사(연도 미확인) / 석사(2011~2016) / 박사(2016~2018)",career:"2024.03~ 비뇨의학과 부교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=L2xPTWJybkhWYjMrTkk0NFRrOC9sQT09",excerpt:"검색 스니펫·프로필 확인: 비뇨의학과 부교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed178",hospital:"asan",name:"주연호",dept:"정신건강의학과",title:"교수",specialty:"조증, 조현병",clinical:"조증, 조현병(정신분열증)/조울병",university:"미확인",gradYear:null,edu:"서울대 박사(1996~1999)",career:"2003.03~ 정신건강의학과 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=UHdkZU9vTzBONDY4VVc0QmJIMkM5dz09",excerpt:"검색 스니펫·프로필 확인: 정신건강의학과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed179",hospital:"asan",name:"박형근",dept:"정신건강의학과",title:"임상조교수",specialty:"기분장애, 인지행동치료",clinical:"기분장애, 자살행동, 인지행동치료, TMS",university:"서울대학교",gradYear:2012,edu:"2008.03~2012.02 서울대 의학 학사",career:"2022.03~ 정신건강의학과 임상조교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=aDZrSDl0Tkt5dG5LWlNobkQ3QXU0dz09",excerpt:"검색 스니펫·프로필 확인: 임상조교수, 서울대 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed180",hospital:"asan",name:"김대열",dept:"재활의학과",title:"교수",specialty:"말초신경·근육재활",clinical:"말초신경·근육재활, 근전도, 뇌신경재활",university:"미확인",gradYear:null,edu:"서울대 의학 학사(연도 미확인)",career:"2018.09~ 재활의학교실 교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=eDJHcTdJcUdoSUpHTnFac25WRkc1QT09",excerpt:"검색 스니펫·프로필 확인: 재활의학과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed181",hospital:"asan",name:"차승우",dept:"재활의학과",title:"조교수",specialty:"뇌신경재활, 암재활",clinical:"뇌신경재활, 뇌종양재활, 삼킴장애, 암재활",university:"서울대학교",gradYear:2014,edu:"2008.03~2014.02 서울대 의학 학사",career:"2025.03~ 재활의학과 조교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=SVZCQzNud1hIb1ZzSWtwa2J2c1ZCQT09",excerpt:"검색 스니펫·프로필 확인: 조교수, 서울대 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed182",hospital:"asan",name:"정아영",dept:"영상의학과",title:"임상교수",specialty:"소아영상의학",clinical:"영상의학과·소아영상의학과 진료",university:"이화여자대학교",gradYear:2001,edu:"1995.03~2001.02 이화여대 의학 학사",career:"2023.03~ 영상의학과 임상교수",profileUrl:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=Y0JIUXh0amlhMmN6c2lScDhqZTlIdz09",excerpt:"검색 스니펫·프로필 확인: 임상교수, 이화여대 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed183",hospital:"asan",name:"이한나",dept:"영상의학과",title:"임상부교수",specialty:"영상의학과(폐암센터)",clinical:"영상의학과·암병원·폐암센터 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2025.03~ 영상의학과 임상부교수",profileUrl:"https://cancer.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=dEIydDFOamZLYlRwaHZ1YVV6dTlqUT09&searchHpCd=D015",excerpt:"검색 스니펫 확인: 영상의학과 임상부교수 (암병원 도메인 공식 페이지)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed184",hospital:"cmc",name:"장정원",dept:"소화기내과",title:"교수",specialty:"간질환",clinical:"간 클리닉(간질환)",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울성모병원 소화기내과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/83/D0001148",excerpt:"검색 스니펫 확인: 소화기내과 교수, 간 클리닉",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed185",hospital:"cmc",name:"성필수",dept:"소화기내과",title:"교수",specialty:"간암, 간경변",clinical:"간암, 고위험지방간, 자가면역간질환, 간경변",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울성모병원 소화기내과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/83/D0000297",excerpt:"검색 스니펫 확인: 소화기내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed186",hospital:"cmc",name:"민진수",dept:"호흡기내과",title:"교수",specialty:"결핵",clinical:"결핵(잠복결핵, 국가결핵관리사업)",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"호흡기내과 임상분과장",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/195/D0002321",excerpt:"검색 스니펫 확인: 호흡기내과 임상분과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed187",hospital:"cmc",name:"김승준",dept:"호흡기내과",title:"교수",specialty:"폐암, 폐결절",clinical:"폐암, 폐결절",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"폐암센터장(호흡기내과)",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/195/D0000825",excerpt:"검색 스니펫 확인: 호흡기내과 교수(폐암센터장)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed188",hospital:"cmc",name:"이은영",dept:"내분비내과",title:"교수",specialty:"당뇨병",clinical:"당뇨병(1형·임신성당뇨병 포함)",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"내분비내과 임상분과장",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/23/D0000651",excerpt:"검색 스니펫 확인: 내분비내과 임상분과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed189",hospital:"cmc",name:"이준엽",dept:"내분비내과",title:"교수",specialty:"2형당뇨병",clinical:"2형 당뇨병, 췌도부전",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울성모병원 내분비내과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/23/D0002066",excerpt:"검색 스니펫 확인: 내분비내과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed190",hospital:"cmc",name:"박훈석",dept:"신장내과",title:"교수",specialty:"중재신장학, 투석",clinical:"중재신장학(투석도관, 신장조직검사)",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"신장내과 임상분과장",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/105/D0000079",excerpt:"검색 스니펫 확인: 신장내과 임상분과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed191",hospital:"cmc",name:"김예니",dept:"신장내과",title:"조교수",specialty:"신부전, 투석",clinical:"급성·만성 신부전, 혈액·복막투석",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울성모병원 신장내과 조교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/105/D0001569",excerpt:"검색 스니펫 확인: 신장내과 조교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed192",hospital:"cmc",name:"조병식",dept:"혈액내과",title:"교수",specialty:"혈액암, 조혈모세포이식",clinical:"혈액암, 조혈모세포이식",university:"가톨릭대학교",gradYear:1998,edu:"1992~1998 가톨릭대 의학 학사(검색 스니펫 확인)",career:"혈액내과 임상분과장",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/189/D0001202",excerpt:"검색 스니펫 확인: 혈액내과 임상분과장, 1992~1998 학사",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed193",hospital:"cmc",name:"김인호",dept:"종양내과",title:"교수",specialty:"위암, 비뇨기암",clinical:"신약임상시험, 위암, 비뇨기암, 식도암",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"종양내과 임상분과장",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/162/D0000262",excerpt:"검색 스니펫 확인: 종양내과 임상분과장",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed194",hospital:"cmc",name:"정우백",dept:"심장내과",title:"교수",specialty:"심장종양학, 심장영상",clinical:"심장종양학, 심초음파·심장영상진단",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"순환기내과 임상분과장(전 심뇌혈관병원장)",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/89/D0000011",excerpt:"검색 스니펫 확인: 순환기내과 임상분과장 (심장내과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed195",hospital:"cmc",name:"양동원",dept:"신경과",title:"교수",specialty:"치매, 어지럼증",clinical:"치매, 어지럼증",university:"가톨릭대학교",gradYear:1990,edu:"1984~1990 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 신경과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/96/D0001215",excerpt:"공식 API·프로필 확인: 신경과 교수, 학사(~1990)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed196",hospital:"cmc",name:"김중석",dept:"신경과",title:"교수",specialty:"파킨슨병, 이상운동질환",clinical:"파킨슨병, 이상운동질환",university:"가톨릭대학교",gradYear:1996,edu:"1988~1996 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 신경과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/96/D0001080",excerpt:"공식 API·프로필 확인: 신경과 교수, 학사(~1996)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed197",hospital:"cmc",name:"신용삼",dept:"신경외과",title:"교수",specialty:"뇌혈관질환",clinical:"뇌동맥류, 뇌출혈, 모야모야병, 혈관내치료",university:"연세대학교",gradYear:1988,edu:"1982~1988 연세대 의학 학사(공식 API 확인)",career:"서울성모병원 신경외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/100/D0000382",excerpt:"공식 API·프로필 확인: 신경외과 교수, 학사(~1988)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed198",hospital:"cmc",name:"손병철",dept:"신경외과",title:"교수",specialty:"삼차신경통, 말초신경",clinical:"얼굴손떨림, 사경, 삼차신경통, 말초신경",university:"가톨릭대학교",gradYear:1989,edu:"1982~1989 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 신경외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/100/D0001123",excerpt:"공식 API·프로필 확인: 신경외과 교수, 학사(~1989)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed199",hospital:"cmc",name:"인용",dept:"정형외과",title:"교수",specialty:"무릎관절, 인공관절",clinical:"무릎관절질환, 인공관절, 관절내시경",university:"가톨릭대학교",gradYear:1992,edu:"1986~1992 가톨릭대 의학과 학사(공식 API 확인)",career:"서울성모병원 정형외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/157/D0000857",excerpt:"공식 API·프로필 확인: 정형외과 교수, 학사(~1992)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed200",hospital:"cmc",name:"송교영",dept:"외과",title:"교수",specialty:"위암, 로봇수술(위장관외과)",clinical:"위암, 로봇수술",university:"가톨릭대학교",gradYear:1995,edu:"1989~1995 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 위장관외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/128/D0001016",excerpt:"공식 API·프로필 확인: 위장관외과 교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed201",hospital:"cmc",name:"이한홍",dept:"외과",title:"교수",specialty:"위암, 비만수술(위장관외과)",clinical:"위암, 상부소화기질환, 비만수술, 복강경·로봇수술",university:"가톨릭대학교",gradYear:2001,edu:"1995~2001 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 위장관외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/128/D0000051",excerpt:"공식 API·프로필 확인: 위장관외과 교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed202",hospital:"cmc",name:"박우찬",dept:"외과",title:"교수",specialty:"유방암(유방외과)",clinical:"유방암",university:"가톨릭대학교",gradYear:1988,edu:"1982~1988 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 유방외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/131/D0001059",excerpt:"공식 API·프로필 확인: 유방외과 교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed203",hospital:"cmc",name:"배수연",dept:"외과",title:"교수",specialty:"유방암(유방외과)",clinical:"유방암",university:"건국대학교",gradYear:null,edu:"건국대 의학학사(연도 미기재, 공식 API 확인)",career:"서울성모병원 유방외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/131/D0002049",excerpt:"공식 API·프로필 확인: 유방외과 교수 (외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed204",hospital:"cmc",name:"김영두",dept:"심장외과",title:"교수",specialty:"폐암, 식도암",clinical:"폐암, 전이성폐암, 식도암, 흉강경·로봇수술",university:"가톨릭대학교",gradYear:1997,edu:"1990~1997 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 심장혈관흉부외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/201/D0001153",excerpt:"공식 API·프로필 확인: 심장혈관흉부외과 교수 (심장외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed205",hospital:"cmc",name:"이철",dept:"심장외과",title:"교수",specialty:"소아심장외과",clinical:"소아 심장외과, 선천성심장병",university:"서울대학교",gradYear:1997,edu:"1993~1997 서울대 의과대학 의학사(공식 API 확인)",career:"서울성모병원 심장혈관흉부외과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/201/D0000642",excerpt:"공식 API·프로필 확인: 심장혈관흉부외과 교수 (심장외과로 매핑)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed206",hospital:"cmc",name:"김미란",dept:"산부인과",title:"교수",specialty:"자궁근종, 로봇수술",clinical:"자궁근종, 자궁내막증, 로봇·복강경수술, 폐경클리닉",university:"가톨릭대학교",gradYear:1989,edu:"1983~1989 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 산부인과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/62/D0001161",excerpt:"공식 API·프로필 확인: 산부인과 교수, 학사(~1989)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed207",hospital:"cmc",name:"박인양",dept:"산부인과",title:"교수",specialty:"고위험임신",clinical:"고위험임신, 정밀초음파, 임신중근종",university:"가톨릭대학교",gradYear:1995,edu:"1989~1995 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 산부인과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/62/D0001026",excerpt:"공식 API·프로필 확인: 산부인과 교수, 학사(~1995)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed208",hospital:"cmc",name:"이지현",dept:"피부과",title:"교수",specialty:"아토피피부염, 건선",clinical:"소아·성인 아토피피부염, 건선",university:"가톨릭대학교",gradYear:2005,edu:"2001~2005 가톨릭대 의학 학사(검색 스니펫 확인)",career:"2023~ 서울성모병원 피부과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/178/D0000214",excerpt:"검색 스니펫 확인: 피부과 교수, 의학 학사(~2005)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed209",hospital:"cmc",name:"한주희",dept:"피부과",title:"교수",specialty:"백반증, 레이저",clinical:"백반증, 건선, 여드름, 레이저, 흉터",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울성모병원 피부과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/178/D0001448",excerpt:"검색 스니펫 확인: 피부과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed210",hospital:"cmc",name:"이재욱",dept:"소아청소년과",title:"교수",specialty:"소아 백혈병, 조혈모세포이식",clinical:"소아백혈병, 림프종, 소아암, 조혈모세포이식",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2023~ 서울성모병원 소아청소년과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/1085/D0000113",excerpt:"검색 스니펫 확인: 소아청소년과 교수 (유재원과 별개 분과)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed211",hospital:"cmc",name:"이인경",dept:"소아청소년과",title:"임상진료조교수",specialty:"소아중환자",clinical:"소아중환자 진료",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"2024~ 소아청소년과 임상진료조교수(전 소아중환자실 전담전문의)",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/1630/D0002529",excerpt:"검색 스니펫 확인: 임상진료조교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed212",hospital:"cmc",name:"박시내",dept:"이비인후과",title:"교수",specialty:"난청, 인공와우",clinical:"난청, 이명, 어지럼증, 중이염, 인공와우이식",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"서울성모병원 이비인후과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/139/D0000970",excerpt:"검색 스니펫 확인: 이비인후과 교수",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed213",hospital:"cmc",name:"김대진",dept:"정신건강의학과",title:"교수",specialty:"중독치료",clinical:"알코올·인터넷·게임·스마트폰 중독",university:"미확인",gradYear:null,edu:"공식 프로필에서 확인 요망",career:"정신과학교실 주임교수·정신건강의학과 과장",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/1135/D0001175",excerpt:"검색 스니펫 확인: 주임교수·과장, 중독치료",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed214",hospital:"cmc",name:"정소향",dept:"안과",title:"교수",specialty:"각막, 백내장",clinical:"각막·외안부클리닉, 백내장",university:"연세대학교",gradYear:1999,edu:"1999 연세대 의대 수석졸업(검색 스니펫 확인)",career:"안과 교수(안은행장)",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/315/D0000377",excerpt:"검색 스니펫 확인: 안과 교수(안은행장), 1999 졸업",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed215",hospital:"cmc",name:"홍성후",dept:"비뇨의학과",title:"교수",specialty:"비뇨기종양, 로봇수술",clinical:"전립선암, 신장암, 방광암, 로봇·복강경수술",university:"가톨릭대학교",gradYear:1996,edu:"1990~1996 가톨릭대 의학 학사(공식 API 확인)",career:"로봇수술센터장·비뇨기암센터장(비뇨의학과)",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/56/D0001079",excerpt:"공식 API·프로필 확인: 비뇨의학과 교수, 학사(~1996)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed216",hospital:"cmc",name:"이종인",dept:"재활의학과",title:"교수",specialty:"근골격계재활, 척수손상",clinical:"근골격계재활, 림프부종, 스포츠재활, 척수손상",university:"가톨릭대학교",gradYear:1995,edu:"1989~1995 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 재활의학과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/145/D0001008",excerpt:"공식 API·프로필 확인: 재활의학과 교수, 학사(~1995)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed217",hospital:"cmc",name:"박혜정",dept:"재활의학과",title:"임상조교수",specialty:"소아재활, 근전도",clinical:"소아재활, 족부통증, 뇌신경재활, 근전도",university:"중앙대학교",gradYear:2007,edu:"2001~2007 중앙대 의학 학사(공식 API 확인)",career:"서울성모병원 재활의학과 임상조교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/145/D0000295",excerpt:"공식 API·프로필 확인: 임상조교수, 학사(~2007)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed218",hospital:"cmc",name:"김범수",dept:"영상의학과",title:"교수",specialty:"신경두경부영상",clinical:"신경두경부영상의학, 신경중재치료",university:"가톨릭대학교",gradYear:1988,edu:"1982~1988 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 영상의학과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/117/D0000996",excerpt:"공식 API·프로필 확인: 영상의학과 교수, 학사(~1988)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed219",hospital:"cmc",name:"안국진",dept:"영상의학과",title:"교수",specialty:"신경두경부영상",clinical:"신경두경부영상의학",university:"가톨릭대학교",gradYear:1989,edu:"1983~1989 가톨릭대 의학 학사(공식 API 확인)",career:"서울성모병원 영상의학과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/117/D0001124",excerpt:"공식 API·프로필 확인: 영상의학과 교수, 학사(~1989)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false},
+{id:"seed220",hospital:"cmc",name:"이명아",dept:"종양내과",title:"교수",specialty:"대장암, 간담췌암",clinical:"대장암, 직장암, 간담췌암",university:"가톨릭대학교",gradYear:1994,edu:"1988~1994 가톨릭대 의학과(공식 API 확인)",career:"서울성모병원 종양내과 교수",profileUrl:"https://www.cmcseoul.or.kr/page/doctor/162/D0000962",excerpt:"공식 API·프로필 확인: 종양내과 교수, 학사(~1994)",verified:"검증됨",verifiedAt:SEED_DATE,status:"활성",demo:false}];
+const norm=s=>(s||"").toLowerCase().replace(/\s+/g,"").replace(/[.,!?~·]+/g,"");
+function estimate(gradYear,ref){if(!gradYear||!ref)return{group:"연령대 확인 필요",min:null,max:null,elapsed:null};
+const e=ref-gradYear;const mn=e+22,mx=e+24;let g="연령대 확인 필요";
+const in40=mn<=49&&mx>=40,in50=mn<=59&&mx>=50;
+if(mn>=40&&mx<=49)g="40대 추정";else if(mn>=50&&mx<=59)g="50대 추정";
+else if(in40&&!in50)g="연령대 확인 필요";else if(in50&&!in40)g="연령대 확인 필요";
+return{group:g,min:mn,max:mx,elapsed:e};}
+function load(){try{const raw=localStorage.getItem(LSKEY);if(!raw){const s={doctors:SEED_DOCTORS,logs:[{t:SEED_DATE+" 00:00",msg:"공식 홈페이지 조사 기반 시드 220명 로드"}]};localStorage.setItem(LSKEY,JSON.stringify(s));return s;}return JSON.parse(raw)||{doctors:[],logs:[]}}catch(e){return{doctors:SEED_DOCTORS.slice(),logs:[]}}}
+async function restoreSeed(){if(!confirm("공식 조사 기반 시드로 되돌릴까요? 현재 추가분은 사라집니다."))return;
+if(BACKEND_OK){try{const r=await api("/api/admin/restore-seed",{method:"POST",body:"{}"});if(r.status===401){alert("관리자 로그인이 필요합니다.");return;}if(r.status!==200){alert("복원 실패.");return;}await refreshDB();}catch(e){alert("백엔드 연결 실패.");return;}renderAdmin();updateMini();document.getElementById("docsList")&&(document.getElementById("docsList").innerHTML="");return;}
+const s={doctors:SEED_DOCTORS.slice(),logs:[{t:new Date().toISOString().slice(0,19).replace("T"," "),msg:"시드 복원 220명"}]};save(s);renderAdmin();updateMini();document.getElementById("docsList")&&(document.getElementById("docsList").innerHTML="");}
+function save(s){localStorage.setItem(LSKEY,JSON.stringify(s));}
+function log(msg){const s=load();s.logs.unshift({t:new Date().toISOString().slice(0,19).replace("T"," "),msg});s.logs=s.logs.slice(0,60);save(s);}
+let DB=null;
+async function refreshDB(){if(!BACKEND_OK)return;try{const r=await api("/api/doctors");if(r.status!==200||!r.body||!Array.isArray(r.body.doctors))return;const doctors=r.body.doctors;let logs=[];try{const l=await api("/api/admin/logs");if(l.status===200&&l.body)logs=l.body.logs||[];}catch(e){}DB={doctors,logs};}catch(e){}}
+function getStore(){return (BACKEND_OK&&DB)?DB:load();}
+async function syncUI(){await refreshDB();updateMini();renderAdmin();renderDocs();renderHosp();}
+function hospName(id){const h=HOSPITALS.find(x=>x.id===id);return h?h.name:id;}
+function esc(s){return String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function isEmergency(q){return EMG.some(r=>r.test(q||""));}
+function recommend(q){
+const nq=norm(q);let hits=[];
+MAP.forEach(m=>{m.k.forEach(k=>{if(q.includes(k)||nq.includes(norm(k))){m.dept.forEach(d=>{if(!hits.includes(d))hits.push(d);});}});});
+DEPTS.forEach(d=>{if(q.includes(d)&&!hits.includes(d))hits.push(d);});
+return hits.slice(0,5);}
+// tabs
+document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#nav button").forEach(x=>x.classList.remove("on"));b.classList.add("on");["search","hosp","docs","admin","guide"].forEach(t=>document.getElementById("tab-"+t).hidden=(t!==b.dataset.tab));if(b.dataset.tab==="docs")renderDocs();if(b.dataset.tab==="hosp")renderHosp();if(b.dataset.tab==="admin")renderAdminGate();window.scrollTo({top:0});});
+// popular
+const POP=["가슴이 아프고 숨이 차요","두통이 심하고 한쪽 팔에 힘이 빠져요","무릎 통증이 지속돼요","갑상선 결절이 발견됐어요","대장암 진료를 받고 싶어요","심장내과 전문의를 찾고 싶어요"];
+function initChips(){
+document.getElementById("popular").innerHTML=POP.map(p=>`<button class="chip" onclick="document.getElementById('q').value='${esc(p)}';doSearch()">${esc(p)}</button>`).join("");
+const fh=document.getElementById("fHosp");fh.innerHTML=`<option value="">전체 병원</option>`+HOSPITALS.map(h=>`<option value="${h.id}">${esc(h.name)}</option>`).join("");
+const fd=document.getElementById("fDept");fd.innerHTML=`<option value="">전체 진료과</option>`+DEPTS.map(d=>`<option>${esc(d)}</option>`).join("");
+const ah=document.getElementById("aHosp");ah.innerHTML=HOSPITALS.map(h=>`<option value="${h.id}">${esc(h.name)}</option>`).join("");
+const ad=document.getElementById("aDept");ad.innerHTML=DEPTS.map(d=>`<option>${esc(d)}</option>`).join("");
+document.getElementById("srcList").innerHTML=HOSPITALS.map(h=>`<div style="margin:6px 0"><b>${esc(h.name)}</b><br><a href="${h.official}" target="_blank" rel="noopener">공식 의료진 페이지</a> · <a href="${h.reserve}" target="_blank" rel="noopener">예약 페이지</a></div>`).join("");
+document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="Enter")doSearch();});
+document.getElementById("pwInput").addEventListener("keydown",e=>{if(e.key==="Enter")tryLogin();});
+updateMini();
+}
+function updateMini(){const el=document.getElementById("statMini");if(!el)return;const s=getStore();const verified=s.doctors.filter(d=>d.status!=="비활성").length;
+el.innerHTML=`등록 의료진 <b>${verified}</b>명 · 검증 필요 <b>${s.doctors.filter(d=>d.verified!=="검증됨").length}</b>명 · 수집 로그 <b>${s.logs.length}</b>건<br>최종 업데이트: ${esc(s.logs[0]?.t||"없음")}`;}
+function doSearch(){
+const q=document.getElementById("q").value.trim();
+const emg=isEmergency(q);
+let html="";
+if(emg){html+=`<div class="alert red"><b>응급 가능 증상으로 판단됩니다.</b> 일반적인 의료진 검색보다 응급 평가가 우선입니다.<br>대한민국에서는 <b>119</b> 또는 가까운 <b>응급실</b>로 즉시 이동하세요. 특정 의사 예약을 기다리지 마세요.<br><span class="small">감지 근거: 갑작스러운 마비·언어장애 / 심한 흉통·호흡곤란 / 의식소실 / 조절 안 되는 출혈 / 벼락두통 패턴 (보수적 감지)</span></div>`;}
+if(!q){document.getElementById("emgBox").innerHTML=html;document.getElementById("resultBox").innerHTML=`<div class="card muted small">검색어를 입력하세요.</div>`;return;}
+const recs=recommend(q);
+const s=getStore();const ref=new Date().getFullYear();
+let pool=s.doctors.filter(d=>d.status!=="비활성");
+if(recs.length)pool=pool.filter(d=>recs.includes(d.dept)||d.specialty.includes(q)||d.clinical.includes(q)||d.name.includes(q)||norm(d.specialty).includes(norm(q)));
+else pool=pool.filter(d=>d.name.includes(q)||d.specialty.includes(q)||d.clinical.includes(q)||d.dept.includes(q));
+let relHtml=recs.length?recs.map(d=>`<span class="pill">${esc(d)}</span>`).join(""):`<span class="pill gray">매핑된 진료과 없음 — 검색어를 바꿔 다시 시도하세요</span>`;
+document.getElementById("emgBox").innerHTML=html;
+let cards="";
+if(!pool.length){cards=`<div class="card"><b>검증된 후보 없음</b><div class="small muted">추천 진료과(${recs.join(",")||"없음"})에 부합하는 공식 검증 의료진이 없습니다. 실존 인물을 임의로 채우지 않습니다. CSV 가져오기 또는 관리자 등록 후 다시 검색하세요.</div></div>`;}
+else{cards=pool.map(d=>{const e=estimate(d.gradYear,ref);return docCard(d,e);}).join("");}
+document.getElementById("resultBox").innerHTML=`
+<div class="card"><div class="small muted">입력 검색어</div><div style="font-size:18px;font-weight:800">${esc(q)}</div>
+<div style="margin-top:8px"><b>관련 진료과 추천</b> <span class="small muted">(진단 아님)</span><br>${relHtml}</div>
+<div class="small muted" style="margin-top:6px">결과 ${pool.length}명 · 관련성은 공식 진료분야 매칭 기준</div></div>${cards}`;
+}
+function docCard(d,e){
+const demo=d.demo?` <span class="pill amber">데모</span>`:"";
+const ageCls=e.group==="40대 추정"||e.group==="50대 추정"?"green":(e.group==="연령대 확인 필요"?"amber":"gray");
+return `<div class="doc"><h3>${esc(d.name)} ${demo}<span class="pill gray">${esc(hospName(d.hospital))}</span> <span class="pill">${esc(d.dept)}</span> <span class="pill ${ageCls}">${esc(e.group)}</span></h3>
+<div class="small muted">${esc(d.title||"")} · 전문: ${esc(d.specialty||"미확인")} · 졸업: ${d.gradYear||"미확인"}${e.min!=null?` (추정 ${e.min}~${e.max}세, 기준 ${new Date().getFullYear()}년)`:""}</div>
+<div class="row" style="margin-top:8px"><button class="btn sm" onclick="openDetail('${d.id}')">상세 보기</button>${d.profileUrl?`<a class="btn sm ghost" style="text-decoration:none;padding:7px 11px" href="${esc(d.profileUrl)}" target="_blank" rel="noopener">공식 프로필 보기</a>`:""}<a class="btn sm ghost" style="text-decoration:none;padding:7px 11px" href="${esc((HOSPITALS.find(h=>h.id===d.hospital)||{}).reserve||"#")}" target="_blank" rel="noopener">공식 예약 페이지</a></div></div>`;
+}
+function openDetail(id){const s=getStore();const d=s.doctors.find(x=>x.id===id);if(!d)return;const ref=new Date().getFullYear();const e=estimate(d.gradYear,ref);
+document.getElementById("sheet").innerHTML=`<div class="row" style="justify-content:space-between"><h2 style="margin:0">${esc(d.name)}</h2><button class="btn ghost sm" onclick="closeModal()">닫기</button></div>
+<div class="small muted">${esc(hospName(d.hospital))} · ${esc(d.dept)} · ${esc(d.title||"")}</div><div class="hr"></div>
+<table><tr><th style="width:170px">전문 분야</th><td>${esc(d.specialty||"미확인")}</td></tr>
+<tr><th>진료 분야·대상 질환</th><td>${esc(d.clinical||"미확인")}</td></tr>
+<tr><th>공개 학력</th><td>${esc(d.university||"미확인")}${d.gradYear?` · ${d.gradYear}년 졸업`:" · 졸업연도 미확인"}<br><span class="small muted">${esc(d.edu||"")}</span></td></tr>
+<tr><th>공개 경력</th><td>${esc(d.career||"미확인")}</td></tr>
+<tr><th>학부 졸업연도</th><td>${d.gradYear||"미확인"}</td></tr>
+<tr><th>추정 연령 범위</th><td>${e.min!=null?`약 ${e.min}~${e.max}세 (${e.group}, 기준 ${ref}년, 경과 ${e.elapsed}년)`:"산정 불가 ("+e.group+")"}<br><span class="small muted">방법: 졸업연령 22~24세 가정. 편입·휴학·군복무·학제 차이로 오차 가능. 실제 나이 아님.</span></td></tr>
+<tr><th>공식 출처</th><td>${d.profileUrl?`<a href="${esc(d.profileUrl)}" target="_blank" rel="noopener">${esc(d.profileUrl)}</a>`:"없음"}<br><span class="small muted">발췌: ${esc(d.excerpt||"없음")} · 검증: ${esc(d.verified||"검증 필요")} · 최종확인: ${esc(d.verifiedAt||"없음")}</span></td></tr></table>
+<div class="alert amber small" style="margin-top:10px">추정 연령대는 통계적 추정치이며 실제 나이와 다를 수 있습니다. 나이를 실력의 지표로 사용하지 마세요. 진료 가능 여부는 공식 예약 페이지에서 확인하세요.</div>
+<div class="row" style="margin-top:10px"><button class="btn ghost sm" onclick="editDoctor('${d.id}')">관리자 수정</button></div>`;
+document.getElementById("modal").classList.add("open");}
+function closeModal(){document.getElementById("modal").classList.remove("open");}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal();});
+// hosp tab
+let curHosp="snuh";
+function renderHosp(){
+document.getElementById("hospTabs").innerHTML=HOSPITALS.map(h=>`<button class="chip ${h.id===curHosp?"on":""}" onclick="curHosp='${h.id}';renderHosp()">${esc(h.name)}</button>`).join("");
+const h=HOSPITALS.find(x=>x.id===curHosp);const s=getStore();
+const docs=s.doctors.filter(d=>d.hospital===curHosp&&d.status!=="비활성");
+let byDept="";
+function indexRows(index,docs){
+return index.map(r=>{
+const cs=r.canons||[r.canon];
+const l=docs.filter(d=>d.dept&&cs.includes(d.dept));
+const rep=l.slice(0,2);
+const inner=l.length?`대표 의료진: ${rep.map(d=>esc(d.name)).join(" · ")}${l.length>2?` 외 ${l.length-2}명`:""} <span class="muted">(공식 목록 기준, 순위 아님)</span>`:`<span class="muted">검증된 후보 없음 — 추가 수집 예정. 임의 인물을 채우지 않습니다.</span>`;
+return `<div class="doc" style="margin-top:8px"><b>${esc(r.label)}</b> <span class="small muted">${l.length}명</span><div class="small" style="margin-top:6px">${inner}</div><div class="row" style="margin-top:6px">${l.map(d=>`<button class="chip" onclick="openDetail('${d.id}')">${esc(d.name)}</button>`).join("")}</div></div>`;}).join("");}
+if(curHosp==="sev"){
+byDept=`<div class="alert blue small">세브란스 진료과 색인(21개): 공식 프로필이 확인된 과별 대표 의료진을 보여줍니다. 전체 목록은 <a href="https://sev.severance.healthcare/sev/department/department-center-clinic-all.do" target="_blank" rel="noopener">공식 진료과 찾기</a> · <a href="https://sev.severance.healthcare/sev/doctor/doctor.do" target="_blank" rel="noopener">의료진 찾기</a>에서 확인하세요.</div>`+indexRows(SEV_INDEX,docs);
+}else if(curHosp==="samsung"){
+byDept=`<div class="alert blue small">삼성서울병원 진료과 색인(20개): 공식 프로필이 확인된 과별 대표 의료진을 보여줍니다. 전체 목록은 <a href="https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do" target="_blank" rel="noopener">공식 의료진 찾기</a>에서 확인하세요.</div>`+indexRows(SMC_INDEX,docs);
+}else if(curHosp==="snuh"){
+byDept=`<div class="alert blue small">서울대학교병원 진료과 색인(21개): 공식 프로필이 확인된 과별 대표 의료진을 보여줍니다. 전체 목록은 <a href="https://www.snuh.org/reservation/meddept/main.do" target="_blank" rel="noopener">공식 진료과·의료진</a>에서 확인하세요.</div>`+indexRows(SNUH_INDEX,docs);
+}else if(curHosp==="asan"){
+byDept=`<div class="alert blue small">서울아산병원 진료과 색인(22개): 공식 프로필이 확인된 과별 대표 의료진을 보여줍니다. 전체 목록은 <a href="https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do" target="_blank" rel="noopener">공식 의료진·진료과</a>에서 확인하세요.</div>`+indexRows(ASAN_INDEX,docs);
+}else if(curHosp==="cmc"){
+byDept=`<div class="alert blue small">서울성모병원 진료과 색인(21개): 공식 프로필이 확인된 과별 대표 의료진을 보여줍니다. 전체 목록은 <a href="https://www.cmcseoul.or.kr/page/department/A" target="_blank" rel="noopener">공식 진료과</a> · <a href="https://www.cmcseoul.or.kr/common.examination.doc_list.sp" target="_blank" rel="noopener">의료진</a>에서 확인하세요.</div>`+indexRows(CMC_INDEX,docs);
+}else{
+byDept=DEPTS.map(dp=>{const l=docs.filter(d=>d.dept===dp);if(!l.length)return"";
+const rep=l.slice(0,2);
+return `<div class="doc" style="margin-top:8px"><b>${esc(dp)}</b> <span class="small muted">${l.length}명</span><div class="small" style="margin-top:6px">대표 의료진: ${rep.map(d=>esc(d.name)).join(" · ")}${l.length>2?` 외 ${l.length-2}명`:""} <span class="muted">(공식 목록 기준, 순위 아님)</span></div><div class="row" style="margin-top:6px">${l.map(d=>`<button class="chip" onclick="openDetail('${d.id}')">${esc(d.name)}</button>`).join("")}</div></div>`;}).join("");
+}
+if(!docs.length)byDept=`<div class="alert amber small">검증된 후보 없음 — 공식 수집 전입니다. 임의 인물을 채우지 않습니다.</div>`;
+document.getElementById("hospDetail").innerHTML=`<h3 style="margin:10px 0 4px">${esc(h.name)}</h3><div class="row"><a href="${h.official}" target="_blank" rel="noopener">공식 홈페이지</a><a href="${h.reserve}" target="_blank" rel="noopener">예약 링크</a></div><div class="hr"></div>${byDept}`;
+}
+// docs tab
+function renderDocs(){
+const fh=document.getElementById("fHosp").value,fd=document.getElementById("fDept").value,fa=document.getElementById("fAge").value,fn=document.getElementById("fName").value.trim();
+const s=getStore();const ref=new Date().getFullYear();
+let pool=s.doctors.filter(d=>d.status!=="비활성");
+if(fh)pool=pool.filter(d=>d.hospital===fh);if(fd)pool=pool.filter(d=>d.dept===fd);
+if(fa)pool=pool.filter(d=>estimate(d.gradYear,ref).group===fa);
+if(fn)pool=pool.filter(d=>d.name.includes(fn)||norm(d.specialty).includes(norm(fn))||norm(d.clinical).includes(norm(fn)));
+document.getElementById("docsList").innerHTML=pool.length?pool.map(d=>docCard(d,estimate(d.gradYear,ref))).join(""):`<div class="card"><b>검증된 후보 없음</b><div class="small muted">필터 조건에 맞는 검증 데이터가 없습니다.</div></div>`;
+}
+function clearFilter(){document.getElementById("fHosp").value="";document.getElementById("fDept").value="";document.getElementById("fAge").value="";document.getElementById("fName").value="";renderDocs();}
+// admin
+async function saveDoctor(){
+const name=document.getElementById("aName").value.trim(),profile=document.getElementById("aProfile").value.trim();
+const hosp=document.getElementById("aHosp").value,dept=document.getElementById("aDept").value;
+const gradRaw=document.getElementById("aGrad").value;const gradYear=gradRaw?+gradRaw:null;
+const msg=document.getElementById("adminMsg");
+if(!name||!profile||!hosp||!dept){msg.innerHTML=`<div class="alert red small">병원·이름·진료과·공식 프로필 URL은 필수입니다.</div>`;return;}
+if(!/^https?:\/\/.+/.test(profile)){msg.innerHTML=`<div class="alert red small">공식 프로필 URL 형식이 올바르지 않습니다.</div>`;return;}
+if(gradRaw&&(gradYear<1950||gradYear>new Date().getFullYear())){msg.innerHTML=`<div class="alert red small">졸업 연도 범위를 확인하세요.</div>`;return;}
+const rec={hospital:hosp,name,dept,title:document.getElementById("aTitle").value.trim(),specialty:document.getElementById("aSpec").value.trim(),clinical:document.getElementById("aClin").value.trim(),university:document.getElementById("aUniv").value.trim(),gradYear,edu:document.getElementById("aEdu").value.trim(),career:document.getElementById("aCareer").value.trim(),profileUrl:profile,excerpt:document.getElementById("aExcerpt").value.trim()};
+if(BACKEND_OK){
+const id=document.getElementById("aId").value||null;
+try{
+const r=id?await api("/api/admin/doctors/"+encodeURIComponent(id),{method:"PATCH",body:JSON.stringify(rec)})
+:await api("/api/admin/doctors",{method:"POST",body:JSON.stringify(rec)});
+if(r.status===401){msg.innerHTML=`<div class="alert red small">관리자 로그인이 필요합니다.</div>`;return;}
+if(r.status===400||r.status===404){msg.innerHTML=`<div class="alert red small">${esc((r.body&&r.body.error)||"저장 실패")}</div>`;return;}
+if(r.status!==200&&r.status!==201){msg.innerHTML=`<div class="alert red small">저장 실패 (${r.status})</div>`;return;}
+}catch(e){msg.innerHTML=`<div class="alert red small">백엔드 연결 실패.</div>`;return;}
+clearForm();await refreshDB();renderAdmin();updateMini();
+document.getElementById("adminMsg").innerHTML=`<div class="alert green small">저장되었습니다. 출처 검증 전까지 "검증 필요" 상태입니다.</div>`;return;}
+const s=getStore();const id=document.getElementById("aId").value||("d"+Date.now());
+const rec2={id,...rec,verified:"검증 필요",verifiedAt:new Date().toISOString().slice(0,10),status:"활성",demo:false};
+const i=s.doctors.findIndex(d=>d.id===id);if(i>=0)s.doctors[i]={...s.doctors[i],...rec2};else s.doctors.push(rec2);
+save(s);log(`의료진 저장: ${name} (${hospName(hosp)}/${dept})`);clearForm();renderAdmin();updateMini();
+document.getElementById("adminMsg").innerHTML=`<div class="alert green small">저장되었습니다. 출처 검증 전까지 "검증 필요" 상태입니다.</div>`;}
+function clearForm(){["aId","aName","aTitle","aSpec","aClin","aUniv","aGrad","aEdu","aCareer","aProfile","aExcerpt"].forEach(id=>document.getElementById(id).value="");}
+function editDoctor(id){document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x.dataset.tab==="admin"));["search","hosp","docs","admin","guide"].forEach(t=>document.getElementById("tab-"+t).hidden=(t!=="admin"));
+const s=getStore();const d=s.doctors.find(x=>x.id===id);if(!d)return;
+document.getElementById("aId").value=d.id;document.getElementById("aHosp").value=d.hospital;document.getElementById("aName").value=d.name;document.getElementById("aDept").value=d.dept;
+document.getElementById("aTitle").value=d.title||"";document.getElementById("aSpec").value=d.specialty||"";document.getElementById("aClin").value=d.clinical||"";document.getElementById("aUniv").value=d.university||"";
+document.getElementById("aGrad").value=d.gradYear||"";document.getElementById("aEdu").value=d.edu||"";document.getElementById("aCareer").value=d.career||"";document.getElementById("aProfile").value=d.profileUrl||"";document.getElementById("aExcerpt").value=d.excerpt||"";
+renderAdminGate();window.scrollTo({top:0});}
+function renderAdmin(){
+const s=getStore();const ref=new Date().getFullYear();
+document.getElementById("adminStat").innerHTML=`<div class="small">등록 <b>${s.doctors.length}</b>명 · 검증됨 <b>${s.doctors.filter(d=>d.verified==="검증됨").length}</b>명 · 검증 필요 <b>${s.doctors.filter(d=>d.verified!=="검증됨").length}</b>명 · 비활성 <b>${s.doctors.filter(d=>d.status==="비활성").length}</b>명</div>
+<div class="small muted">병원별: ${HOSPITALS.map(h=>`${h.name} ${s.doctors.filter(d=>d.hospital===h.id&&d.status!=="비활성").length}명`).join(" · ")}</div>`;
+document.getElementById("adminLog").innerHTML=(s.logs.slice(0,8).map(l=>`<div>· ${esc(l.t)} — ${esc(l.msg)}</div>`).join("")||"로그 없음");
+document.getElementById("adminTable").innerHTML=s.doctors.length?`<table><tr><th>이름</th><th>병원/진료과</th><th>졸업/추정</th><th>출처·검증</th><th>관리</th></tr>${s.doctors.map(d=>{const e=estimate(d.gradYear,ref);return `<tr><td>${esc(d.name)}${d.demo?" (데모)":""}</td><td>${esc(hospName(d.hospital))}<br>${esc(d.dept)}</td><td>${d.gradYear||"미확인"}<br>${esc(e.group)}</td><td><span class="pill ${d.verified==="검증됨"?"green":"amber"}">${esc(d.verified||"검증 필요")}</span><br><span class="small muted">${esc(d.verifiedAt||"")}</span></td><td><div class="row"><button class="btn sm ghost" onclick="verifyDoc('${d.id}')">검증</button><button class="btn sm ghost" onclick="editDoctor('${d.id}')">수정</button><button class="btn sm warn" onclick="toggleActive('${d.id}')">활성/비활성</button></div></td></tr>`;}).join("")}</table>`:`<div class="small muted">빈 데이터베이스 — 수집 전 상태. 실패 레코드를 정상처럼 저장하지 않습니다.</div>`;
+updateMini();}
+// admin auth (화면 가림용: 단일 HTML 파일이므로 실제 보안은 백엔드 필요)
+const AUTH_SALT="mvp::admin::v1::";
+const INIT_PW="c01045719064";
+let authed=false;
+try{authed=sessionStorage.getItem("mvp_admin")==="1";}catch(e){}
+function phash(s){let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0;i<s.length;i++){const ch=s.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677);}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return (h2>>>0).toString(16)+(h1>>>0).toString(16);}
+function pwStored(){try{return localStorage.getItem("mvp_admin_hash")||"";}catch(e){return "";}}
+function checkPw(pw){const st=pwStored();if(!st)return pw===INIT_PW;return phash(AUTH_SALT+pw)===st;}
+function renderAdminGate(){
+const lock=document.getElementById("adminLock"),body=document.getElementById("adminBody");
+if(authed){lock.hidden=true;body.hidden=false;renderAdmin();}
+else{lock.hidden=false;body.hidden=true;document.getElementById("pwInput").value="";document.getElementById("pwMsg").innerHTML="";}}
+const HAS_BACKEND=/^https?:$/.test(location.protocol);
+let BACKEND_OK=false;
+async function detectBackend(){BACKEND_OK=false;if(!HAS_BACKEND)return false;try{const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),5000);const r=await fetch("/api/health",{signal:ctl.signal});clearTimeout(t);if(r.ok){const j=await r.json();if(j&&j.ok===true){BACKEND_OK=true;return true;}}}catch(e){}return false;}
+async function api(path,opts){const r=await fetch(path,{headers:{"Content-Type":"application/json"},...(opts||{})});let j=null;try{j=await r.json();}catch(e){}return{status:r.status,body:j};}
+async function refreshMe(){if(!BACKEND_OK)return;try{const r=await api("/api/auth/me");authed=!!(r.body&&r.body.authed);if(authed){try{sessionStorage.setItem("mvp_admin","1");}catch(e){}}}catch(e){}}
+async function tryLogin(){const pw=document.getElementById("pwInput").value;
+const m=document.getElementById("pwMsg");
+if(BACKEND_OK){try{
+const r=await api("/api/auth/login",{method:"POST",body:JSON.stringify({password:pw})});
+if(r.status===200&&r.body&&r.body.ok){authed=true;try{sessionStorage.setItem("mvp_admin","1");}catch(e){}await refreshDB();renderAdminGate();return;}
+if(r.status===429){m.innerHTML=`<div class="alert red small">시도가 너무 많습니다. 1분 후 다시 시도하세요.</div>`;return;}
+m.innerHTML=`<div class="alert red small">비밀번호가 틀렸습니다.</div>`;return;
+}catch(e){/* 백엔드 미동작: 아래 로컬 잠금으로 폴백 */}}
+if(checkPw(pw)){if(!pwStored()){try{localStorage.setItem("mvp_admin_hash",phash(AUTH_SALT+pw));}catch(e){}}
+authed=true;try{sessionStorage.setItem("mvp_admin","1");}catch(e){}renderAdminGate();}
+else{m.innerHTML=`<div class="alert red small">비밀번호가 틀렸습니다.</div>`;}}
+async function logoutAdmin(){if(BACKEND_OK){try{await api("/api/auth/logout",{method:"POST",body:"{}"});}catch(e){}}
+authed=false;try{sessionStorage.removeItem("mvp_admin");}catch(e){}renderAdminGate();}
+function togglePwForm(){const f=document.getElementById("pwForm");f.hidden=!f.hidden;}
+function changePw(){const cur=document.getElementById("pwCur").value,nw=document.getElementById("pwNew").value;
+const m=document.getElementById("pwChgMsg");
+const done=()=>{document.getElementById("pwCur").value="";document.getElementById("pwNew").value="";m.innerHTML=`<div class="alert green small">비밀번호를 변경했습니다.</div>`;};
+if(!nw||nw.length<8){m.innerHTML=`<div class="alert amber small">새 비밀번호는 8자 이상 입력하세요.</div>`;return;}
+if(BACKEND_OK){api("/api/auth/change-password",{method:"POST",body:JSON.stringify({current:cur,next:nw})}).then(r=>{
+if(r.status===200){done();try{localStorage.setItem("mvp_admin_hash",phash(AUTH_SALT+nw));}catch(e){}}
+else if(r.status===401){m.innerHTML=`<div class="alert red small">현재 비밀번호가 틀렸습니다.</div>`;}
+else{m.innerHTML=`<div class="alert red small">변경 실패 (${r.status}). 백엔드 로그를 확인하세요.</div>`;}}).catch(e=>{m.innerHTML=`<div class="alert red small">백엔드 연결 실패.</div>`;});return;}
+if(!checkPw(cur)){m.innerHTML=`<div class="alert red small">현재 비밀번호가 틀렸습니다.</div>`;return;}
+try{localStorage.setItem("mvp_admin_hash",phash(AUTH_SALT+nw));}catch(e){}
+done();}
+async function verifyDoc(id){
+if(BACKEND_OK){try{const r=await api("/api/admin/doctors/"+encodeURIComponent(id)+"/verify",{method:"POST",body:"{}"});
+if(r.status===401){alert("관리자 로그인이 필요합니다.");return;}
+if(r.status!==200){alert((r.body&&r.body.error)||"검증 실패");return;}}catch(e){alert("백엔드 연결 실패.");return;}
+await refreshDB();renderAdmin();return;}
+const s=getStore();const d=s.doctors.find(x=>x.id===id);if(!d)return;
+if(!d.profileUrl||!/^https?:\/\//.test(d.profileUrl)){alert("공식 프로필 URL이 유효하지 않아 검증할 수 없습니다.");return;}
+d.verified="검증됨";d.verifiedAt=new Date().toISOString().slice(0,10);save(s);log(`출처 검증됨: ${d.name}`);renderAdmin();}
+async function toggleActive(id){const s=getStore();const d=s.doctors.find(x=>x.id===id);if(!d)return;
+if(BACKEND_OK){const next=d.status==="비활성"?"활성":"비활성";
+try{const r=await api("/api/admin/doctors/"+encodeURIComponent(id)+"/status",{method:"POST",body:JSON.stringify({status:next})});
+if(r.status===401){alert("관리자 로그인이 필요합니다.");return;}
+if(r.status!==200){alert("상태 변경 실패");return;}}catch(e){alert("백엔드 연결 실패.");return;}
+await refreshDB();renderAdmin();return;}
+d.status=d.status==="비활성"?"활성":"비활성";save(s);log(`상태 변경: ${d.name} → ${d.status}`);renderAdmin();}
+async function checkDup(){const s=getStore();const seen={};const dups=[];
+s.doctors.forEach(d=>{const k=d.hospital+"|"+d.name+"|"+(d.profileUrl||"");if(seen[k])dups.push(d.name+" ("+hospName(d.hospital)+")");seen[k]=1;});
+if(BACKEND_OK){try{await api("/api/admin/log",{method:"POST",body:JSON.stringify({msg:"중복 확인 실행"})});}catch(e){}await refreshDB();}
+else log("중복 확인 실행");
+alert(dups.length?("중복 의심(병원+이름+프로필 동일):\n"+dups.join("\n")):"중복 없음 (이름만으로 중복 제거하지 않음: 병원ID+프로필 식별자 기준)");renderAdmin();}
+async function revalidate(){
+if(BACKEND_OK){try{const r=await api("/api/admin/revalidate",{method:"POST",body:"{}"});
+if(r.status===401){alert("관리자 로그인이 필요합니다.");return;}
+if(r.status!==200){alert("재검증 실패");return;}}catch(e){alert("백엔드 연결 실패.");return;}
+await refreshDB();renderAdmin();return;}
+const s=getStore();const cutoff=new Date();cutoff.setDate(cutoff.getDate()-90);let n=0;
+s.doctors.forEach(d=>{if(!d.verifiedAt||new Date(d.verifiedAt)<cutoff){d.verified="검증 필요";n++;}});
+save(s);log(`재검증 표시: ${n}건 (90일 초과)`);renderAdmin();}
+function exportCSV(){const s=getStore();const rows=[["name","hospital","department","specialty","university","gradYear","profileUrl","title"]];
+s.doctors.forEach(d=>rows.push([d.name,d.hospital,d.dept,`"${(d.specialty||"").replace(/"/g,'""')}"`,d.university||"",d.gradYear||"",d.profileUrl||"",d.title||""]));
+const csv=rows.map(r=>r.join(",")).join("\n");const blob=new Blob(["\ufeff"+csv],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="doctors.csv";a.click();if(!BACKEND_OK)log("CSV 내보내기");}
+function importCSV(ev){const f=ev.target.files[0];if(!f)return;const r=new FileReader();
+r.onload=()=>{const lines=String(r.result).split(/\r?\n/).filter(Boolean);const head=lines.shift().split(",").map(x=>x.trim());
+const rows=lines.map(ln=>{const c=ln.split(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/);const o={};head.forEach((h,i)=>o[h]=(c[i]||"").replace(/^"|"$/g,"").trim());return o;});
+if(BACKEND_OK){
+const payload=rows.map(o=>({hospital:o.hospital||"snuh",name:o.name,department:o.department||o.dept||"내과",specialty:o.specialty||"",university:o.university||"",gradYear:o.gradYear||null,profileUrl:o.profileUrl,title:o.title||""}));
+api("/api/admin/import",{method:"POST",body:JSON.stringify({rows:payload})}).then(async r2=>{
+if(r2.status===401){alert("관리자 로그인이 필요합니다.");return;}
+const ok2=r2.body?r2.body.ok:0,fail2=r2.body?r2.body.fail:0;
+await refreshDB();alert(`가져오기 완료: 성공 ${ok2}, 실패 ${fail2}(URL 없는 행은 저장 안 함)`);renderAdmin();}).catch(e=>alert("백엔드 연결 실패."));
+ev.target.value="";return;}
+const s=getStore();let ok=0,fail=0;
+lines.forEach(ln=>{const c=ln.split(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/);const o={};head.forEach((h,i)=>o[h]=(c[i]||"").replace(/^"|"$/g,"").trim());
+if(!o.name||!o.profileUrl||!/^https?:\/\//.test(o.profileUrl)){fail++;return;}
+s.doctors.push({id:"d"+Date.now()+ok,hospital:o.hospital||"snuh",name:o.name,dept:o.department||"내과",specialty:o.specialty||"",university:o.university||"",gradYear:o.gradYear?+o.gradYear:null,profileUrl:o.profileUrl,title:o.title||"",clinical:"",edu:"",career:"",excerpt:"CSV 가져오기",verified:"검증 필요",verifiedAt:new Date().toISOString().slice(0,10),status:"활성",demo:false});ok++;});
+save(s);log(`CSV 가져오기: 성공 ${ok}, 실패 ${fail}`);alert(`가져오기 완료: 성공 ${ok}, 실패 ${fail}(URL 없는 행은 저장 안 함)`);renderAdmin();ev.target.value="";};
+r.readAsText(f,"utf-8");}
+async function loadDemo(){if(!confirm("데모 데이터(가상 인물, 실존 인물 아님)를 불러올까요? 실데이터와 (데모) 표시로 구분됩니다."))return;
+if(BACKEND_OK){try{const r=await api("/api/admin/demo",{method:"POST",body:"{}"});
+if(r.status===401){alert("관리자 로그인이 필요합니다.");return;}
+if(r.status!==200){alert("데모 로드 실패");return;}}catch(e){alert("백엔드 연결 실패.");return;}
+await refreshDB();renderAdmin();return;}
+const s=getStore();const t=new Date().toISOString().slice(0,10);
+const demo=[{name:"김데모(데모)",hospital:"snuh",dept:"심장내과",gradYear:2003},{name:"이데모(데모)",hospital:"snuh",dept:"심장내과",gradYear:1995},{name:"박데모(데모)",hospital:"asan",dept:"소화기내과",gradYear:2004},{name:"최데모(데모)",hospital:"asan",dept:"소화기내과",gradYear:1993}];
+demo.forEach((d,i)=>s.doctors.push({id:"demo"+Date.now()+i,title:"교수(가상)",specialty:"데모 전문분야",clinical:"데모 진료분야",university:"가상대학교",edu:"데모 학력",career:"데모 경력(가상)",profileUrl:"https://example.com/demo/"+i,excerpt:"데모 데이터 - 공식 출처 아님",verified:"검증 필요",verifiedAt:t,status:"활성",demo:true,...d}));
+save(s);log("데모 데이터 로드(가상)");renderAdmin();}
+async function resetData(){if(!confirm("모든 데이터를 삭제하고 빈 DB로 되돌릴까요?"))return;
+if(BACKEND_OK){try{const r=await api("/api/admin/reset",{method:"POST",body:"{}"});
+if(r.status===401){alert("관리자 로그인이 필요합니다.");return;}}catch(e){alert("백엔드 연결 실패.");return;}
+await refreshDB();renderAdmin();document.getElementById("resultBox").innerHTML="";document.getElementById("docsList").innerHTML="";return;}
+localStorage.removeItem(LSKEY);log("DB 초기화");renderAdmin();document.getElementById("resultBox").innerHTML="";document.getElementById("docsList").innerHTML="";}
+initChips();renderAdminGate();
+if(HAS_BACKEND){(async()=>{await detectBackend();await refreshMe();await refreshDB();updateMini();renderAdminGate();})();}
+</script>
+</body>
+</html>
