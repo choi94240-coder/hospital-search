@@ -80,8 +80,8 @@ node -e "const fs=require('fs'),vm=require('vm');const h=fs.readFileSync('index.
 ## 테스트
 
 ```bat
-node test-auth.js
-node test-api.js
+.\test.bat
 ```
 
-인증 15개 + CRUD 24개 항목을 자동 검증합니다.
+(인증 15개 + CRUD 24개 항목 자동 검증. 직접 실행 시 `node test-auth.js`,
+`node test-api.js` 순서대로 입력하세요.)

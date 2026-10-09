@@ -26,7 +26,9 @@ label{font-size:12.5px;font-weight:700;color:#334155;display:block;margin:10px 0
 .btn{border:0;border-radius:10px;padding:11px 16px;font-weight:800;cursor:pointer;font-size:14px;background:var(--pri);color:#fff}
 .btn:hover{background:var(--pri2)}.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn.dark{background:var(--ink)}.btn.warn{background:#b45309}.btn.danger{background:#b91c1c}.btn.sm{padding:7px 11px;font-size:12.5px}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.searchbox{display:flex;gap:8px}.searchbox input{font-size:16px;padding:14px}
+.searchbox{display:flex;gap:8px}.searchbox input{font-size:16px;padding:14px;border:2px solid #475569;background:#fff}
+.searchbox input::placeholder{color:#b6c2cf;font-weight:400}
+.searchbox input:focus{outline:none;border-color:var(--pri)}
 .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;cursor:pointer;font-weight:600}
 .chip.on{background:#0e7490;color:#fff;border-color:#0e7490}
 .doc{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
@@ -67,8 +69,6 @@ a{color:#0369a1}
 <div style="height:10px"></div>
 <div class="searchbox"><input id="q" placeholder="증상·질환·진료과·의료진 이름을 입력하세요" value=""><button class="btn" onclick="doSearch()">검색</button></div>
 <div style="height:10px"></div>
-<div class="small muted">인기 검색어</div>
-<div id="popular" class="row" style="margin-top:6px"></div>
 <div class="hr"></div>
 <div class="alert blue small">검색 결과는 <b>관련 진료과 추천</b>이며 <b>진단을 대신하지 않습니다.</b> 공식 프로필 링크로 반드시 최신 정보를 확인하세요. 응급 가능 증상 입력 시 응급 안내가 우선 표시됩니다.</div>
 </div>
@@ -554,10 +554,7 @@ DEPTS.forEach(d=>{if(q.includes(d)&&!hits.includes(d))hits.push(d);});
 return hits.slice(0,5);}
 // tabs
 document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#nav button").forEach(x=>x.classList.remove("on"));b.classList.add("on");["search","hosp","docs","admin","guide"].forEach(t=>document.getElementById("tab-"+t).hidden=(t!==b.dataset.tab));if(b.dataset.tab==="docs")renderDocs();if(b.dataset.tab==="hosp")renderHosp();if(b.dataset.tab==="admin")renderAdminGate();window.scrollTo({top:0});});
-// popular
-const POP=["가슴이 아프고 숨이 차요","두통이 심하고 한쪽 팔에 힘이 빠져요","무릎 통증이 지속돼요","갑상선 결절이 발견됐어요","대장암 진료를 받고 싶어요","심장내과 전문의를 찾고 싶어요"];
 function initChips(){
-document.getElementById("popular").innerHTML=POP.map(p=>`<button class="chip" onclick="document.getElementById('q').value='${esc(p)}';doSearch()">${esc(p)}</button>`).join("");
 const fh=document.getElementById("fHosp");fh.innerHTML=`<option value="">전체 병원</option>`+HOSPITALS.map(h=>`<option value="${h.id}">${esc(h.name)}</option>`).join("");
 const fd=document.getElementById("fDept");fd.innerHTML=`<option value="">전체 진료과</option>`+DEPTS.map(d=>`<option>${esc(d)}</option>`).join("");
 const ah=document.getElementById("aHosp");ah.innerHTML=HOSPITALS.map(h=>`<option value="${h.id}">${esc(h.name)}</option>`).join("");
