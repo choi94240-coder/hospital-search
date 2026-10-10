@@ -26,8 +26,8 @@ const WRITE_WINDOW_MS = 60000;
 const MIN_PW_LEN = 8;
 const SEED = require("./seed.json");
 
-const HOSPITAL_IDS = ["snuh", "sev", "samsung", "asan", "cmc"];
-const DEPTS = ["내과","심장내과","신경과","신경외과","정형외과","소화기내과","호흡기내과","내분비내과","종양내과","혈액내과","알레르기내과","외과","심장외과","산부인과","소아청소년과","피부과","안과","이비인후과","비뇨의학과","정신건강의학과","재활의학과","영상의학과","신장내과"];
+const HOSPITAL_IDS = ["snuh", "sev", "samsung", "asan", "cmc", "ebs"];
+const DEPTS = ["내과","심장내과","신경과","신경외과","정형외과","소화기내과","호흡기내과","내분비내과","종양내과","혈액내과","알레르기내과","류마티스내과","가정의학과","마취통증의학과","혈관외과","성형외과","치과","외과","심장외과","산부인과","소아청소년과","피부과","안과","이비인후과","비뇨의학과","정신건강의학과","재활의학과","영상의학과","신장내과"];
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 
@@ -122,8 +122,10 @@ const loginLimit = limiter(LOGIN_MAX, LOGIN_WINDOW_MS);
 const writeLimit = limiter(WRITE_MAX, WRITE_WINDOW_MS);
 
 /* ---------- 의료진 DB (서버 소유) ---------- */
+const SEED_VERSION = "2026-10-10-ebs-merged";
 function freshDb() {
   return {
+    seedVersion: SEED_VERSION,
     doctors: JSON.parse(JSON.stringify(SEED)),
     logs: [{ t: new Date().toISOString().slice(0, 19).replace("T", " "), msg: `공식 홈페이지 조사 기반 시드 ${SEED.length}명 로드` }],
   };
@@ -131,7 +133,21 @@ function freshDb() {
 function loadDb() {
   try {
     const j = JSON.parse(fs.readFileSync(DB_FILE, "utf8"));
-    if (j && Array.isArray(j.doctors) && Array.isArray(j.logs)) return j;
+    if (j && Array.isArray(j.doctors) && Array.isArray(j.logs)) {
+      if (!j.seedVersion) j.seedVersion = "legacy";
+      if (j.seedVersion !== SEED_VERSION) {
+        const have = new Set(j.doctors.map((d) => d.id));
+        let added = 0;
+        for (const s of SEED) {
+          if (!have.has(s.id)) { j.doctors.push(JSON.parse(JSON.stringify(s))); added++; }
+        }
+        j.seedVersion = SEED_VERSION;
+        j.logs.unshift({ t: new Date().toISOString().slice(0, 19).replace("T", " "), msg: `시드 동기화: ${added}명 추가 (기존 데이터 유지)` });
+        j.logs = j.logs.slice(0, 60);
+        saveDb(j);
+      }
+      return j;
+    }
   } catch (e) { /* 최초 실행: 시드로 생성 */ }
   const db = freshDb();
   saveDb(db);
@@ -162,7 +178,7 @@ function validateDoctor(d) {
   if (!HOSPITAL_IDS.includes(d.hospital)) return "병원을 확인하세요.";
   if (!d.name || !String(d.name).trim() || String(d.name).trim().length > 100) return "이름을 확인하세요.";
   if (!DEPTS.includes(d.dept)) return "진료과를 확인하세요.";
-  if (typeof d.profileUrl !== "string" || !/^https?:\/\/.{1,2000}/.test(d.profileUrl.trim())) return "공식 프로필 URL 형식이 올바르지 않습니다.";
+  if (typeof d.profileUrl !== "string" || (d.profileUrl.trim() !== "" && !/^https?:\/\/.{1,2000}/.test(d.profileUrl.trim()))) return "공식 프로필 URL 형식이 올바르지 않습니다. (엑셀 기반 자료는 비워둘 수 있음)";
   if (d.gradYear !== null && d.gradYear !== undefined && d.gradYear !== "") {
     const g = +d.gradYear;
     if (!Number.isInteger(g) || g < 1950 || g > new Date().getFullYear()) return "졸업 연도 범위를 확인하세요.";
@@ -372,7 +388,7 @@ const server = http.createServer(async (req, res) => {
           edu: "", career: "", profileUrl: r.profileUrl, excerpt: "CSV 가져오기",
           verified: "검증 필요", verifiedAt: today(), status: "활성", demo: false,
         };
-        if (validateDoctor(d)) { fail++; continue; }
+        if (!d.profileUrl || !/^https?:\/\//.test(d.profileUrl.trim()) || validateDoctor(d)) { fail++; continue; }
         DB.doctors.push({ id: newId(), ...cleanDoctor(d, true) });
         ok++;
       }

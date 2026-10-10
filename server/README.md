@@ -50,6 +50,9 @@ node server\server.js
 - `GET /api/admin/logs` → 수집 로그
 - `POST /api/admin/log` `{msg}` → 로그 1건 추가
 
+서버는 `seedVersion`으로 시드를 관리합니다. 시드가 바뀌면 재시작 시
+빠진 ID만 추가하고 기존 데이터는 유지합니다 (`test-migrate.js` 검증).
+
 ## 데이터 파일 (`DATA_DIR`, 기본 `server/data`)
 
 - `auth.json` — 비밀번호 scrypt 해시 (평문 없음)
@@ -83,5 +86,5 @@ node -e "const fs=require('fs'),vm=require('vm');const h=fs.readFileSync('index.
 .\test.bat
 ```
 
-(인증 15개 + CRUD 24개 항목 자동 검증. 직접 실행 시 `node test-auth.js`,
-`node test-api.js` 순서대로 입력하세요.)
+(인증 15개 + CRUD 25개 + 마이그레이션 5개 항목 자동 검증. 직접 실행 시 `node test-auth.js`,
+`node test-api.js`, `node test-migrate.js` 순서대로 입력하세요.)

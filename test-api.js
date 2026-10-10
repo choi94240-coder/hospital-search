@@ -49,7 +49,10 @@ const good = {
   await waitReady();
 
   let r = await req("GET", "/api/doctors");
-  ok("공개 목록 200 + 시드 220명", r.status === 200 && r.body.doctors.length === 220);
+  ok("공개 목록 200 + 시드 791명", r.status === 200 && r.body.doctors.length === 791);
+  const ebsN = r.body.doctors.filter((d) => d.hospital === "ebs").length;
+  const mergedN = r.body.doctors.filter((d) => d.ebs).length;
+  ok("EBS 571명 + 병합 22명", ebsN === 571 && mergedN === 22);
 
   r = await req("POST", "/api/admin/doctors", good);
   ok("미인증 생성 401", r.status === 401);
@@ -74,7 +77,7 @@ const good = {
   const id = r.body.doctor.id;
 
   r = await req("GET", "/api/doctors", null, ck);
-  ok("생성 후 221명", r.body.doctors.length === 221);
+  ok("생성 후 792명", r.body.doctors.length === 792);
 
   r = await req("PATCH", "/api/admin/doctors/" + id, { specialty: "변경됨" }, ck);
   ok("수정 200", r.status === 200 && r.body.doctor.specialty === "변경됨");
@@ -111,7 +114,7 @@ const good = {
   ok("초기화 후 0명", r.body.doctors.length === 0);
 
   r = await req("POST", "/api/admin/restore-seed", {}, ck);
-  ok("시드 복원 220명", r.status === 200 && r.body.count === 220);
+  ok("시드 복원 791명", r.status === 200 && r.body.count === 791);
 
   r = await req("POST", "/api/auth/logout", {}, ck);
   ok("로그아웃", r.status === 200);
