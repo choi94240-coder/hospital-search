@@ -4218,7 +4218,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "EBS 다시보기 출연진 정보",
+  "reserveUrl": "https://www.ebs.co.kr"
  },
  {
   "id": "ebs002",
@@ -4237,7 +4239,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "EBS 다시보기 출연진 정보",
+  "reserveUrl": "https://www.ebs.co.kr"
  },
  {
   "id": "ebs003",
@@ -4256,7 +4260,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대 길병원",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs004",
@@ -4275,7 +4281,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대 길병원",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs005",
@@ -4294,7 +4302,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대길병원",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs006",
@@ -4313,7 +4323,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대길병원",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs007",
@@ -4332,7 +4344,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대길병원",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs008",
@@ -4351,7 +4365,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대 길병원 외 2곳 (가천대길병원 / 순천향대 / 분당서울대)",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs009",
@@ -4370,7 +4386,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대 길병원 외 2곳 (가천대길병원 / 순천향대 / 분당서울대)",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs010",
@@ -4389,7 +4407,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대 길병원 외 2곳 (가천대길병원 / 순천향대 / 분당서울대)",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs011",
@@ -4408,7 +4428,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가천대 길병원 외 2곳 (가천대길병원 / 순천향대 / 분당서울대)",
+  "reserveUrl": "https://www.gilhospital.com"
  },
  {
   "id": "ebs013",
@@ -4427,7 +4449,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가톨릭대 서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs014",
@@ -4446,7 +4470,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가톨릭대 은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs015",
@@ -4465,7 +4491,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "가톨릭대 은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs016",
@@ -4484,7 +4512,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs017",
@@ -4503,7 +4533,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs018",
@@ -4522,7 +4554,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs019",
@@ -4541,7 +4575,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원 외 1곳 (강남세브란스 / 분당서울대병원)",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs020",
@@ -4560,7 +4596,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원 외 1곳 (강남세브란스 / 분당서울대병원)",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs021",
@@ -4579,7 +4617,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원 외 1곳 (강남세브란스 / 서울대병원)",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs022",
@@ -4598,7 +4638,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원 외 1곳 (강남세브란스 / 서울대병원)",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs023",
@@ -4617,7 +4659,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs024",
@@ -4636,7 +4680,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs025",
@@ -4655,7 +4701,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs026",
@@ -4674,7 +4722,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs027",
@@ -4693,7 +4743,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs028",
@@ -4712,7 +4764,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs029",
@@ -4731,7 +4785,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs030",
@@ -4750,7 +4806,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs031",
@@ -4769,7 +4827,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs032",
@@ -4788,7 +4848,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs033",
@@ -4807,7 +4869,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs034",
@@ -4826,7 +4890,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs035",
@@ -4845,7 +4911,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs036",
@@ -4864,7 +4932,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원 외 1곳 (강남세브란스병원 / 고려대안암병원)",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs037",
@@ -4883,7 +4953,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원 외 1곳 (강남세브란스병원 / 고려대안암병원)",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs038",
@@ -4902,7 +4974,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강남세브란스병원 외 1곳 (강남세브란스병원 / 고려대안암병원)",
+  "reserveUrl": "https://gs.severance.healthcare"
  },
  {
   "id": "ebs039",
@@ -4921,7 +4995,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대 / 강남세브란스)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs040",
@@ -4940,7 +5016,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대 / 강남세브란스)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs041",
@@ -4959,7 +5037,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대 / 서울아산)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs042",
@@ -4978,7 +5058,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대 / 서울아산)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs043",
@@ -4997,7 +5079,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs044",
@@ -5016,7 +5100,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs045",
@@ -5035,7 +5121,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs046",
@@ -5054,7 +5142,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs047",
@@ -5073,7 +5163,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs048",
@@ -5092,7 +5184,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs049",
@@ -5111,7 +5205,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs050",
@@ -5130,7 +5226,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs051",
@@ -5149,7 +5247,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs052",
@@ -5168,7 +5268,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs053",
@@ -5187,7 +5289,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs054",
@@ -5206,7 +5310,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs055",
@@ -5225,7 +5331,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs056",
@@ -5244,7 +5352,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs057",
@@ -5263,7 +5373,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs058",
@@ -5282,7 +5394,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs059",
@@ -5301,7 +5415,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs060",
@@ -5320,7 +5436,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs061",
@@ -5339,7 +5457,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대병원",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs062",
@@ -5358,7 +5478,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 2곳 (강동경희대병원 / 경북대병원 / 인하대병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs063",
@@ -5377,7 +5499,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 2곳 (강동경희대병원 / 경북대병원 / 인하대병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs064",
@@ -5396,7 +5520,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 2곳 (강동경희대병원 / 경북대병원 / 인하대병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs065",
@@ -5415,7 +5541,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 고려대안암병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs066",
@@ -5434,7 +5562,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 고려대안암병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs067",
@@ -5453,7 +5583,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 고려대안암병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs068",
@@ -5472,7 +5604,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 고려대안암병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs069",
@@ -5491,7 +5625,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 서울성모병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs070",
@@ -5510,7 +5646,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 서울성모병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs071",
@@ -5529,7 +5667,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 서울성모병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs072",
@@ -5548,7 +5688,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 서울성모병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs073",
@@ -5567,7 +5709,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 서울아산병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs074",
@@ -5586,7 +5730,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 서울아산병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs075",
@@ -5605,7 +5751,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (강동경희대병원 / 서울아산병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs076",
@@ -5624,7 +5772,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강북삼성병원",
+  "reserveUrl": "https://www.kbsmc.co.kr"
  },
  {
   "id": "ebs077",
@@ -5643,7 +5793,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강북삼성병원",
+  "reserveUrl": "https://www.kbsmc.co.kr"
  },
  {
   "id": "ebs078",
@@ -5662,7 +5814,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강북삼성병원 외 1곳 (강북삼성병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.kbsmc.co.kr"
  },
  {
   "id": "ebs079",
@@ -5681,7 +5835,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강북삼성병원 외 1곳 (강북삼성병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.kbsmc.co.kr"
  },
  {
   "id": "ebs080",
@@ -5700,7 +5856,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강북삼성병원 외 1곳 (강북삼성병원 / 경희대병원)",
+  "reserveUrl": "https://www.kbsmc.co.kr"
  },
  {
   "id": "ebs081",
@@ -5719,7 +5877,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강북삼성병원 외 1곳 (강북삼성병원 / 경희대병원)",
+  "reserveUrl": "https://www.kbsmc.co.kr"
  },
  {
   "id": "ebs082",
@@ -5738,7 +5898,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강북삼성병원 외 1곳 (강북삼성병원 / 평촌성심병원)",
+  "reserveUrl": "https://www.kbsmc.co.kr"
  },
  {
   "id": "ebs083",
@@ -5757,7 +5919,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강북삼성병원 외 1곳 (강북삼성병원 / 평촌성심병원)",
+  "reserveUrl": "https://www.kbsmc.co.kr"
  },
  {
   "id": "ebs084",
@@ -5776,7 +5940,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대병원",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs085",
@@ -5795,7 +5961,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대병원",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs086",
@@ -5814,7 +5982,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대병원",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs087",
@@ -5833,7 +6003,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대병원",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs088",
@@ -5852,7 +6024,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대병원",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs089",
@@ -5871,7 +6045,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대학교병원 외 1곳 (건국대병원 / 고려대구로병원)",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs090",
@@ -5890,7 +6066,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대학교병원 외 1곳 (건국대병원 / 고려대구로병원)",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs091",
@@ -5909,7 +6087,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대학교병원",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs092",
@@ -5928,7 +6108,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건국대학교병원",
+  "reserveUrl": "https://www.kuh.ac.kr"
  },
  {
   "id": "ebs093",
@@ -5947,7 +6129,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "건양대학교병원",
+  "reserveUrl": "https://www.kyuh.ac.kr"
  },
  {
   "id": "ebs094",
@@ -5966,7 +6150,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경북대병원",
+  "reserveUrl": "https://knuh.kr"
  },
  {
   "id": "ebs095",
@@ -5985,7 +6171,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경북대병원",
+  "reserveUrl": "https://knuh.kr"
  },
  {
   "id": "ebs096",
@@ -6004,7 +6192,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs097",
@@ -6023,7 +6213,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs098",
@@ -6042,7 +6234,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs099",
@@ -6061,7 +6255,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs100",
@@ -6080,7 +6276,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs101",
@@ -6099,7 +6297,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs102",
@@ -6118,7 +6318,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs103",
@@ -6137,7 +6339,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs104",
@@ -6156,7 +6360,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs105",
@@ -6175,7 +6381,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희의료원·경희대병원 외 2곳 (경희대병원 / 서울대병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs106",
@@ -6194,7 +6402,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희의료원·경희대병원 외 2곳 (경희대병원 / 서울대병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs107",
@@ -6213,7 +6423,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희의료원·경희대병원 외 2곳 (경희대병원 / 서울대병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs109",
@@ -6232,7 +6444,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희의료원·경희대병원 외 1곳 (경희대병원 / 세브란스병원)",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs110",
@@ -6251,7 +6465,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희대학교치과병원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs111",
@@ -6270,7 +6486,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희의료원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs112",
@@ -6289,7 +6507,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희의료원",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs113",
@@ -6308,7 +6528,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희의료원·경희대병원 외 1곳 (경희의료원 / 노원을지대병원)",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs114",
@@ -6327,7 +6549,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "경희의료원·경희대병원 외 1곳 (경희의료원 / 노원을지대병원)",
+  "reserveUrl": "https://www.khmc.or.kr"
  },
  {
   "id": "ebs115",
@@ -6346,7 +6570,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "계명대 동산병원",
+  "reserveUrl": "https://www.dsmc.or.kr"
  },
  {
   "id": "ebs116",
@@ -6365,7 +6591,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대학교 구로병원 외 3곳 (고대구로 / 노원을지대 / 건양대 / 분당차병원)",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs117",
@@ -6384,7 +6612,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대학교 구로병원 외 3곳 (고대구로 / 노원을지대 / 건양대 / 분당차병원)",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs118",
@@ -6403,7 +6633,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대학교 구로병원 외 3곳 (고대구로 / 노원을지대 / 건양대 / 분당차병원)",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs119",
@@ -6422,7 +6654,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대학교 구로병원 외 3곳 (고대구로 / 노원을지대 / 건양대 / 분당차병원)",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs120",
@@ -6441,7 +6675,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs121",
@@ -6460,7 +6696,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs122",
@@ -6479,7 +6717,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs123",
@@ -6498,7 +6738,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs124",
@@ -6517,7 +6759,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs125",
@@ -6536,7 +6780,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs126",
@@ -6555,7 +6801,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs127",
@@ -6574,7 +6822,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs128",
@@ -6593,7 +6843,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs129",
@@ -6612,7 +6864,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs130",
@@ -6631,7 +6885,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs131",
@@ -6650,7 +6906,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대안산병원",
+  "reserveUrl": "https://ansan.kumc.or.kr"
  },
  {
   "id": "ebs132",
@@ -6669,7 +6927,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대학교 안산병원 외 1곳 (고대안산병원 / 화순전남대병원)",
+  "reserveUrl": "https://ansan.kumc.or.kr"
  },
  {
   "id": "ebs133",
@@ -6688,7 +6948,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대학교 안산병원 외 1곳 (고대안산병원 / 화순전남대병원)",
+  "reserveUrl": "https://ansan.kumc.or.kr"
  },
  {
   "id": "ebs134",
@@ -6707,7 +6969,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs135",
@@ -6726,7 +6990,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs136",
@@ -6745,7 +7011,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs137",
@@ -6764,7 +7032,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs138",
@@ -6783,7 +7053,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs139",
@@ -6802,7 +7074,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs140",
@@ -6821,7 +7095,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs141",
@@ -6840,7 +7116,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs142",
@@ -6859,7 +7137,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs143",
@@ -6878,7 +7158,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs144",
@@ -6897,7 +7179,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대구로병원",
+  "reserveUrl": "https://guro.kumc.or.kr"
  },
  {
   "id": "ebs145",
@@ -6916,7 +7200,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs146",
@@ -6935,7 +7221,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs147",
@@ -6954,7 +7242,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs148",
@@ -6973,7 +7263,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "고려대안암병원",
+  "reserveUrl": "https://anam.kumc.or.kr"
  },
  {
   "id": "ebs149",
@@ -6992,7 +7284,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "구리 한양대병원",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs150",
@@ -7011,7 +7305,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국립암센터",
+  "reserveUrl": "https://www.ncc.re.kr"
  },
  {
   "id": "ebs151",
@@ -7030,7 +7326,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국립암센터",
+  "reserveUrl": "https://www.ncc.re.kr"
  },
  {
   "id": "ebs152",
@@ -7049,7 +7347,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국립암센터 외 1곳 (국립암센터 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.ncc.re.kr"
  },
  {
   "id": "ebs153",
@@ -7068,7 +7368,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국립암센터 외 1곳 (국립암센터 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.ncc.re.kr"
  },
  {
   "id": "ebs154",
@@ -7087,7 +7389,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국립암센터 외 1곳 (국립암센터 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.ncc.re.kr"
  },
  {
   "id": "ebs155",
@@ -7106,7 +7410,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국민건강보험 일산병원",
+  "reserveUrl": "https://www.nhimc.or.kr"
  },
  {
   "id": "ebs156",
@@ -7125,7 +7431,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국민건강보험 일산병원",
+  "reserveUrl": "https://www.nhimc.or.kr"
  },
  {
   "id": "ebs157",
@@ -7144,7 +7452,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국민건강보험 일산병원",
+  "reserveUrl": "https://www.nhimc.or.kr"
  },
  {
   "id": "ebs158",
@@ -7163,7 +7473,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국민건강보험 일산병원",
+  "reserveUrl": "https://www.nhimc.or.kr"
  },
  {
   "id": "ebs159",
@@ -7182,7 +7494,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "국민건강보험 일산병원",
+  "reserveUrl": "https://www.nhimc.or.kr"
  },
  {
   "id": "ebs160",
@@ -7201,7 +7515,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "노원을지대병원",
+  "reserveUrl": "https://www.eulji.ac.kr"
  },
  {
   "id": "ebs161",
@@ -7220,7 +7536,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "대구가톨릭대병원",
+  "reserveUrl": "https://www.dcmc.co.kr"
  },
  {
   "id": "ebs162",
@@ -7239,7 +7557,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "대구가톨릭대학교병원",
+  "reserveUrl": "https://www.dcmc.co.kr"
  },
  {
   "id": "ebs163",
@@ -7258,7 +7578,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "대구경북대병원",
+  "reserveUrl": "https://knuh.kr"
  },
  {
   "id": "ebs164",
@@ -7277,7 +7599,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "대구경북대병원",
+  "reserveUrl": "https://knuh.kr"
  },
  {
   "id": "ebs165",
@@ -7296,7 +7620,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "대전을지병원",
+  "reserveUrl": "https://www.eulji.ac.kr"
  },
  {
   "id": "ebs166",
@@ -7315,7 +7641,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "대항병원",
+  "reserveUrl": "https://www.daehang.com"
  },
  {
   "id": "ebs167",
@@ -7334,7 +7662,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "대항병원",
+  "reserveUrl": "https://www.daehang.com"
  },
  {
   "id": "ebs168",
@@ -7353,7 +7683,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "동아대병원",
+  "reserveUrl": "https://www.damc.or.kr"
  },
  {
   "id": "ebs169",
@@ -7372,7 +7704,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "동아대학교병원",
+  "reserveUrl": "https://www.damc.or.kr"
  },
  {
   "id": "ebs170",
@@ -7391,7 +7725,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "부산대병원",
+  "reserveUrl": "https://www.pnuh.or.kr"
  },
  {
   "id": "ebs171",
@@ -7410,7 +7746,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "부산대학교병원 외 1곳 (부산대병원 / 부산백병원)",
+  "reserveUrl": "https://www.pnuh.or.kr"
  },
  {
   "id": "ebs172",
@@ -7429,7 +7767,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "부산대학교병원 외 1곳 (부산대병원 / 부산백병원)",
+  "reserveUrl": "https://www.pnuh.or.kr"
  },
  {
   "id": "ebs173",
@@ -7448,7 +7788,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (분당서울대 / 강동경희대)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs174",
@@ -7467,7 +7809,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (분당서울대 / 강동경희대)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs175",
@@ -7486,7 +7830,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (분당서울대 / 강동경희대)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs176",
@@ -7505,7 +7851,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (분당서울대 / 강동경희대)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs177",
@@ -7524,7 +7872,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs178",
@@ -7543,7 +7893,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs179",
@@ -7562,7 +7914,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs180",
@@ -7581,7 +7935,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs181",
@@ -7600,7 +7956,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs182",
@@ -7619,7 +7977,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs183",
@@ -7638,7 +7998,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs184",
@@ -7657,7 +8019,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs185",
@@ -7676,7 +8040,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs186",
@@ -7695,7 +8061,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs187",
@@ -7714,7 +8082,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (분당서울대병원 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs188",
@@ -7733,7 +8103,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (분당서울대병원 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs189",
@@ -7752,7 +8124,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당차병원 외 1곳 (분당차병원 / 아주대병원)",
+  "reserveUrl": "https://www.chamc.co.kr"
  },
  {
   "id": "ebs190",
@@ -7771,7 +8145,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "분당차병원 외 1곳 (분당차병원 / 아주대병원)",
+  "reserveUrl": "https://www.chamc.co.kr"
  },
  {
   "id": "ebs191",
@@ -7790,7 +8166,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs192",
@@ -7809,7 +8187,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs193",
@@ -7828,7 +8208,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs194",
@@ -7847,7 +8229,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs195",
@@ -7866,7 +8250,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs196",
@@ -7885,7 +8271,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs197",
@@ -7904,7 +8292,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs198",
@@ -7923,7 +8313,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs199",
@@ -7942,7 +8334,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs200",
@@ -7961,7 +8355,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs201",
@@ -7980,7 +8376,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs202",
@@ -7999,7 +8397,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs203",
@@ -8018,7 +8418,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs204",
@@ -8037,7 +8439,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs205",
@@ -8056,7 +8460,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs206",
@@ -8075,7 +8481,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs207",
@@ -8094,7 +8502,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs208",
@@ -8113,7 +8523,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs209",
@@ -8132,7 +8544,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs210",
@@ -8151,7 +8565,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs212",
@@ -8170,7 +8586,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs213",
@@ -8189,7 +8607,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs214",
@@ -8208,7 +8628,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs215",
@@ -8227,7 +8649,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs216",
@@ -8246,7 +8670,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs218",
@@ -8265,7 +8691,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs219",
@@ -8284,7 +8712,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs220",
@@ -8303,7 +8733,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs221",
@@ -8322,7 +8754,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs222",
@@ -8341,7 +8775,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs223",
@@ -8360,7 +8796,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs224",
@@ -8379,7 +8817,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs225",
@@ -8398,7 +8838,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs226",
@@ -8417,7 +8859,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs227",
@@ -8436,7 +8880,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs228",
@@ -8455,7 +8901,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs230",
@@ -8474,7 +8922,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 경희의료원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs231",
@@ -8493,7 +8943,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 경희의료원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs232",
@@ -8512,7 +8964,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs233",
@@ -8531,7 +8985,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs234",
@@ -8550,7 +9006,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 서울성모병원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs235",
@@ -8569,7 +9027,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 서울성모병원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs236",
@@ -8588,7 +9048,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs237",
@@ -8607,7 +9069,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs238",
@@ -8626,7 +9090,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 연세세브란스병원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs239",
@@ -8645,7 +9111,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성서울병원 외 1곳 (삼성서울병원 / 연세세브란스병원)",
+  "reserveUrl": "https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do"
  },
  {
   "id": "ebs240",
@@ -8664,7 +9132,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성창원병원 외 2곳 (삼성창원 / 이대서울 / 서울성모)",
+  "reserveUrl": "https://www.samsunghospital.com"
  },
  {
   "id": "ebs241",
@@ -8683,7 +9153,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성창원병원 외 2곳 (삼성창원 / 이대서울 / 서울성모)",
+  "reserveUrl": "https://www.samsunghospital.com"
  },
  {
   "id": "ebs242",
@@ -8702,7 +9174,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "삼성창원병원 외 2곳 (삼성창원 / 이대서울 / 서울성모)",
+  "reserveUrl": "https://www.samsunghospital.com"
  },
  {
   "id": "ebs243",
@@ -8721,7 +9195,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "상계백병원 외 2곳 (상계백병원 / 서울대병원 / 신촌세브란스)",
+  "reserveUrl": "https://www.paik.ac.kr/sanggye"
  },
  {
   "id": "ebs244",
@@ -8740,7 +9216,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "상계백병원 외 2곳 (상계백병원 / 서울대병원 / 신촌세브란스)",
+  "reserveUrl": "https://www.paik.ac.kr/sanggye"
  },
  {
   "id": "ebs245",
@@ -8759,7 +9237,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "상계백병원 외 2곳 (상계백병원 / 서울대병원 / 신촌세브란스)",
+  "reserveUrl": "https://www.paik.ac.kr/sanggye"
  },
  {
   "id": "ebs246",
@@ -8778,7 +9258,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대 / 고려대안암)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs247",
@@ -8797,7 +9279,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대 / 고려대안암)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs248",
@@ -8816,7 +9300,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 3곳 (서울대 / 노원을지대 / 경희대 / 서울아산)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs249",
@@ -8835,7 +9321,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 3곳 (서울대 / 노원을지대 / 경희대 / 서울아산)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs251",
@@ -8854,7 +9342,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 3곳 (서울대 / 노원을지대 / 경희대 / 서울아산)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs252",
@@ -8873,7 +9363,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대 / 서울아산)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs253",
@@ -8892,7 +9384,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대 / 서울아산)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs254",
@@ -8911,7 +9405,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대 어린이병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs255",
@@ -8930,7 +9426,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs256",
@@ -8949,7 +9447,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs257",
@@ -8968,7 +9468,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs259",
@@ -8987,7 +9489,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs260",
@@ -9006,7 +9510,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs261",
@@ -9025,7 +9531,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs262",
@@ -9044,7 +9552,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs263",
@@ -9063,7 +9573,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs264",
@@ -9082,7 +9594,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs265",
@@ -9101,7 +9615,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs266",
@@ -9120,7 +9636,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs267",
@@ -9139,7 +9657,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs268",
@@ -9158,7 +9678,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs269",
@@ -9177,7 +9699,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs270",
@@ -9196,7 +9720,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs272",
@@ -9215,7 +9741,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs273",
@@ -9234,7 +9762,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs274",
@@ -9253,7 +9783,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs275",
@@ -9272,7 +9804,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs276",
@@ -9291,7 +9825,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs278",
@@ -9310,7 +9846,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs279",
@@ -9329,7 +9867,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs282",
@@ -9348,7 +9888,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs283",
@@ -9367,7 +9909,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs284",
@@ -9386,7 +9930,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs285",
@@ -9405,7 +9951,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 강동경희대병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs286",
@@ -9424,7 +9972,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 강동경희대병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs287",
@@ -9443,7 +9993,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 서울백병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs288",
@@ -9462,7 +10014,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 서울백병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs289",
@@ -9481,7 +10035,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 서울보라매병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs290",
@@ -9500,7 +10056,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 서울보라매병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs291",
@@ -9519,7 +10077,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 서울아산병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs292",
@@ -9538,7 +10098,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원 외 1곳 (서울대병원 / 서울아산병원)",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs293",
@@ -9557,7 +10119,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대치과병원",
+  "reserveUrl": "https://www.snudh.org"
  },
  {
   "id": "ebs295",
@@ -9576,7 +10140,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs296",
@@ -9595,7 +10161,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs297",
@@ -9614,7 +10182,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs298",
@@ -9633,7 +10203,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs299",
@@ -9652,7 +10224,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울대학교병원",
+  "reserveUrl": "https://www.snuh.org/reservation/meddept/main.do"
  },
  {
   "id": "ebs300",
@@ -9671,7 +10245,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울백병원",
+  "reserveUrl": "https://www.paik.ac.kr/seoul"
  },
  {
   "id": "ebs301",
@@ -9690,7 +10266,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울백병원 외 1곳 (서울백병원 / 서울대병원)",
+  "reserveUrl": "https://www.paik.ac.kr/seoul"
  },
  {
   "id": "ebs302",
@@ -9709,7 +10287,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울백병원 외 1곳 (서울백병원 / 서울대병원)",
+  "reserveUrl": "https://www.paik.ac.kr/seoul"
  },
  {
   "id": "ebs303",
@@ -9728,7 +10308,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울보라매병원",
+  "reserveUrl": "https://www.brmh.org"
  },
  {
   "id": "ebs304",
@@ -9747,7 +10329,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs306",
@@ -9766,7 +10350,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs307",
@@ -9785,7 +10371,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs308",
@@ -9804,7 +10392,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs309",
@@ -9823,7 +10413,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs310",
@@ -9842,7 +10434,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs311",
@@ -9861,7 +10455,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs312",
@@ -9880,7 +10476,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs313",
@@ -9899,7 +10497,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs314",
@@ -9918,7 +10518,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs315",
@@ -9937,7 +10539,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs316",
@@ -9956,7 +10560,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs318",
@@ -9975,7 +10581,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs319",
@@ -9994,7 +10602,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs320",
@@ -10013,7 +10623,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs321",
@@ -10032,7 +10644,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs322",
@@ -10051,7 +10665,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs323",
@@ -10070,7 +10686,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs325",
@@ -10089,7 +10707,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs326",
@@ -10108,7 +10728,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 경희의료원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs327",
@@ -10127,7 +10749,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 경희의료원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs329",
@@ -10146,7 +10770,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs331",
@@ -10165,7 +10791,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs332",
@@ -10184,7 +10812,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 성빈센트병원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs333",
@@ -10203,7 +10833,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울성모병원 외 1곳 (서울성모병원 / 성빈센트병원)",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs334",
@@ -10222,7 +10854,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산 / 강동경희대)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs336",
@@ -10241,7 +10875,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산 / 아주대)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs337",
@@ -10260,7 +10896,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산 / 아주대)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs338",
@@ -10279,7 +10917,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산 / 중앙대)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs339",
@@ -10298,7 +10938,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산 / 중앙대)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs340",
@@ -10317,7 +10959,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs341",
@@ -10336,7 +10980,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs342",
@@ -10355,7 +11001,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs343",
@@ -10374,7 +11022,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs344",
@@ -10393,7 +11043,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs345",
@@ -10412,7 +11064,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs346",
@@ -10431,7 +11085,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs347",
@@ -10450,7 +11106,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs348",
@@ -10469,7 +11127,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs349",
@@ -10488,7 +11148,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs350",
@@ -10507,7 +11169,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs351",
@@ -10526,7 +11190,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs352",
@@ -10545,7 +11211,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs353",
@@ -10564,7 +11232,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs354",
@@ -10583,7 +11253,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs355",
@@ -10602,7 +11274,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs356",
@@ -10621,7 +11295,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs357",
@@ -10640,7 +11316,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs358",
@@ -10659,7 +11337,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs359",
@@ -10678,7 +11358,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs360",
@@ -10697,7 +11379,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs361",
@@ -10716,7 +11400,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs362",
@@ -10735,7 +11421,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs363",
@@ -10754,7 +11442,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs364",
@@ -10773,7 +11463,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs365",
@@ -10792,7 +11484,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs366",
@@ -10811,7 +11505,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs367",
@@ -10830,7 +11526,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs368",
@@ -10849,7 +11547,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs369",
@@ -10868,7 +11568,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs370",
@@ -10887,7 +11589,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs371",
@@ -10906,7 +11610,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs372",
@@ -10925,7 +11631,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs373",
@@ -10944,7 +11652,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs374",
@@ -10963,7 +11673,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs375",
@@ -10982,7 +11694,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs376",
@@ -11001,7 +11715,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs377",
@@ -11020,7 +11736,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs378",
@@ -11039,7 +11757,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs379",
@@ -11058,7 +11778,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs380",
@@ -11077,7 +11799,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs381",
@@ -11096,7 +11820,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 강남세브란스병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs382",
@@ -11115,7 +11841,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 고대구로병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs383",
@@ -11134,7 +11862,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 고대구로병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs384",
@@ -11153,7 +11883,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs385",
@@ -11172,7 +11904,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs386",
@@ -11191,7 +11925,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs387",
@@ -11210,7 +11946,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs388",
@@ -11229,7 +11967,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs389",
@@ -11248,7 +11988,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 세브란스병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs390",
@@ -11267,7 +12009,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 세브란스병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs391",
@@ -11286,7 +12030,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 아주대병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs392",
@@ -11305,7 +12051,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "서울아산병원 외 1곳 (서울아산병원 / 아주대병원)",
+  "reserveUrl": "https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"
  },
  {
   "id": "ebs393",
@@ -11324,7 +12072,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "을지대학교병원 외 1곳 (서울을지병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.eulji.ac.kr"
  },
  {
   "id": "ebs394",
@@ -11343,7 +12093,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "을지대학교병원 외 1곳 (서울을지병원 / 삼성서울병원)",
+  "reserveUrl": "https://www.eulji.ac.kr"
  },
  {
   "id": "ebs395",
@@ -11362,7 +12114,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "성빈센트병원",
+  "reserveUrl": "https://www.cmcvincent.or.kr"
  },
  {
   "id": "ebs396",
@@ -11381,7 +12135,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "성빈센트병원",
+  "reserveUrl": "https://www.cmcvincent.or.kr"
  },
  {
   "id": "ebs397",
@@ -11400,7 +12156,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "성빈센트병원 외 1곳 (성빈센트병원 / 고려대안산병원)",
+  "reserveUrl": "https://www.cmcvincent.or.kr"
  },
  {
   "id": "ebs398",
@@ -11419,7 +12177,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "성빈센트병원 외 1곳 (성빈센트병원 / 고려대안산병원)",
+  "reserveUrl": "https://www.cmcvincent.or.kr"
  },
  {
   "id": "ebs399",
@@ -11438,7 +12198,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs400",
@@ -11457,7 +12219,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs401",
@@ -11476,7 +12240,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs402",
@@ -11495,7 +12261,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs403",
@@ -11514,7 +12282,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs404",
@@ -11533,7 +12303,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs405",
@@ -11552,7 +12324,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs406",
@@ -11571,7 +12345,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs408",
@@ -11590,7 +12366,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs409",
@@ -11609,7 +12387,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs410",
@@ -11628,7 +12408,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs411",
@@ -11647,7 +12429,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs412",
@@ -11666,7 +12450,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs413",
@@ -11685,7 +12471,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 강동경희대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs414",
@@ -11704,7 +12492,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 강동경희대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs415",
@@ -11723,7 +12513,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 고려대안암병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs416",
@@ -11742,7 +12534,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 고려대안암병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs417",
@@ -11761,7 +12555,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 서울대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs418",
@@ -11780,7 +12576,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 서울대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs419",
@@ -11799,7 +12597,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 서울성모병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs420",
@@ -11818,7 +12618,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 서울성모병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs421",
@@ -11837,7 +12639,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 서울아산병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs422",
@@ -11856,7 +12660,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 서울아산병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs423",
@@ -11875,7 +12681,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 2곳 (세브란스병원 / 을지병원 / 서울대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs424",
@@ -11894,7 +12702,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 2곳 (세브란스병원 / 을지병원 / 서울대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs425",
@@ -11913,7 +12723,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 2곳 (세브란스병원 / 을지병원 / 서울대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs426",
@@ -11932,7 +12744,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 인천성모병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs427",
@@ -11951,7 +12765,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "세브란스병원 외 1곳 (세브란스병원 / 인천성모병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs428",
@@ -11970,7 +12786,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대 서울병원",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs429",
@@ -11989,7 +12807,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대 서울병원",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs430",
@@ -12008,7 +12828,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원 외 1곳 (순천향대병원 / 서울성모병원)",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs431",
@@ -12027,7 +12849,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원 외 1곳 (순천향대병원 / 서울성모병원)",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs432",
@@ -12046,7 +12870,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원 외 1곳 (순천향대병원 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs433",
@@ -12065,7 +12891,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원 외 1곳 (순천향대병원 / 신촌세브란스병원)",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs434",
@@ -12084,7 +12912,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs435",
@@ -12103,7 +12933,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원 외 1곳 (순천향병원 / 서울대병원)",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs436",
@@ -12122,7 +12954,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원 외 1곳 (순천향병원 / 서울대병원)",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs437",
@@ -12141,7 +12975,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원 외 1곳 (순천향서울병원 / 서울대병원)",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs438",
@@ -12160,7 +12996,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "순천향대학교병원 외 1곳 (순천향서울병원 / 서울대병원)",
+  "reserveUrl": "https://www.schmc.ac.kr"
  },
  {
   "id": "ebs439",
@@ -12179,7 +13017,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신장내과 병원 의료진",
+  "reserveUrl": "https://www.ebs.co.kr"
  },
  {
   "id": "ebs440",
@@ -12198,7 +13038,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 경북대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs441",
@@ -12217,7 +13059,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 경북대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs442",
@@ -12236,7 +13080,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 고려대구로병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs443",
@@ -12255,7 +13101,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 고려대구로병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs444",
@@ -12274,7 +13122,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 고려대안암병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs445",
@@ -12293,7 +13143,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 고려대안암병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs446",
@@ -12312,7 +13164,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 삼성서울병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs447",
@@ -12331,7 +13185,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 삼성서울병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs448",
@@ -12350,7 +13206,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 1곳 (신촌세브란스 / 삼성서울병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs450",
@@ -12369,7 +13227,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs451",
@@ -12388,7 +13248,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs452",
@@ -12407,7 +13269,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs453",
@@ -12426,7 +13290,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs454",
@@ -12445,7 +13311,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs455",
@@ -12464,7 +13332,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs456",
@@ -12483,7 +13353,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs457",
@@ -12502,7 +13374,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs458",
@@ -12521,7 +13395,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs459",
@@ -12540,7 +13416,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs460",
@@ -12559,7 +13437,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs462",
@@ -12578,7 +13458,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs463",
@@ -12597,7 +13479,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs464",
@@ -12616,7 +13500,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs465",
@@ -12635,7 +13521,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs467",
@@ -12654,7 +13542,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs468",
@@ -12673,7 +13563,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs469",
@@ -12692,7 +13584,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs470",
@@ -12711,7 +13605,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs471",
@@ -12730,7 +13626,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs472",
@@ -12749,7 +13647,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs473",
@@ -12768,7 +13668,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs474",
@@ -12787,7 +13689,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs476",
@@ -12806,7 +13710,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs477",
@@ -12825,7 +13731,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs478",
@@ -12844,7 +13752,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs479",
@@ -12863,7 +13773,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs480",
@@ -12882,7 +13794,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs481",
@@ -12901,7 +13815,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs482",
@@ -12920,7 +13836,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs483",
@@ -12939,7 +13857,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs485",
@@ -12958,7 +13878,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs486",
@@ -12977,7 +13899,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs487",
@@ -12996,7 +13920,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs488",
@@ -13015,7 +13941,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 4곳 (신촌세브란스병원 / 서울아산병원 / 서울성모병원 / 아주대병원 / 강동경희대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs489",
@@ -13034,7 +13962,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 4곳 (신촌세브란스병원 / 서울아산병원 / 서울성모병원 / 아주대병원 / 강동경희대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs490",
@@ -13053,7 +13983,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 4곳 (신촌세브란스병원 / 서울아산병원 / 서울성모병원 / 아주대병원 / 강동경희대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs491",
@@ -13072,7 +14004,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 4곳 (신촌세브란스병원 / 서울아산병원 / 서울성모병원 / 아주대병원 / 강동경희대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs492",
@@ -13091,7 +14025,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "신촌세브란스병원 외 4곳 (신촌세브란스병원 / 서울아산병원 / 서울성모병원 / 아주대병원 / 강동경희대병원)",
+  "reserveUrl": "https://sev.severance.healthcare/sev/doctor/doctor.do"
  },
  {
   "id": "ebs493",
@@ -13110,7 +14046,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs494",
@@ -13129,7 +14067,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs495",
@@ -13148,7 +14088,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs496",
@@ -13167,7 +14109,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs497",
@@ -13186,7 +14130,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs498",
@@ -13205,7 +14151,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs499",
@@ -13224,7 +14172,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs500",
@@ -13243,7 +14193,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs501",
@@ -13262,7 +14214,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs502",
@@ -13281,7 +14235,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs503",
@@ -13300,7 +14256,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원 외 1곳 (아주대병원 / 중앙대병원)",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs504",
@@ -13319,7 +14277,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원 외 1곳 (아주대병원 / 중앙대병원)",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs505",
@@ -13338,7 +14298,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs506",
@@ -13357,7 +14319,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs507",
@@ -13376,7 +14340,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs508",
@@ -13395,7 +14361,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs509",
@@ -13414,7 +14382,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs510",
@@ -13433,7 +14403,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs511",
@@ -13452,7 +14424,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs512",
@@ -13471,7 +14445,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs513",
@@ -13490,7 +14466,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs514",
@@ -13509,7 +14487,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs515",
@@ -13528,7 +14508,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs516",
@@ -13547,7 +14529,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "아주대학교병원",
+  "reserveUrl": "https://hosp.ajoumc.or.kr"
  },
  {
   "id": "ebs517",
@@ -13566,7 +14550,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "여의도성모병원",
+  "reserveUrl": "https://www.cmcsungmo.or.kr"
  },
  {
   "id": "ebs518",
@@ -13585,7 +14571,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "여의도성모병원",
+  "reserveUrl": "https://www.cmcsungmo.or.kr"
  },
  {
   "id": "ebs519",
@@ -13604,7 +14592,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "여의도성모병원",
+  "reserveUrl": "https://www.cmcsungmo.or.kr"
  },
  {
   "id": "ebs520",
@@ -13623,7 +14613,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "연세대 치과대학병원",
+  "reserveUrl": "https://dental.severance.healthcare/dental/index.do"
  },
  {
   "id": "ebs521",
@@ -13642,7 +14634,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "영남대학교병원 외 1곳 (영남대병원 / 고신대복음병원)",
+  "reserveUrl": "https://www.yumc.ac.kr"
  },
  {
   "id": "ebs522",
@@ -13661,7 +14655,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "영남대학교병원 외 1곳 (영남대병원 / 고신대복음병원)",
+  "reserveUrl": "https://www.yumc.ac.kr"
  },
  {
   "id": "ebs523",
@@ -13680,7 +14676,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "용인세브란스병원",
+  "reserveUrl": "https://yi.severance.healthcare/"
  },
  {
   "id": "ebs524",
@@ -13699,7 +14697,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "원광대병원",
+  "reserveUrl": "https://www.wkuh.org"
  },
  {
   "id": "ebs525",
@@ -13718,7 +14718,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "원광대병원",
+  "reserveUrl": "https://www.wkuh.org"
  },
  {
   "id": "ebs526",
@@ -13737,7 +14739,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "원자력병원",
+  "reserveUrl": "https://www.kirams.re.kr"
  },
  {
   "id": "ebs527",
@@ -13756,7 +14760,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "원주세브란스기독병원",
+  "reserveUrl": "https://www.ywmc.or.kr"
  },
  {
   "id": "ebs528",
@@ -13775,7 +14781,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs529",
@@ -13794,7 +14802,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs530",
@@ -13813,7 +14823,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs531",
@@ -13832,7 +14844,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs532",
@@ -13851,7 +14865,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs533",
@@ -13870,7 +14886,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs534",
@@ -13889,7 +14907,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs535",
@@ -13908,7 +14928,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs536",
@@ -13927,7 +14949,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "은평성모병원",
+  "reserveUrl": "https://www.cmcep.or.kr"
  },
  {
   "id": "ebs537",
@@ -13946,7 +14970,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "을지대학교병원",
+  "reserveUrl": "https://www.eulji.ac.kr"
  },
  {
   "id": "ebs538",
@@ -13965,7 +14991,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "을지대학교병원",
+  "reserveUrl": "https://www.eulji.ac.kr"
  },
  {
   "id": "ebs539",
@@ -13984,7 +15012,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "을지대학교병원 외 1곳 (을지병원 / 서울백병원)",
+  "reserveUrl": "https://www.eulji.ac.kr"
  },
  {
   "id": "ebs540",
@@ -14003,7 +15033,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "을지대학교병원 외 1곳 (을지병원 / 서울백병원)",
+  "reserveUrl": "https://www.eulji.ac.kr"
  },
  {
   "id": "ebs541",
@@ -14022,7 +15054,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "이대목동병원",
+  "reserveUrl": "https://mokdong.eumc.ac.kr"
  },
  {
   "id": "ebs542",
@@ -14041,7 +15075,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "이대목동병원",
+  "reserveUrl": "https://mokdong.eumc.ac.kr"
  },
  {
   "id": "ebs543",
@@ -14060,7 +15096,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "이대서울병원",
+  "reserveUrl": "https://seoul.eumc.ac.kr"
  },
  {
   "id": "ebs544",
@@ -14079,7 +15117,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "이대서울병원",
+  "reserveUrl": "https://seoul.eumc.ac.kr"
  },
  {
   "id": "ebs545",
@@ -14098,7 +15138,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "이대서울병원",
+  "reserveUrl": "https://seoul.eumc.ac.kr"
  },
  {
   "id": "ebs546",
@@ -14117,7 +15159,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "인제대 부산백병원",
+  "reserveUrl": "https://www.paik.ac.kr/busan"
  },
  {
   "id": "ebs547",
@@ -14136,7 +15180,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "인천성모병원",
+  "reserveUrl": "https://www.cmcseoul.or.kr/page/department/A"
  },
  {
   "id": "ebs548",
@@ -14155,7 +15201,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "인하대병원",
+  "reserveUrl": "https://www.inha.com"
  },
  {
   "id": "ebs549",
@@ -14174,7 +15222,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (일산동국대병원 / 강동경희대병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs550",
@@ -14193,7 +15243,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "강동경희대학교병원 외 1곳 (일산동국대병원 / 강동경희대병원)",
+  "reserveUrl": "https://www.khnmc.or.kr"
  },
  {
   "id": "ebs551",
@@ -14212,7 +15264,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "일산차병원",
+  "reserveUrl": "https://www.chamc.co.kr"
  },
  {
   "id": "ebs552",
@@ -14231,7 +15285,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "전남대병원",
+  "reserveUrl": "https://www.cnuh.com/"
  },
  {
   "id": "ebs553",
@@ -14250,7 +15306,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "전남대병원",
+  "reserveUrl": "https://www.cnuh.com/"
  },
  {
   "id": "ebs554",
@@ -14269,7 +15327,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "전남대병원",
+  "reserveUrl": "https://www.cnuh.com/"
  },
  {
   "id": "ebs555",
@@ -14288,7 +15348,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "전남대병원",
+  "reserveUrl": "https://www.cnuh.com/"
  },
  {
   "id": "ebs556",
@@ -14307,7 +15369,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "전북대학교병원",
+  "reserveUrl": "https://www.jbuh.co.kr"
  },
  {
   "id": "ebs557",
@@ -14326,7 +15390,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "중앙대광명병원",
+  "reserveUrl": "https://gh.cauhs.or.kr"
  },
  {
   "id": "ebs558",
@@ -14345,7 +15411,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "중앙대병원",
+  "reserveUrl": "https://ch.cauhs.or.kr/"
  },
  {
   "id": "ebs559",
@@ -14364,7 +15432,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "중앙대학교병원 외 1곳 (중앙대병원 / 한양대병원)",
+  "reserveUrl": "https://ch.cauhs.or.kr/"
  },
  {
   "id": "ebs560",
@@ -14383,7 +15453,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "중앙대학교병원 외 1곳 (중앙대병원 / 한양대병원)",
+  "reserveUrl": "https://ch.cauhs.or.kr/"
  },
  {
   "id": "ebs561",
@@ -14402,7 +15474,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "중앙대학교병원",
+  "reserveUrl": "https://ch.cauhs.or.kr/"
  },
  {
   "id": "ebs562",
@@ -14421,7 +15495,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "중앙대학교병원",
+  "reserveUrl": "https://ch.cauhs.or.kr/"
  },
  {
   "id": "ebs563",
@@ -14440,7 +15516,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "중앙보훈병원 외 1곳 (중앙보훈병원 / 한양대병원)",
+  "reserveUrl": "https://seoul.bohun.or.kr"
  },
  {
   "id": "ebs564",
@@ -14459,7 +15537,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "중앙보훈병원 외 1곳 (중앙보훈병원 / 한양대병원)",
+  "reserveUrl": "https://seoul.bohun.or.kr"
  },
  {
   "id": "ebs565",
@@ -14478,7 +15558,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "청산도 푸른뫼중앙병원",
+  "reserveUrl": "https://www.ebs.co.kr"
  },
  {
   "id": "ebs566",
@@ -14497,7 +15579,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "칠곡경북대병원",
+  "reserveUrl": "https://www.knuch.kr"
  },
  {
   "id": "ebs567",
@@ -14516,7 +15600,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한림대학교의료원 외 1곳 (한림대 강남성심병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.hallym.or.kr"
  },
  {
   "id": "ebs568",
@@ -14535,7 +15621,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한림대학교의료원 외 1곳 (한림대 강남성심병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.hallym.or.kr"
  },
  {
   "id": "ebs569",
@@ -14554,7 +15642,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한림대 동탄성심병원",
+  "reserveUrl": "https://www.hallym.or.kr"
  },
  {
   "id": "ebs570",
@@ -14573,7 +15663,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한림대 한강성심병원",
+  "reserveUrl": "https://www.hallym.or.kr"
  },
  {
   "id": "ebs571",
@@ -14592,7 +15684,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한림대학교의료원 외 1곳 (한림대병원 / 국립암센터)",
+  "reserveUrl": "https://www.hallym.or.kr"
  },
  {
   "id": "ebs572",
@@ -14611,7 +15705,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한림대학교의료원 외 1곳 (한림대병원 / 국립암센터)",
+  "reserveUrl": "https://www.hallym.or.kr"
  },
  {
   "id": "ebs573",
@@ -14630,7 +15726,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한림대성심병원",
+  "reserveUrl": "https://www.hallym.or.kr"
  },
  {
   "id": "ebs574",
@@ -14649,7 +15747,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한림대성심병원",
+  "reserveUrl": "https://www.hallym.or.kr"
  },
  {
   "id": "ebs575",
@@ -14668,7 +15768,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원 외 1곳 (한양대병원 / 경북대병원)",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs576",
@@ -14687,7 +15789,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원 외 1곳 (한양대병원 / 경북대병원)",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs577",
@@ -14706,7 +15810,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원 외 1곳 (한양대병원 / 고려대안암병원)",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs578",
@@ -14725,7 +15831,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원 외 1곳 (한양대병원 / 고려대안암병원)",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs579",
@@ -14744,7 +15852,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원 외 1곳 (한양대병원 / 고려대안암병원)",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs580",
@@ -14763,7 +15873,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원 외 1곳 (한양대병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs581",
@@ -14782,7 +15894,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원 외 1곳 (한양대병원 / 분당서울대병원)",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs582",
@@ -14801,7 +15915,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs583",
@@ -14820,7 +15936,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs584",
@@ -14839,7 +15957,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "한양대학교병원",
+  "reserveUrl": "https://www.hyumc.com"
  },
  {
   "id": "ebs585",
@@ -14858,7 +15978,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "부민병원 외 2곳 (해운대부민병원 / 참조은병원 / 강동경희대병원)",
+  "reserveUrl": "https://www.bumin.co.kr"
  },
  {
   "id": "ebs586",
@@ -14877,7 +15999,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "부민병원 외 2곳 (해운대부민병원 / 참조은병원 / 강동경희대병원)",
+  "reserveUrl": "https://www.bumin.co.kr"
  },
  {
   "id": "ebs587",
@@ -14896,7 +16020,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "부민병원 외 2곳 (해운대부민병원 / 참조은병원 / 강동경희대병원)",
+  "reserveUrl": "https://www.bumin.co.kr"
  },
  {
   "id": "ebs588",
@@ -14915,7 +16041,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "화순전남대병원",
+  "reserveUrl": "https://www.cnuhh.com/"
  },
  {
   "id": "ebs589",
@@ -14934,7 +16062,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "화순전남대병원",
+  "reserveUrl": "https://www.cnuhh.com/"
  },
  {
   "id": "ebs590",
@@ -14953,7 +16083,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "화순전남대병원",
+  "reserveUrl": "https://www.cnuhh.com/"
  },
  {
   "id": "ebs591",
@@ -14972,7 +16104,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "화순전남대병원",
+  "reserveUrl": "https://www.cnuhh.com/"
  },
  {
   "id": "ebs592",
@@ -14991,7 +16125,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "화순전남대병원",
+  "reserveUrl": "https://www.cnuhh.com/"
  },
  {
   "id": "ebs593",
@@ -15010,7 +16146,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "화순전남대병원",
+  "reserveUrl": "https://www.cnuhh.com/"
  },
  {
   "id": "ebs594",
@@ -15029,7 +16167,9 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "화순전남대병원",
+  "reserveUrl": "https://www.cnuhh.com/"
  },
  {
   "id": "ebs595",
@@ -15048,6 +16188,8 @@
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
-  "demo": false
+  "demo": false,
+  "affilHospital": "화순전남대병원",
+  "reserveUrl": "https://www.cnuhh.com/"
  }
 ]

@@ -122,7 +122,7 @@ const loginLimit = limiter(LOGIN_MAX, LOGIN_WINDOW_MS);
 const writeLimit = limiter(WRITE_MAX, WRITE_WINDOW_MS);
 
 /* ---------- 의료진 DB (서버 소유) ---------- */
-const SEED_VERSION = "2026-10-10-ebs-merged";
+const SEED_VERSION = "2026-10-13-ebs-reserve-links";
 function freshDb() {
   return {
     seedVersion: SEED_VERSION,
@@ -137,12 +137,18 @@ function loadDb() {
       if (!j.seedVersion) j.seedVersion = "legacy";
       if (j.seedVersion !== SEED_VERSION) {
         const have = new Set(j.doctors.map((d) => d.id));
-        let added = 0;
+        let added = 0, backfilled = 0;
         for (const s of SEED) {
           if (!have.has(s.id)) { j.doctors.push(JSON.parse(JSON.stringify(s))); added++; }
+          else if (s.reserveUrl || s.affilHospital) {
+            const cur = j.doctors.find((d) => d.id === s.id);
+            if (cur && (cur.reserveUrl !== s.reserveUrl || cur.affilHospital !== s.affilHospital)) {
+              cur.reserveUrl = s.reserveUrl; cur.affilHospital = s.affilHospital; backfilled++;
+            }
+          }
         }
         j.seedVersion = SEED_VERSION;
-        j.logs.unshift({ t: new Date().toISOString().slice(0, 19).replace("T", " "), msg: `시드 동기화: ${added}명 추가 (기존 데이터 유지)` });
+        j.logs.unshift({ t: new Date().toISOString().slice(0, 19).replace("T", " "), msg: `시드 동기화: ${added}명 추가, 소속병원 예약링크 ${backfilled}건 보완 (기존 데이터 유지)` });
         j.logs = j.logs.slice(0, 60);
         saveDb(j);
       }
