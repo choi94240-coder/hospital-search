@@ -4212,15 +4212,15 @@
   "university": "",
   "gradYear": null,
   "edu": "",
-  "career": "소속(엑셀 기재): EBS 다시보기 출연진 정보",
+  "career": "소속(엑셀 기재): 건국대학교병원",
   "profileUrl": "",
-  "excerpt": "EBS명의 엑셀 출처 | 소속: EBS 다시보기 출연진 정보 | 진료과(원문): 마취통증의학과 | 질환: 대상포진 | 방영일: 2023-07-21 | 파일: EBS명의_2021-2023",
+  "excerpt": "EBS명의 엑셀 출처 | 소속: 건국대학교병원 | 진료과(원문): 마취통증의학과 | 질환: 대상포진 | 방영일: 2023-07-21 | 파일: EBS명의_2021-2023",
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
   "demo": false,
-  "affilHospital": "EBS 다시보기 출연진 정보",
-  "reserveUrl": "https://www.ebs.co.kr"
+  "affilHospital": "건국대학교병원",
+  "reserveUrl": "https://www.kuh.ac.kr/doctor/basicInfo.do?dr_sid=20110145"
  },
  {
   "id": "ebs002",
@@ -4233,15 +4233,15 @@
   "university": "",
   "gradYear": null,
   "edu": "",
-  "career": "소속(엑셀 기재): EBS 다시보기 출연진 정보",
+  "career": "소속(엑셀 기재): 제로마취통증의학과의원 (전 고려대 구로병원)",
   "profileUrl": "",
-  "excerpt": "EBS명의 엑셀 출처 | 소속: EBS 다시보기 출연진 정보 | 진료과(원문): 마취통증의학과 | 질환: 대상포진 | 방영일: 2023-07-21 | 파일: EBS명의_2021-2023",
+  "excerpt": "EBS명의 엑셀 출처 | 소속: 제로마취통증의학과의원 (전 고려대 구로병원) | 진료과(원문): 마취통증의학과 | 질환: 대상포진 | 방영일: 2023-07-21 | 파일: EBS명의_2021-2023",
   "verified": "검증 필요",
   "verifiedAt": "2026-10-09",
   "status": "활성",
   "demo": false,
-  "affilHospital": "EBS 다시보기 출연진 정보",
-  "reserveUrl": "https://www.ebs.co.kr"
+  "affilHospital": "제로마취통증의학과의원 (전 고려대 구로병원)",
+  "reserveUrl": "https://zeropain.medisay.co.kr/build/zeropain/menu-specialist_8fdb19fe-bc12-4080-9081-05d2e90fe46f.html"
  },
  {
   "id": "ebs003",
