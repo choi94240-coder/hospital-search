@@ -20,7 +20,7 @@ MAP = [
     (("서울대치과",), "서울대학교치과병원", "https://www.snudh.org"),
     (("서울대병원", "서울대학교병원", "서울대 어린이", "서울대어린이"), "서울대학교병원", "https://www.snuh.org/reservation/meddept/main.do"),
     (("서울대",), "서울대학교병원", "https://www.snuh.org/reservation/meddept/main.do"),
-    (("분당서울대",), "분당서울대학교병원", "https://www.snubh.org"),
+    (("분당서울대",), "분당서울대학교병원", "https://www.snubh.org/index.do"),
     (("서울보라매", "보라매병원"), "서울특별시보라매병원", "https://www.brmh.org"),
     (("서울백병원", "서울백",), "서울백병원", "https://www.paik.ac.kr/seoul"),
     (("상계백",), "상계백병원", "https://www.paik.ac.kr/sanggye"),
@@ -79,16 +79,24 @@ EBS_GENERIC = "https://www.ebs.co.kr"
 
 def match(affil_full):
     tokens = [p.strip() for p in re.split(r'\s*/\s*', affil_full.strip()) if p.strip()]
-    # 각 토큰 순서대로 매칭, EBS-generic이 아닌 실제 병원 링크 우선
+    # 각 토큰 순서대로 매칭. 같은 토큰에 여러 키워드가 포함되면
+    # 가장 긴 키워드(구체적인 병원명) 우선 — 예: "분당서울대병원"은 "서울대"가 아닌 "분당서울대"로 매칭
+    # EBS-generic이 아닌 실제 병원 링크 우선
     fallback_hit = None
     for tok in tokens:
-        for keys, canon, url in MAP:
+        best = None  # (키워드길이, 위치, canon, url) — 길이 우선, 동점이면 토큰 내 앞 위치 우선
+        for keys, canon, url in MAP:  # MAP 순서가 최종 동점자 결정
             for k in keys:
                 if k and k in tok:
-                    if url != EBS_GENERIC:
-                        return canon, url, True
-                    if fallback_hit is None:
-                        fallback_hit = (canon, url)
+                    if url == EBS_GENERIC:
+                        if fallback_hit is None:
+                            fallback_hit = (canon, url)
+                        continue
+                    pos = tok.find(k)
+                    if best is None or len(k) > best[0] or (len(k) == best[0] and pos < best[1]):
+                        best = (len(k), pos, canon, url)
+        if best:
+            return best[2], best[3], True
     if fallback_hit:
         return fallback_hit[0], fallback_hit[1], True
     first = tokens[0] if tokens else ""
