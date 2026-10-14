@@ -122,7 +122,7 @@ const loginLimit = limiter(LOGIN_MAX, LOGIN_WINDOW_MS);
 const writeLimit = limiter(WRITE_MAX, WRITE_WINDOW_MS);
 
 /* ---------- 의료진 DB (서버 소유) ---------- */
-const SEED_VERSION = "2026-10-14-ebs001-002-fix";
+const SEED_VERSION = "2026-10-14-samsung-reserve-fix";
 function freshDb() {
   return {
     seedVersion: SEED_VERSION,
