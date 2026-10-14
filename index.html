@@ -1260,7 +1260,7 @@ document.getElementById("adminTable").innerHTML=s.doctors.length?`<table><tr><th
 updateMini();}
 // admin auth (화면 가림용: 단일 HTML 파일이므로 실제 보안은 백엔드 필요)
 const AUTH_SALT="mvp::admin::v1::";
-const INIT_PW="c01045719064";
+const INIT_PW="123456789";
 let authed=false;
 try{authed=sessionStorage.getItem("mvp_admin")==="1";}catch(e){}
 function phash(s){let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0;i<s.length;i++){const ch=s.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677);}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return (h2>>>0).toString(16)+(h1>>>0).toString(16);}
