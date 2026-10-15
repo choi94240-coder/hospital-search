@@ -162,8 +162,8 @@ const HOSPITALS=[
 {id:"snuh",name:"서울대학교병원",official:"https://www.snuh.org/reservation/meddept/main.do",reserve:"https://www.snuh.org/content/M001004005.do"},
 {id:"sev",name:"신촌세브란스병원",official:"https://sev.severance.healthcare/sev/department/department-center-clinic-all.do",reserve:"https://sev.severance.healthcare/sev/patient-carer/appointment/treatment/apt-guide.do#tab-content1"},
 {id:"samsung",name:"삼성서울병원",official:"https://www.samsunghospital.com/home/reservation/doctorDetailInfo.do",reserve:"https://www.samsunghospital.com/home/reservation/onlineReservationInfo.do"},
-{id:"asan",name:"서울아산병원",official:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do",reserve:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do"},
-{id:"cmc",name:"서울성모병원",official:"https://www.cmcseoul.or.kr/page/department/A",reserve:"https://www.cmcseoul.or.kr/page/department/A"},
+{id:"asan",name:"서울아산병원",official:"https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoList.do",reserve:"https://www.amc.seoul.kr/asan/reservation/main.do"},
+{id:"cmc",name:"서울성모병원",official:"https://www.cmcseoul.or.kr/page/department/A",reserve:"https://www.cmcseoul.or.kr/page/appointment"},
 {id:"ebs",name:"기타병원(EBS명의)",official:"https://www.ebs.co.kr",reserve:"https://www.ebs.co.kr"}];
 const DEPTS=["내과","심장내과","신경과","신경외과","정형외과","소화기내과","호흡기내과","내분비내과","종양내과","혈액내과","알레르기내과","류마티스내과","가정의학과","마취통증의학과","혈관외과","성형외과","치과","외과","심장외과","산부인과","소아청소년과","피부과","안과","이비인후과","비뇨의학과","정신건강의학과","재활의학과","영상의학과","신장내과"];
 const MAP=[
@@ -1176,7 +1176,8 @@ document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="
 // hosp tab
 let curHosp="snuh";
 function renderHosp(){
-document.getElementById("hospTabs").innerHTML=HOSPITALS.map(h=>`<button class="chip ${h.id===curHosp?"on":""}" onclick="curHosp='${h.id}';renderHosp()">${esc(h.name)}</button>`).join("");
+document.getElementById("hospTabs").innerHTML=HOSPITALS.map(h=>`<button class="chip ${h.id===curHosp?"on":""}" onclick="curHosp='${h.id}';renderHosp()">${esc(h.name)}</button>`).join("")+`<button class="chip ${curHosp==="healthchosun"?"on":""}" onclick="curHosp='healthchosun';renderHosp()">헬스조선 명의</button>`;
+if(curHosp==="healthchosun"){document.getElementById("hospDetail").innerHTML=`<h3 style="margin:10px 0 4px">헬스조선 명의</h3><div class="row"><a href="https://health.chosun.com/bestdoctor/index.html" target="_blank" rel="noopener">헬스조선 베스트닥터 바로가기</a></div><div class="hr"></div><div class="alert blue small">외부 언론사 명의 목록입니다. 병원 공식 프로필이 아니므로, 진료 선택 전 각 병원 공식 프로필·예약 페이지에서 최신 정보를 확인하세요.</div>`;return;}
 const h=HOSPITALS.find(x=>x.id===curHosp);const s=getStore();
 const docs=s.doctors.filter(d=>d.hospital===curHosp&&d.status!=="비활성");
 let byDept="";
