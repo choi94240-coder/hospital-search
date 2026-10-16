@@ -122,7 +122,7 @@ const loginLimit = limiter(LOGIN_MAX, LOGIN_WINDOW_MS);
 const writeLimit = limiter(WRITE_MAX, WRITE_WINDOW_MS);
 
 /* ---------- 의료진 DB (서버 소유) ---------- */
-const SEED_VERSION = "2026-10-14-samsung-reserve-fix";
+const SEED_VERSION = "2026-10-17-ebs-edu-fix";
 function freshDb() {
   return {
     seedVersion: SEED_VERSION,
@@ -142,8 +142,8 @@ function loadDb() {
           if (!have.has(s.id)) { j.doctors.push(JSON.parse(JSON.stringify(s))); added++; }
           else if (s.reserveUrl || s.affilHospital) {
             const cur = j.doctors.find((d) => d.id === s.id);
-            if (cur && (cur.reserveUrl !== s.reserveUrl || cur.affilHospital !== s.affilHospital || cur.career !== s.career || cur.excerpt !== s.excerpt)) {
-              cur.reserveUrl = s.reserveUrl; cur.affilHospital = s.affilHospital; cur.career = s.career; cur.excerpt = s.excerpt; backfilled++;
+            if (cur && (cur.reserveUrl !== s.reserveUrl || cur.affilHospital !== s.affilHospital || cur.career !== s.career || cur.excerpt !== s.excerpt || cur.university !== s.university || cur.gradYear !== s.gradYear)) {
+              cur.reserveUrl = s.reserveUrl; cur.affilHospital = s.affilHospital; cur.career = s.career; cur.excerpt = s.excerpt; cur.university = s.university; cur.gradYear = s.gradYear; backfilled++;
             }
           }
         }
