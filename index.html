@@ -1525,7 +1525,7 @@ const fh=document.getElementById("fHosp");fh.innerHTML=`<option value="">전체 
 const fd=document.getElementById("fDept");fd.innerHTML=`<option value="">전체 진료과</option>`+DEPTS.map(d=>`<option>${esc(d)}</option>`).join("");
 const ah=document.getElementById("aHosp");ah.innerHTML=HOSPITALS.map(h=>`<option value="${h.id}">${esc(h.name)}</option>`).join("");
 const ad=document.getElementById("aDept");ad.innerHTML=DEPTS.map(d=>`<option>${esc(d)}</option>`).join("");
-document.getElementById("srcList").innerHTML=HOSPITALS.filter(h=>h.id!=="ebs").map(h=>`<div style="margin:6px 0"><b>${esc(h.name)}</b><br><a href="${h.official}" target="_blank" rel="noopener">공식 의료진 페이지</a> · <a href="${h.reserve}" target="_blank" rel="noopener">예약 페이지</a></div>`).join("");
+document.getElementById("srcList").innerHTML=HOSPITALS.filter(h=>h.id!=="ebs"&&h.id!=="ebs2").map(h=>`<div style="margin:6px 0"><b>${esc(h.name)}</b><br><a href="${h.official}" target="_blank" rel="noopener">공식 의료진 페이지</a> · <a href="${h.reserve}" target="_blank" rel="noopener">예약 페이지</a></div>`).join("");
 document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="Enter")doSearch();});
 document.getElementById("pwInput").addEventListener("keydown",e=>{if(e.key==="Enter")tryLogin();});
 updateMini();
