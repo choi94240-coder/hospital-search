@@ -1537,8 +1537,8 @@ function estimate(gradYear,ref){if(!gradYear||!ref)return{group:"연령대 확�
 const e=ref-gradYear;const mn=e+22,mx=e+24;const mid=(mn+mx)/2;let g;
 if(mid<40)g="30대 추정";else if(mid<50)g="40대 추정";else if(mid<60)g="50대 추정";else g="60대 추정";
 return{group:g,min:mn,max:mx,elapsed:e};}
-function load(){try{const raw=localStorage.getItem(LSKEY);if(!raw){const s={doctors:SEED_DOCTORS,logs:[{t:SEED_DATE+" 00:00",msg:`공식 홈페이지 조사 기반 시드 ${SEED_DOCTORS.length}명 로드(기타병원 소속병원 예약링크 포함)`}]};localStorage.setItem(LSKEY,JSON.stringify(s));try{localStorage.setItem(LSKEY+"_ver",SEED_VER);}catch(e){}return s;}const s=JSON.parse(raw)||{doctors:[],logs:[]};let patched=0;s.doctors=(s.doctors||[]).map(d=>{const seed=SEED_DOCTORS.find(x=>x.id===d.id);if(seed&&seed.gradYear!=null&&(d.gradYear==null||d.gradYear==="")){patched++;return Object.assign({},d,{gradYear:seed.gradYear,university:seed.university||d.university,edu:seed.edu||d.edu,excerpt:seed.excerpt||d.excerpt});}return d;});let _sv=null;try{_sv=localStorage.getItem(LSKEY+"_ver");}catch(e){}
-if(_sv!==SEED_VER){let _n=0;s.doctors=(s.doctors||[]).map(d=>{const seed=SEED_DOCTORS.find(x=>x.id===d.id);if(!seed)return d;_n++;const m=Object.assign({},seed);Object.keys(d).forEach(k=>{if(!(k in seed)&&d[k]!=null&&d[k]!=="")m[k]=d[k];});return m;});
+function load(){try{const raw=localStorage.getItem(LSKEY);if(!raw){const s={doctors:SEED_DOCTORS,logs:[{t:SEED_DATE+" 00:00",msg:`공식 홈페이지 조사 기반 시드 ${SEED_DOCTORS.length}명 로드(기타병원 소속병원 예약링크 포함)`}]};localStorage.setItem(LSKEY,JSON.stringify(s));try{localStorage.setItem(LSKEY+"_ver",SEED_VER);}catch(e){}return s;}const s=JSON.parse(raw)||{doctors:[],logs:[]};let patched=0;s.doctors=(s.doctors||[]).map(d=>{const seed=SEED_DOCTORS.find(x=>x.id===d.id);if(seed&&seed.gradYear!=null&&(d.gradYear==null||d.gradYear==="")&&!(d._edited||[]).includes("gradYear")){patched++;return Object.assign({},d,{gradYear:seed.gradYear,university:seed.university||d.university,edu:seed.edu||d.edu,excerpt:seed.excerpt||d.excerpt});}return d;});let _sv=null;try{_sv=localStorage.getItem(LSKEY+"_ver");}catch(e){}
+if(_sv!==SEED_VER){let _n=0;s.doctors=(s.doctors||[]).map(d=>{const seed=SEED_DOCTORS.find(x=>x.id===d.id);if(!seed)return d;_n++;const _ed=d._edited||[];const m=Object.assign({},seed,d);Object.keys(seed).forEach(k=>{if(!_ed.includes(k))m[k]=seed[k];});return m;});
 SEED_DOCTORS.forEach(sd=>{if(!s.doctors.some(x=>x.id===sd.id)){s.doctors.push(sd);_n++;}});
 s.logs=s.logs||[];s.logs.unshift({t:new Date().toISOString().slice(0,19).replace("T"," "),msg:"시드 데이터 자동 동기화 ("+_n+"건 갱신)"});s.logs=s.logs.slice(0,60);
 try{localStorage.setItem(LSKEY+"_ver",SEED_VER);}catch(e){}patched+=_n;}
@@ -1605,7 +1605,7 @@ return `<div class="doc"><h3>${esc(d.name)} ${demo}${ebspill}<span class="pill g
 }
 function ebsBroadcastLine(d){const v=EBS_BROADCAST[d.id];if(!v)return"";const p=v.split("|");return `${d.profileUrl?"<br>":""}EBS 명의 방송: ${esc(p[0])} (방영 ${esc(p[1]||"")})`;}
 function openDetail(id){const s=getStore();const d=s.doctors.find(x=>x.id===id);if(!d)return;const ref=new Date().getFullYear();const e=estimate(d.gradYear,ref);const f=FINDER_MAP[d.name]||null;
-document.getElementById("sheet").innerHTML=`<div class="row" style="justify-content:space-between"><h2 style="margin:0;line-height:1.6;padding:2px 0;overflow:visible">${esc(d.name)}</h2></div>
+document.getElementById("sheet").innerHTML=`<div class="row" style="justify-content:space-between"><h2 style="margin:0;line-height:1.6;padding:2px 0;overflow:visible">${esc(d.name)}</h2>${authed?`<button class="btn sm ghost" style="align-self:center" onclick="editDoctor('${d.id}')">수정 (관리자)</button>`:""}</div>
 <div class="small muted">${esc(hospName(d.hospital))} · ${esc(d.dept)} · ${esc(d.title||"")}</div><div class="hr"></div>
 <table><tr><th style="width:170px">전문 분야</th><td>${esc(d.specialty||"미확인")}</td></tr>
 <tr><th>진료 분야·대상 질환</th><td>${esc(d.clinical||"미확인")}</td></tr>
@@ -1682,13 +1682,17 @@ clearForm();await refreshDB();renderAdmin();updateMini();
 document.getElementById("adminMsg").innerHTML=`<div class="alert green small">저장되었습니다. 출처 검증 전까지 "검증 필요" 상태입니다.</div>`;return;}
 const s=getStore();const id=document.getElementById("aId").value||("d"+Date.now());
 const rec2={id,...rec,verified:"검증 필요",verifiedAt:new Date().toISOString().slice(0,10),status:"활성",demo:false};
-const i=s.doctors.findIndex(d=>d.id===id);if(i>=0)s.doctors[i]={...s.doctors[i],...rec2};else s.doctors.push(rec2);
+const i=s.doctors.findIndex(d=>d.id===id);
+if(i>=0){const _old=s.doctors[i];const _ef=["hospital","name","dept","title","specialty","clinical","university","gradYear","edu","career","profileUrl","excerpt"];const _ed=new Set(_old._edited||[]);_ef.forEach(k=>{if((_old[k]??null)!==(rec[k]??null))_ed.add(k);});s.doctors[i]={..._old,...rec2,_edited:[..._ed]};}
+else s.doctors.push(rec2);
 save(s);log(`의료진 저장: ${name} (${hospName(hosp)}/${dept})`);clearForm();renderAdmin();updateMini();
 document.getElementById("adminMsg").innerHTML=`<div class="alert green small">저장되었습니다. 출처 검증 전까지 "검증 필요" 상태입니다.</div>`;}
 function clearForm(){["aId","aName","aTitle","aSpec","aClin","aUniv","aGrad","aEdu","aCareer","aProfile","aExcerpt"].forEach(id=>document.getElementById(id).value="");}
 function editDoctor(id){document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x.dataset.tab==="admin"));["search","hosp","docs","admin","guide"].forEach(t=>document.getElementById("tab-"+t).hidden=(t!=="admin"));
+if(!authed){renderAdminGate();return;}
 const s=getStore();const d=s.doctors.find(x=>x.id===id);if(!d)return;
-document.getElementById("aId").value=d.id;document.getElementById("aHosp").value=d.hospital;document.getElementById("aName").value=d.name;document.getElementById("aDept").value=d.dept;
+document.getElementById("aId").value=d.id;document.getElementById("aHosp").value=d.hospital;document.getElementById("aName").value=d.name;
+const _ad=document.getElementById("aDept");if(d.dept&&!Array.prototype.some.call(_ad.options,o=>o.value===d.dept)){const _o=document.createElement("option");_o.value=d.dept;_o.textContent=d.dept;_ad.appendChild(_o);}_ad.value=d.dept||"";
 document.getElementById("aTitle").value=d.title||"";document.getElementById("aSpec").value=d.specialty||"";document.getElementById("aClin").value=d.clinical||"";document.getElementById("aUniv").value=d.university||"";
 document.getElementById("aGrad").value=d.gradYear||"";document.getElementById("aEdu").value=d.edu||"";document.getElementById("aCareer").value=d.career||"";document.getElementById("aProfile").value=d.profileUrl||"";document.getElementById("aExcerpt").value=d.excerpt||"";
 renderAdminGate();window.scrollTo({top:0});}
