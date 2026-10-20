@@ -1614,7 +1614,7 @@ document.getElementById("sheet").innerHTML=`<div class="row" style="justify-cont
 <tr><th>학부 졸업연도</th><td>${d.gradYear||"미확인"}</td></tr>
 <tr><th>추정 연령 범위</th><td>${e.min!=null?`약 ${e.min}~${e.max}세 (${e.group}, 기준 ${ref}년, 경과 ${e.elapsed}년)`:"산정 불가 ("+e.group+")"}<br><span class="small muted">방법: 졸업연령 22~24세 가정. 편입·휴학·군복무·학제 차이로 오차 가능. 실제 나이 아님.</span></td></tr>
 <tr><th>공식 출처</th><td>${d.profileUrl?`<a href="${esc(d.profileUrl)}" target="_blank" rel="noopener">${esc(d.profileUrl)}</a>`:""}${ebsBroadcastLine(d)}${f?`<br>소속병원: ${esc(f.h)}${f.u?` · <a href="${esc(f.u)}" target="_blank" rel="noopener">병원홈페이지</a>`:""}`:""}</td></tr>${(d.hospital==="ebs"||d.hospital==="ebs2")?`<tr><th>소속병원 예약</th><td>${d.reserveUrl?`<a href="${esc(d.reserveUrl)}" target="_blank" rel="noopener">${esc(d.reserveUrl)}</a>`:"없음"}</td></tr>`:""}${d.ebs?`<tr><th>EBS명의 출연</th><td>${esc(d.ebs)}</td></tr>`:""}</table>
-<div class="row" style="margin-top:14px;justify-content:center;position:relative"><button class="btn ghost sm" style="position:absolute;right:0" onclick="editDoctor('${d.id}')">관리자 수정</button><button class="btn ghost sm" onclick="closeModal()">닫기</button></div>`;
+<div class="row" style="margin-top:14px;justify-content:center;position:relative">${authed?`<button class="btn ghost sm" style="position:absolute;right:0" onclick="editDoctor('${d.id}')">관리자 수정</button>`:""}<button class="btn ghost sm" onclick="closeModal()">닫기</button></div>`;
 document.getElementById("modal").classList.add("open");document.getElementById("sheet").scrollTop=0;}
 function closeModal(){document.getElementById("modal").classList.remove("open");}
 document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal();});
@@ -1688,7 +1688,7 @@ else s.doctors.push(rec2);
 save(s);log(`의료진 저장: ${name} (${hospName(hosp)}/${dept})`);clearForm();renderAdmin();updateMini();
 document.getElementById("adminMsg").innerHTML=`<div class="alert green small">저장되었습니다. 출처 검증 전까지 "검증 필요" 상태입니다.</div>`;}
 function clearForm(){["aId","aName","aTitle","aSpec","aClin","aUniv","aGrad","aEdu","aCareer","aProfile","aExcerpt"].forEach(id=>document.getElementById(id).value="");}
-function editDoctor(id){document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x.dataset.tab==="admin"));["search","hosp","docs","admin","guide"].forEach(t=>document.getElementById("tab-"+t).hidden=(t!=="admin"));
+function editDoctor(id){closeModal();document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x.dataset.tab==="admin"));["search","hosp","docs","admin","guide"].forEach(t=>document.getElementById("tab-"+t).hidden=(t!=="admin"));
 if(!authed){renderAdminGate();return;}
 const s=getStore();const d=s.doctors.find(x=>x.id===id);if(!d)return;
 document.getElementById("aId").value=d.id;document.getElementById("aHosp").value=d.hospital;document.getElementById("aName").value=d.name;
